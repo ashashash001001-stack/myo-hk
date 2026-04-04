@@ -148,6 +148,23 @@
     ]
 }
     </script>
+
+    <script>
+    (function() {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.href = window.location.href;
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+        var ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) {
+            var imgPath = ogImage.getAttribute('content');
+            if (imgPath.indexOf('http') === -1) {
+                ogImage.setAttribute('content', window.location.origin + imgPath);
+            }
+        }
+    })();
+    </script>
+
 </head>
 <body>
     <nav class="bg-white p-4 shadow-md sticky top-0 z-50">
@@ -268,15 +285,62 @@
                     <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">蜜月旅行推薦</h3>
                     <p class="text-sm text-gray-600">亞洲到歐洲目的地。</p>
                 </a>
+            
+            <h2>分享本文</h2>
+            <div class="flex flex-wrap gap-3 justify-center my-6" id="shareButtons">
+                <a href="#" id="shareWhatsApp" target="_blank" rel="noopener" class="inline-flex items-center bg-green-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-green-600 transition text-sm">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+                <a href="#" id="shareFacebook" target="_blank" rel="noopener" class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition text-sm">
+                    <i class="fab fa-facebook-f mr-2"></i>Facebook
+                </a>
+                <a href="#" id="shareTwitter" target="_blank" rel="noopener" class="inline-flex items-center bg-sky-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-sky-600 transition text-sm">
+                    <i class="fab fa-twitter mr-2"></i>Twitter
+                </a>
+                <a href="#" id="shareCopy" class="inline-flex items-center bg-gray-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-700 transition text-sm">
+                    <i class="fas fa-link mr-2"></i>複製連結
+                </a>
+            </div>
+            <script>
+            (function() {
+                var currentUrl = window.location.href;
+                var currentTitle = document.title;
+                var wa = document.getElementById('shareWhatsApp');
+                var fb = document.getElementById('shareFacebook');
+                var tw = document.getElementById('shareTwitter');
+                var cp = document.getElementById('shareCopy');
+                if (wa) wa.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(currentTitle + ' ' + currentUrl);
+                if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl);
+                if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(currentUrl) + '&text=' + encodeURIComponent(currentTitle);
+                if (cp) cp.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(currentUrl).then(function() {
+                            cp.innerHTML = '<i class="fas fa-check mr-2"></i>已複製';
+                            setTimeout(function() { cp.innerHTML = '<i class="fas fa-link mr-2"></i>複製連結'; }, 2000);
+                        });
+                    }
+                });
+            })();
+            </script>
+
             <h2>延伸閱讀</h2>
             <div class="grid md:grid-cols-2 gap-4 mt-6">
-                <a href="./香港結婚完整攻略.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">香港結婚完整攻略</h3>
-                    <p class="text-sm text-gray-600">由註冊到婚宴的每一步完整教學。</p>
+                <a href="./證書套材質比較.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">結婚證書套材質比較：亞麻布vs絲絨vs皮革</h3>
+                    <p class="text-sm text-gray-600">結婚證書套材質完整比較，涵蓋亞麻布、絲絨、皮革和珠光材質。...</p>
                 </a>
-                <a href="./結婚證書套推薦.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">結婚證書套推薦 Top 5</h3>
-                    <p class="text-sm text-gray-600">實測比較 5 款熱門證書套。</p>
+                <a href="./證書套保養指南.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">結婚證書套保養指南：延長使用壽命</h3>
+                    <p class="text-sm text-gray-600">結婚證書套保養完整指南，涵蓋清潔、存放和保養建議。...</p>
+                </a>
+                <a href="./婚宴酒水預算規劃.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">婚宴酒水預算規劃：如何精明選擇</h3>
+                    <p class="text-sm text-gray-600">婚宴酒水預算完整規劃，涵蓋自備酒水、套餐比較和省錢貼士。...</p>
+                </a>
+                <a href="./伴娘裙選擇指南.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">伴娘裙選擇指南：完美伴娘造型</h3>
+                    <p class="text-sm text-gray-600">伴娘裙完整選擇指南，涵蓋款式、顏色、尺碼和預算建議。...</p>
                 </a>
             </div>
 

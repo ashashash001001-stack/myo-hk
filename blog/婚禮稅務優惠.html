@@ -40,6 +40,23 @@
         .tip-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 1rem; border-radius: 0.5rem; margin: 1.5rem 0; }
         .tip-box strong { color: #92400e; }
     </style>
+
+    <script>
+    (function() {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.href = window.location.href;
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+        var ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) {
+            var imgPath = ogImage.getAttribute('content');
+            if (imgPath.indexOf('http') === -1) {
+                ogImage.setAttribute('content', window.location.origin + imgPath);
+            }
+        }
+    })();
+    </script>
+
 </head>
 <body>
     <nav class="bg-white p-4 shadow-md sticky top-0 z-50">
@@ -195,23 +212,62 @@
                 <strong>💡 My O! 貼士：</strong>婚禮結束後，記得用專屬證書套妥善保管你們的結婚證書。這不僅是愛情的法律見證，更是你們共同生活的起點。My O! 提供客製化燙印服務，讓你的證書套獨一無二。
             </div>
 
+            
+            <h2>分享本文</h2>
+            <div class="flex flex-wrap gap-3 justify-center my-6" id="shareButtons">
+                <a href="#" id="shareWhatsApp" target="_blank" rel="noopener" class="inline-flex items-center bg-green-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-green-600 transition text-sm">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+                <a href="#" id="shareFacebook" target="_blank" rel="noopener" class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition text-sm">
+                    <i class="fab fa-facebook-f mr-2"></i>Facebook
+                </a>
+                <a href="#" id="shareTwitter" target="_blank" rel="noopener" class="inline-flex items-center bg-sky-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-sky-600 transition text-sm">
+                    <i class="fab fa-twitter mr-2"></i>Twitter
+                </a>
+                <a href="#" id="shareCopy" class="inline-flex items-center bg-gray-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-700 transition text-sm">
+                    <i class="fas fa-link mr-2"></i>複製連結
+                </a>
+            </div>
+            <script>
+            (function() {
+                var currentUrl = window.location.href;
+                var currentTitle = document.title;
+                var wa = document.getElementById('shareWhatsApp');
+                var fb = document.getElementById('shareFacebook');
+                var tw = document.getElementById('shareTwitter');
+                var cp = document.getElementById('shareCopy');
+                if (wa) wa.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(currentTitle + ' ' + currentUrl);
+                if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentUrl);
+                if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(currentUrl) + '&text=' + encodeURIComponent(currentTitle);
+                if (cp) cp.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(currentUrl).then(function() {
+                            cp.innerHTML = '<i class="fas fa-check mr-2"></i>已複製';
+                            setTimeout(function() { cp.innerHTML = '<i class="fas fa-link mr-2"></i>複製連結'; }, 2000);
+                        });
+                    }
+                });
+            })();
+            </script>
+
             <h2>延伸閱讀</h2>
             <div class="grid md:grid-cols-2 gap-4 mt-6">
-                <a href="./婚禮策劃完整指南.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">婚禮策劃完整指南</h3>
-                    <p class="text-sm text-gray-600">從零開始的完美婚禮。</p>
+                <a href="./婚禮攝影後製技巧.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">婚禮攝影後製技巧：專業修圖秘訣</h3>
+                    <p class="text-sm text-gray-600">婚禮攝影後製技巧完整指南，涵蓋基本調整、進階技巧和專業輸出。...</p>
                 </a>
-                <a href="./婚禮預算分配指南.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">婚禮預算分配指南</h3>
-                    <p class="text-sm text-gray-600">每一分錢都花在刀口上。</p>
+                <a href="./婚禮攝影照片水印指南.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">婚禮攝影照片水印指南：品牌保護</h3>
+                    <p class="text-sm text-gray-600">婚禮攝影照片水印完整指南，涵蓋水印設計、位置和透明度建議。...</p>
                 </a>
-                <a href="./香港結婚完整攻略.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">香港結婚完整攻略</h3>
-                    <p class="text-sm text-gray-600">由註冊到婚宴的每一步。</p>
+                <a href="./電子請柬vs紙質請柬.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">電子請柬vs紙質請柬：哪個更好？</h3>
+                    <p class="text-sm text-gray-600">全面比較電子請柬和紙質請柬的優缺點、價錢和環保影響。...</p>
                 </a>
-                <a href="./結婚證書套推薦.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">結婚證書套推薦</h3>
-                    <p class="text-sm text-gray-600">5款熱門證書套實測。</p>
+                <a href="./香港婚禮場地推薦2026.html" class="block p-4 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2" style="margin-top:0;color:#333;">香港婚禮場地推薦2026：Budget到豪華選擇</h3>
+                    <p class="text-sm text-gray-600">2026年香港婚禮場地完整推薦，由Budget到豪華選擇。涵蓋酒店、餐廳、特色場地價錢比較。...</p>
                 </a>
             </div>
             <div class="bg-gray-50 p-4 border-l-4 border-amber-600 my-8 text-sm text-gray-600">
