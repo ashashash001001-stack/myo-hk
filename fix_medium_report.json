@@ -1,0 +1,52 @@
+{
+  "total": 5,
+  "success": 5,
+  "failed": 0,
+  "changes_summary": {
+    "url_canonical": 0,
+    "meta_robots": 0,
+    "lazy_loading": 5
+  },
+  "results": [
+    {
+      "file": "婚禮攝影照片阴影提亮指南.html",
+      "status": "success",
+      "changes": [
+        "lazy_loading"
+      ],
+      "changes_count": 1
+    },
+    {
+      "file": "婚禮攝影合約注意事項.html",
+      "status": "success",
+      "changes": [
+        "lazy_loading"
+      ],
+      "changes_count": 1
+    },
+    {
+      "file": "婚禮場地佈置.html",
+      "status": "success",
+      "changes": [
+        "lazy_loading"
+      ],
+      "changes_count": 1
+    },
+    {
+      "file": "婚禮攝影照片移軸效果指南.html",
+      "status": "success",
+      "changes": [
+        "lazy_loading"
+      ],
+      "changes_count": 1
+    },
+    {
+      "file": "婚禮攝影風格比較.html",
+      "status": "success",
+      "changes": [
+        "lazy_loading"
+      ],
+      "changes_count": 1
+    }
+  ]
+}
