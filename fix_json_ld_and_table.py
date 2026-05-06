@@ -18,7 +18,7 @@ def get_faq_count(content):
         data = json.loads(content.strip())
         if data.get('@type') == 'FAQPage':
             return len(data.get('mainEntity', []))
-    except:
+    except (json.JSONDecodeError, AttributeError):
         pass
     return 0
 
@@ -53,7 +53,6 @@ def merge_json_ld(html):
 
     # 按問題數量排序，保留最多的
     faq_blocks.sort(key=lambda x: x['count'], reverse=True)
-    keep_block = faq_blocks[0]
 
     # 構建新 HTML
     new_html = html

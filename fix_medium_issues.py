@@ -5,7 +5,6 @@ My O! 網站修復腳本 - 中等問題批量處理
 用法: python3 fix_medium_issues.py [--test]
 """
 
-import os
 import re
 import json
 import glob
@@ -46,11 +45,10 @@ def fix_medium_issues(html):
             return re.sub(r'<img\b', r'<img loading="lazy"', img_tag, count=1)
         return img_tag
 
-    original_img_count = len(re.findall(r'<img\b[^>]*>', html))
     html = re.sub(r'<img\b[^>]*>', add_loading_lazy, html)
-    new_img_count = len(re.findall(r'<img\b[^>]*>', html))
 
-    if new_img_count > 0 and 'loading=' in html:
+    # 檢查是否有圖片被添加 lazy loading
+    if '<img loading="lazy"' in html:
         changes.append('lazy_loading')
 
     return html, changes
