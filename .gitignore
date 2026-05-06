@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Claude configuration
+.claude/
+
+# OpenCode configuration
+.opencode/
+
+# Sisyphus
+.sisyphus/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+test-*.js
+test-runner.html
