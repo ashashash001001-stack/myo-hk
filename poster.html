@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My O! 專屬結婚證書套 | 宣傳單張</title>
-    <meta name="description" content="為您的結婚證書打造設計師級專屬證書套，讓這份愛情的見證永恆閃耀。">
-    <meta property="og:title" content="My O! 專屬結婚證書套">
-    <meta property="og:description" content="珍藏您的愛情，從一份證書套開始">
-    <meta property="og:image" content="https://myo-hk.github.io/image/01_company_logo.png">
-    <meta property="og:url" content="https://myo-hk.github.io/poster.html">
-    <meta property="og:type" content="website">
+    <title>My O! 結婚證書套宣傳單張</title>
     <meta name="robots" content="index, follow">
-
     <link rel="icon" href="image/01_company_logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* 打印优化 - A5 尺寸 (148mm x 210mm) */
+        /* 匯入高級字體 */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@300;400&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
+        /* 打印優化 - A5 尺寸 */
         @page {
             size: 148mm 210mm;
             margin: 0;
@@ -29,571 +25,470 @@
         }
 
         body {
-            font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-            background: linear-gradient(135deg, #f5f0e8 0%, #e8e0d5 100%);
-            color: #2d2d2d;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #D8D4CB;
+            margin: 0;
+            padding: 20px;
         }
 
-        /* 海报容器 */
-        .poster {
-            width: 100%;
-            max-width: 148mm;
-            min-height: 210mm;
-            margin: 0 auto;
-            background: linear-gradient(180deg, #fdfcfa 0%, #f9f6f1 30%, #f5f0e8 70%, #ebe4d9 100%);
+        /* A5 尺寸比例容器 - 畫廊風格 */
+        .a5-flyer {
+            width: 420px;
+            min-height: 594px;
+            background-color: #FAF8F3;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
             position: relative;
-            overflow: hidden;
             page-break-after: always;
         }
 
-        /* 装饰性内框 */
+        /* 雜誌級邊框系統 (Passepartout) */
         .frame-outer {
             position: absolute;
-            top: 5mm;
-            left: 5mm;
-            right: 5mm;
-            bottom: 5mm;
-            border: 1.5px solid #b8956e;
-            border-radius: 4mm;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 0.5px solid rgba(180, 170, 155, 0.4);
+            pointer-events: none;
         }
 
         .frame-inner {
             position: absolute;
-            top: 8mm;
-            left: 8mm;
-            right: 8mm;
-            bottom: 8mm;
-            border: 0.5px solid #d4c4b0;
-            border-radius: 3mm;
+            top: 18px;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            border: 0.3px solid rgba(180, 170, 155, 0.25);
+            pointer-events: none;
         }
 
-        /* 顶部装饰条 */
-        .top-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 12mm;
-            background: linear-gradient(90deg,
-                transparent 0%,
-                rgba(184, 149, 110, 0.15) 15%,
-                rgba(184, 149, 110, 0.25) 50%,
-                rgba(184, 149, 110, 0.15) 85%,
-                transparent 100%);
-            border-bottom: 0.5px solid rgba(184, 149, 110, 0.3);
-        }
-
-        /* 品牌区域 */
+        /* 品牌區域 - 不置中設計 */
         .brand-section {
-            text-align: center;
-            padding: 18mm 12mm 4mm;
-            position: relative;
-            z-index: 1;
+            padding: 20px 20px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
         }
 
-        .logo-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .logo {
-            width: 24mm;
-            height: 24mm;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2.5px solid #b8956e;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.12), inset 0 0 0 3px rgba(255,255,255,0.3);
-        }
-
-        .logo-ring {
-            position: absolute;
-            top: -3mm;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30mm;
-            height: 30mm;
-            border: 1px solid rgba(184, 149, 110, 0.3);
-            border-radius: 50%;
-        }
-
-        .brand-name {
-            font-family: 'Playfair Display', 'Noto Sans TC', serif;
-            font-size: 8mm;
-            font-weight: 600;
-            color: #5c4033;
-            margin-top: 3mm;
-            letter-spacing: 4px;
-        }
-
-        .brand-tagline {
-            font-size: 3.2mm;
-            color: #8b7355;
-            margin-top: 1.5mm;
-            letter-spacing: 3px;
-            font-weight: 300;
-        }
-
-        /* 主标题区 */
-        .hero-section {
-            text-align: center;
-            padding: 4mm 10mm;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', 'Noto Sans TC', serif;
-            font-size: 9.5mm;
-            font-weight: 600;
-            color: #5c4033;
-            line-height: 1.4;
-            margin-bottom: 2mm;
-        }
-
-        .hero-subtitle {
-            font-size: 4mm;
-            color: #7a6454;
-            letter-spacing: 1px;
-            font-weight: 300;
-        }
-
-        .divider {
+        .brand-left {
             display: flex;
             align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            margin-bottom: 0;
+        }
+
+        .brand-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 0.8px solid rgba(180, 150, 100, 0.5);
+        }
+
+        .brand {
+            font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #4A4540;
+            margin-bottom: 2px;
+        }
+
+        .brand-sub {
+            font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+            font-size: 7px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #9A9388;
+            margin-top: 2px;
+        }
+            text-transform: uppercase;
+        }
+
+        /* 右側裝飾線 */
+        .brand-decoration {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .brand-line {
+            width: 40px;
+            height: 0.3px;
+            background: rgba(180, 150, 100, 0.4);
+        }
+
+        /* 主視覺區 - 不對稱網格 */
+        .hero-section {
+            padding: 12px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .hero-image-main {
+            grid-column: span 2;
+            height: 80px;
+            background-color: #F2EEE8;
+            border: 0.3px solid rgba(180, 170, 155, 0.2);
+            display: flex;
             justify-content: center;
-            gap: 4mm;
-            margin: 3mm 0;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        .hero-image-small {
+            height: 45px;
+            background-color: #F2EEE8;
+            border: 0.3px solid rgba(180, 170, 155, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-image-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        /* 標題區 - 散文式排版 */
+        .title-section {
+            padding: 0 20px;
+            text-align: justify;
+        }
+
+        .title {
+            font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: #4A4540;
+            line-height: 2;
+            letter-spacing: 2px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        
+        /* 裝飾分隔線 */
+        .divider {
+            padding: 0 20px;
+            margin-bottom: 10px;
         }
 
         .divider-line {
-            width: 20mm;
-            height: 0.5px;
-            background: linear-gradient(90deg, transparent, #b8956e, transparent);
+            width: 100%;
+            height: 0.3px;
+            background: linear-gradient(90deg, transparent, rgba(180, 150, 100, 0.3), transparent);
         }
 
-        .divider-icon {
-            font-size: 4mm;
-            color: #b8956e;
+        /* 產品展示 - 畫廊網格 */
+        .product-section {
+            padding: 0 20px;
+            margin-bottom: 10px;
         }
 
-        /* 产品展示区 */
-        .showcase-section {
-            padding: 4mm 12mm;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-label {
-            font-size: 3.5mm;
-            color: #8b7355;
-            text-align: center;
-            font-weight: 500;
-            letter-spacing: 4px;
+        .product-label-small {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #A09888;
             text-transform: uppercase;
-            margin-bottom: 3mm;
+            margin-bottom: 6px;
         }
 
-        .products-grid {
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, auto);
-            gap: 2.5mm;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
         }
 
         .product-item {
             background: #fff;
-            border-radius: 2mm;
-            overflow: hidden;
-            border: 0.5px solid #e0d5c5;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-            transition: transform 0.2s ease;
+            border: 0.3px solid rgba(180, 170, 155, 0.15);
+            padding: 3px;
+            text-align: center;
         }
 
-        .product-item:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .product-item.main {
-            grid-column: span 2;
-        }
-
-        .product-img {
+        .product-item img {
             width: 100%;
-            height: 12mm;
-            object-fit: cover;
-            display: block;
-        }
-
-        .product-img.tall {
-            height: 25mm;
+            height: 28px;
+            object-fit: contain;
         }
 
         .product-label {
-            font-size: 2.8mm;
-            color: #888;
-            text-align: center;
-            padding: 1.5mm 1mm;
-            background: #faf9f7;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 6px;
+            color: #8A8578;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
         }
 
-        /* 颜色选择 */
-        .color-bar {
+        /* 顏色選項 - 水平排列 */
+        .color-section {
+            padding: 0 20px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: center;
-            gap: 8mm;
-            padding: 3mm 0;
+            gap: 20px;
         }
 
-        .color-option {
+        .color-item {
             display: flex;
             align-items: center;
-            gap: 2mm;
+            gap: 6px;
         }
 
         .color-dot {
-            width: 4.5mm;
-            height: 4.5mm;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            border: 0.5px solid rgba(0,0,0,0.15);
+            border: 0.3px solid rgba(180, 170, 155, 0.3);
         }
 
         .color-text {
-            font-size: 3mm;
-            color: #666;
+            font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+            font-size: 7px;
+            font-weight: 300;
+            color: #7A7568;
+            letter-spacing: 1px;
         }
 
-        .color-material {
-            font-size: 2.5mm;
-            color: #999;
-            display: block;
-        }
-
-        /* 特点区 */
-        .features-section {
-            padding: 4mm 14mm;
-            position: relative;
-            z-index: 1;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2.5mm;
-        }
-
-        .feature-card {
-            background: linear-gradient(180deg, #fff 0%, #faf8f5 100%);
-            border-radius: 2mm;
-            padding: 3mm 2mm;
-            text-align: center;
-            border: 0.5px solid #e8ddd0;
-        }
-
-        .feature-icon {
-            font-size: 5mm;
-            margin-bottom: 1.5mm;
-            display: block;
-            filter: grayscale(10%);
-        }
-
-        .feature-title {
-            font-size: 3mm;
-            font-weight: 600;
-            color: #5c4033;
-            margin-bottom: 0.5mm;
-        }
-
-        .feature-desc {
-            font-size: 2.5mm;
-            color: #8b7355;
-            line-height: 1.3;
-        }
-
-        /* 底部区域 */
+        /* 底部區域 - 更突出 */
         .footer-section {
+            margin-top: auto;
+            padding: 12px 25px;
             display: flex;
             justify-content: space-between;
-            align-items: stretch;
-            padding: 5mm 12mm 6mm;
-            gap: 6mm;
-            position: relative;
-            z-index: 1;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(180,170,155,0.08) 0%, transparent 100%);
+            border-top: 0.5px solid rgba(180, 170, 155, 0.3);
         }
 
-        /* 联系卡片 */
-        .contact-card {
-            flex: 1;
-            background: linear-gradient(135deg, #fdfcfa 0%, #f8f5f0 100%);
-            border-radius: 3mm;
-            padding: 4mm 3mm;
-            border: 0.5px solid #e0d5c5;
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
-        .contact-title {
-            font-size: 3.2mm;
-            font-weight: 600;
-            color: #5c4033;
-            text-align: center;
-            margin-bottom: 3mm;
-            letter-spacing: 2px;
+        .contact-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #A09888;
+            text-transform: uppercase;
+            margin-bottom: 2px;
         }
 
-        .contact-row {
+        .contact-item {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 2mm;
-            margin-bottom: 2mm;
-            font-size: 3mm;
+            gap: 8px;
         }
 
-        .contact-row .icon {
-            font-size: 3.5mm;
-            width: 5mm;
-            text-align: center;
+        .contact-item.ig {
+            color: #8B7355;
         }
 
-        .contact-row.ig {
-            color: #c13584;
+        .contact-item.wa {
+            color: #5D7A5D;
         }
 
-        .contact-row.wa {
-            color: #25d366;
+        .contact-item i {
+            font-size: 10px;
         }
 
-        .contact-row.email {
-            color: #666;
-            font-size: 2.8mm;
-        }
-
-        /* QR卡片 */
-        .qr-card {
-            flex: 1;
-            background: #fff;
-            border-radius: 3mm;
-            padding: 3mm;
-            border: 0.5px solid #e0d5c5;
+        /* QR Code - 油墨沉積感 */
+        .qr-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            gap: 4px;
         }
 
         .qr-code {
-            width: 22mm;
-            height: 22mm;
-            border-radius: 1.5mm;
-            border: 0.5px solid #eee;
+            width: 45px;
+            height: 45px;
+            background-color: #FAF8F3;
+            border: 0.3px solid rgba(180, 170, 155, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2px;
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .qr-text {
-            font-size: 2.8mm;
-            color: #8b7355;
-            margin-top: 2mm;
-            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #9A9388;
         }
 
-        .qr-url {
-            font-size: 2.2mm;
-            color: #aaa;
-            margin-top: 1mm;
-        }
-
-        /* 底部版权 */
-        .copyright {
-            position: absolute;
-            bottom: 5mm;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 2.2mm;
-            color: #c4b5a3;
-            z-index: 1;
-        }
-
-        /* 打印优化 */
+        /* 打印優化 */
         @media print {
             body {
-                background: #f5f0e8;
+                background: white;
+                padding: 0;
             }
-            .poster {
+            .a5-flyer {
                 box-shadow: none;
-            }
-            .frame-outer {
-                border-color: #a08060;
-            }
-            .feature-card, .contact-card, .qr-card, .product-item {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
-
-        /* 屏幕预览 */
-        @media screen {
-            body {
-                padding: 20px;
-                background: #d5ccc0;
-            }
-            .poster {
-                box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-                border-radius: 4mm;
-            }
-        }
-
-        /* 响应式 */
-        @media (max-width: 500px) {
-            .poster {
                 width: 100%;
-                max-width: 100%;
+                height: auto;
             }
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .frame-outer, .frame-inner {
+                border-color: #C0B8AC;
             }
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-section {
-                flex-direction: column;
+        }
+
+        /* 屏幕預覽 */
+        @media screen {
+            .a5-flyer {
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             }
         }
     </style>
 </head>
 <body>
-    <div class="poster">
-        <!-- 装饰框架 -->
+    <div class="a5-flyer">
+        <!-- 邊框裝飾 -->
         <div class="frame-outer"></div>
         <div class="frame-inner"></div>
 
-        <!-- 顶部装饰 -->
-        <div class="top-bar"></div>
-
-        <!-- 品牌区 -->
+        <!-- 品牌區域 -->
         <div class="brand-section">
-            <div class="logo-container">
-                <div class="logo-ring"></div>
-                <img src="image/01_company_logo.png" alt="My O! Logo" class="logo" loading="eager">
+            <div class="brand-left">
+                <div class="brand-logo">
+                    <img src="image/01_company_logo.png" alt="My O! Logo">
+                </div>
+                <div class="brand">My O!</div>
+                <div class="brand-sub">結婚證書套</div>
             </div>
-            <div class="brand-name">My O!</div>
-            <div class="brand-tagline">專屬結婚證書套 · 為您珍藏一生的誓言</div>
+            <div class="brand-decoration">
+                <div class="brand-line"></div>
+                <div class="brand-line" style="width: 25px;"></div>
+                <div class="brand-line" style="width: 15px;"></div>
+            </div>
         </div>
 
-        <!-- 标题区 -->
+        <!-- 主視覺區 -->
         <div class="hero-section">
-            <h1 class="hero-title">珍藏您的愛情<br>從一份證書套開始</h1>
-            <p class="hero-subtitle">為您的結婚證書打造設計師級專屬證書套</p>
-            <div class="divider">
-                <span class="divider-line"></span>
-                <span class="divider-icon">♥</span>
-                <span class="divider-line"></span>
+            <div class="hero-image-main">
+                <img src="image/cert_color_beige.jpg" alt="證書套展示">
+            </div>
+            <div class="hero-image-small">
+                <img src="image/cert_style_1.png" alt="款式1">
+            </div>
+            <div class="hero-image-small">
+                <img src="image/cert_style_2.png" alt="款式2">
             </div>
         </div>
 
-        <!-- 产品展示 -->
-        <div class="showcase-section">
-            <div class="section-label">精選設計款式</div>
-            <div class="products-grid">
+        <!-- 標題區 - 散文式 -->
+        <div class="title-section">
+            <div class="title">
+                為人生最重要的一頁，留下最溫柔的觸感。
+            </div>
+        </div>
+
+        <!-- 分隔線 -->
+        <div class="divider">
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- 產品展示 -->
+        <div class="product-section">
+            <div class="product-label-small">精選款式</div>
+            <div class="product-grid">
                 <div class="product-item">
-                    <img src="image/cert_style_1.png" alt="款式1 - 簡約經典設計" class="product-img" loading="lazy">
+                    <img src="image/cert_style_1.png" alt="款式1">
                     <div class="product-label">簡約經典</div>
                 </div>
                 <div class="product-item">
-                    <img src="image/cert_style_2.png" alt="款式2 - 浪漫花卉設計" class="product-img" loading="lazy">
+                    <img src="image/cert_style_2.png" alt="款式2">
                     <div class="product-label">浪漫花卉</div>
                 </div>
                 <div class="product-item">
-                    <img src="image/cert_style_3_chinese.png" alt="款式3 - 時尚幾何設計" class="product-img" loading="lazy">
+                    <img src="image/cert_style_3_chinese.png" alt="款式3">
                     <div class="product-label">時尚幾何</div>
                 </div>
                 <div class="product-item">
-                    <img src="image/cert_style_4.png" alt="款式4 - 夢幻元素設計" class="product-img" loading="lazy">
+                    <img src="image/cert_style_4.png" alt="款式4">
                     <div class="product-label">夢幻元素</div>
                 </div>
-                <div class="product-item main">
-                    <img src="image/cert_color_beige.jpg" alt="米色證書套實品展示 - 亞麻布紋理" class="product-img tall" loading="lazy">
-                    <div class="product-label">米色 · 亞麻布紋理 · 溫暖典雅</div>
+                <div class="product-item">
+                    <img src="image/cert_color_beige.jpg" alt="米色">
+                    <div class="product-label">米色</div>
                 </div>
-                <div class="product-item main">
-                    <img src="image/cert_color_blue.jpg" alt="藍色證書套實品展示 - 磨砂珠光" class="product-img tall" loading="lazy">
-                    <div class="product-label">藍色 · 磨砂珠光 · 沉穩優雅</div>
-                </div>
-            </div>
-
-            <!-- 颜色选项 -->
-            <div class="color-bar">
-                <div class="color-option">
-                    <div class="color-dot" style="background: #f6dba6;"></div>
-                    <div>
-                        <span class="color-text">米色</span>
-                        <span class="color-material">亞麻布</span>
-                    </div>
-                </div>
-                <div class="color-option">
-                    <div class="color-dot" style="background: #0a477e;"></div>
-                    <div>
-                        <span class="color-text">藍色</span>
-                        <span class="color-material">磨砂珠光</span>
-                    </div>
+                <div class="product-item">
+                    <img src="image/cert_color_blue.jpg" alt="藍色">
+                    <div class="product-label">藍色</div>
                 </div>
             </div>
         </div>
 
-        <!-- 特点区 -->
-        <div class="features-section">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">📐</span>
-                    <div class="feature-title">完美尺寸</div>
-                    <div class="feature-desc">適用 A4 證書<br>約 30.7×22.6cm</div>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">✨</span>
-                    <div class="feature-title">高質感</div>
-                    <div class="feature-desc">硬殼磨砂珠光<br>亞麻布紋</div>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🛡️</span>
-                    <div class="feature-title">穩妥保護</div>
-                    <div class="feature-desc">厚卡內襯<br>防潮防塵</div>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🎨</span>
-                    <div class="feature-title">精緻燙印</div>
-                    <div class="feature-desc">熱轉印工藝<br>燙金/銀質感</div>
-                </div>
+        <!-- 顏色選項 -->
+        <div class="color-section">
+            <div class="color-item">
+                <div class="color-dot" style="background-color: #f6dba6;"></div>
+                <span class="color-text">米色 · 亞麻布</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background-color: #0a477e;"></div>
+                <span class="color-text">藍色 · 磨砂珠光</span>
             </div>
         </div>
 
-        <!-- 底部区 -->
+        <!-- 底部區域 -->
         <div class="footer-section">
-            <div class="contact-card">
-                <div class="contact-title">立即聯絡我們</div>
-                <div class="contact-row ig">
-                    <span class="icon">📸</span>
+            <div class="contact-info">
+                <div class="contact-item ig">
+                    <i class="fab fa-instagram" style="font-size: 8px;"></i>
                     @myo.makeyourown
                 </div>
-                <div class="contact-row wa">
-                    <span class="icon">💬</span>
+                <div class="contact-item wa">
+                    <i class="fab fa-whatsapp" style="font-size: 8px;"></i>
                     6379 6410
                 </div>
-                <div class="contact-row email">
-                    <span class="icon">✉️</span>
-                    myo.makeyourown@gmail.com
+            </div>
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://myo-makeyourown.pages.dev&bgcolor=faf8f3&color=4a4540&format=png" alt="QR Code">
                 </div>
+                <span class="qr-text">掃碼瀏覽更多</span>
             </div>
-
-            <div class="qr-card">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://myo-makeyourown.pages.dev&bgcolor=ffffff&color=5c4033&format=png" alt="QR Code" class="qr-code">
-                <div class="qr-text">掃碼瀏覽更多款式</div>
-                <div class="qr-url">myo-makeyourown.pages.dev</div>
-            </div>
-        </div>
-
-        <!-- 版权 -->
-        <div class="copyright">
-            © 2025 My O! 專屬結婚證書套 | 支援中英文客製化
         </div>
     </div>
 </body>
