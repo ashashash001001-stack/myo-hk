@@ -237,7 +237,21 @@
             }
         }
 
-    </style>
+    
+.back-to-list-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #fef3c7;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.back-to-list-btn:hover {
+    background-color: #fde68a;
+    transform: translateX(-3px);
+}
+</style>
 
     <script>
     (function() {
@@ -277,6 +291,13 @@
     </div>
     <main class="container mx-auto px-4 py-8 max-w-3xl">
         <article>
+<div class="mb-4">
+    <a href="./" class="inline-flex items-center text-rose-500 hover:text-rose-600 transition-colors">
+        <i class="fas fa-arrow-left mr-2"></i>
+        <span class="font-medium">返回文章列表</span>
+    </a>
+</div>
+
             <header class="mb-8">
                 <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">婚禮攝影存儲卡選擇指南：可靠存儲</h1>
                 <div class="flex items-center text-sm text-gray-500 space-x-4 flex-wrap">

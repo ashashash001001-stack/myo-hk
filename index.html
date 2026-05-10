@@ -87,6 +87,42 @@
             }
              .mobile-nav-links {
                 display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transform: translateY(-10px);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease-in-out;
+                z-index: 999;
+            }
+             .mobile-nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+             }
+             /* 選單項目觸控回饋 */
+             .mobile-nav-links a {
+                transition: all 0.2s ease;
+                border-radius: 0.5rem;
+                margin: 2px 8px;
+             }
+             .mobile-nav-links a:hover {
+                background-color: #fef3c7;
+             }
+             .mobile-nav-links a:active {
+                background-color: #fcd34d;
+                transform: scale(0.98);
+             }
+             /* 漢堡選單圖標動畫 */
+             .hamburger-menu {
+                transition: transform 0.2s ease;
+             }
+             .hamburger-menu:active {
+                transform: scale(0.9);
              }
         }
 
@@ -197,6 +233,27 @@
         /* Swiper 客製化樣式 (僅適用於「選擇證書套設計樣式」) */
         .swiper-button-prev, .swiper-button-next {
             color: #CD853F;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+        .swiper-button-prev:hover, .swiper-button-next:hover {
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(205, 133, 63, 0.3);
+            transform: scale(1.05);
+        }
+        .swiper-button-prev:active, .swiper-button-next:active {
+            transform: scale(0.95);
+        }
+        .swiper-button-prev::after, .swiper-button-next::after {
+            font-size: 1.2rem;
+            font-weight: bold;
         }
         .swiper-pagination-bullet-active {
             background: #CD853F;
@@ -287,17 +344,28 @@
             top: 15px;
             right: 35px;
             color: #f1f1f1;
-            font-size: 40px;
+            font-size: 32px;
             font-weight: bold;
             transition: 0.3s;
             cursor: pointer;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .close-button:hover,
         .close-button:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+
+        .close-button:active {
+            transform: scale(0.95);
         }
         /* ----- Modal 樣式結束 ----- */
 
@@ -423,8 +491,10 @@
                 padding: 0 5px; /* 縮減 Swiper 邊距 */
             }
             .swiper-button-prev, .swiper-button-next {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 top: 45%; /* 微調位置 */
+                width: 40px;
+                height: 40px;
             }
         }
 
@@ -574,26 +644,26 @@
             left: 0;
             right: 0;
             background: #ffffff;
-            padding: 12px 14px 16px;
-            box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.15);
+            padding: 8px 12px 12px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
             z-index: 999;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 10px;
+            gap: 8px;
             border-top: 3px solid #fbbf24;
         }
 
         .sticky-conversion-bar .brand-section {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             flex-shrink: 0;
         }
 
         .sticky-conversion-bar .logo {
-            width: 36px;
-            height: 36px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -625,18 +695,18 @@
         .sticky-conversion-bar .cta-section {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .sticky-conversion-bar .cta-text {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 800;
             color: #fff;
             background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
-            padding: 10px 18px;
-            border-radius: 25px;
+            padding: 8px 14px;
+            border-radius: 20px;
             white-space: nowrap;
-            box-shadow: 0 4px 0 #9A3412, 0 6px 15px rgba(234, 88, 12, 0.5);
+            box-shadow: 0 3px 0 #9A3412, 0 4px 10px rgba(234, 88, 12, 0.4);
             border: 2px solid rgba(0,0,0,0.1);
         }
 
@@ -644,24 +714,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
             text-decoration: none;
             transition: all 0.2s ease;
-            border: 3px solid #333;
+            border: 2px solid #333;
             background: #fff;
         }
 
         .sticky-conversion-bar .btn-ig {
             color: #E1306C;
-            font-size: 1.6rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
         }
 
         .sticky-conversion-bar .btn-ig:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(225, 48, 108, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(225, 48, 108, 0.25);
             background: #FFF0F5;
             border-color: #E1306C;
         }
@@ -669,8 +739,8 @@
         .sticky-conversion-bar .btn-whatsapp {
             background-color: #fff;
             color: #25D366;
-            font-size: 1.7rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
             border-color: #25D366;
         }
 
@@ -691,7 +761,7 @@
         /* 確保內容區塊底部有 padding 避免被 sticky bar 遮擋 */
         @media (max-width: 767px) {
             footer {
-                padding-bottom: 90px !important;
+                padding-bottom: 70px !important;
             }
         }
 
@@ -731,11 +801,14 @@
             </button>
         </div>
 
-        <div class="mobile-nav-links hidden md:hidden bg-white py-2" id="mobile-menu">
+        <div class="mobile-nav-links md:hidden bg-white py-2" id="mobile-menu">
             <a href="#product-overview" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">產品概覽</a>
             <a href="#designs" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">款式與設計</a>
             <a href="./blog/" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">教學指南</a>
             <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">聯絡我們</a>
+            <a href="./poster.html" class="block px-4 py-2 text-rose-600 hover:bg-rose-50 font-semibold" target="_blank">
+                <i class="fas fa-print mr-2"></i>宣傳單張 (列印版)
+            </a>
         </div>
     </nav>
 
@@ -964,12 +1037,12 @@
 
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('active');
                 });
 
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('active');
                     });
                 });
             }
@@ -1033,12 +1106,30 @@
                 }
             });
 
+            // ESC 鍵關閉 Modal
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && imageModal.style.display === 'flex') {
+                    imageModal.style.display = 'none';
+                }
+            });
+
 
             // 3. 初始化 Swiper 輪播 for 選擇證書套設計樣式 (mySwiper)
             const mySwiper = new Swiper('.mySwiper', {
                 slidesPerView: 'auto',
                 centeredSlides: true,
                 spaceBetween: 20,
+
+                // 觸控優化配置
+                simulateTouch: true,
+                touchRatio: 1,
+                touchAngle: 45,
+                shortSwipes: true,
+                longSwipesRatio: 0.5,
+                allowTouchMove: true,
+
+                // 防止誤觸的滾動閾值
+                threshold: 5,
 
                 breakpoints: {
                     0: { // 0px 到 639px
