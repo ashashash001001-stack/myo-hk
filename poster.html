@@ -14,6 +14,7 @@
 
     <link rel="icon" href="image/01_company_logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         /* 打印优化 - A5 尺寸 (148mm x 210mm) */
@@ -175,7 +176,9 @@
 
         .divider-icon {
             font-size: 4mm;
-            color: #b8956e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* 产品展示区 */
@@ -297,6 +300,13 @@
             margin-bottom: 1.5mm;
             display: block;
             filter: grayscale(10%);
+        }
+
+        .feature-icon-fa {
+            font-size: 5mm;
+            color: #b8956e;
+            margin-bottom: 1.5mm;
+            display: block;
         }
 
         .feature-title {
@@ -486,7 +496,7 @@
             <p class="hero-subtitle">為您的結婚證書打造設計師級專屬證書套</p>
             <div class="divider">
                 <span class="divider-line"></span>
-                <span class="divider-icon">♥</span>
+                <span class="divider-icon"><i class="fas fa-heart" style="color: #b8956e;"></i></span>
                 <span class="divider-line"></span>
             </div>
         </div>
@@ -544,22 +554,22 @@
         <div class="features-section">
             <div class="features-grid">
                 <div class="feature-card">
-                    <span class="feature-icon">📐</span>
+                    <i class="fas fa-ruler-combined feature-icon-fa"></i>
                     <div class="feature-title">完美尺寸</div>
                     <div class="feature-desc">適用 A4 證書<br>約 30.7×22.6cm</div>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">✨</span>
+                    <i class="fas fa-gem feature-icon-fa"></i>
                     <div class="feature-title">高質感</div>
                     <div class="feature-desc">硬殼磨砂珠光<br>亞麻布紋</div>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">🛡️</span>
+                    <i class="fas fa-shield-alt feature-icon-fa"></i>
                     <div class="feature-title">穩妥保護</div>
                     <div class="feature-desc">厚卡內襯<br>防潮防塵</div>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">🎨</span>
+                    <i class="fas fa-palette feature-icon-fa"></i>
                     <div class="feature-title">精緻燙印</div>
                     <div class="feature-desc">熱轉印工藝<br>燙金/銀質感</div>
                 </div>
@@ -571,15 +581,15 @@
             <div class="contact-card">
                 <div class="contact-title">立即聯絡我們</div>
                 <div class="contact-row ig">
-                    <span class="icon">📸</span>
+                    <span class="icon"><i class="fab fa-instagram"></i></span>
                     @myo.makeyourown
                 </div>
                 <div class="contact-row wa">
-                    <span class="icon">💬</span>
+                    <span class="icon"><i class="fab fa-whatsapp"></i></span>
                     6379 6410
                 </div>
                 <div class="contact-row email">
-                    <span class="icon">✉️</span>
+                    <span class="icon"><i class="far fa-envelope"></i></span>
                     myo.makeyourown@gmail.com
                 </div>
             </div>
