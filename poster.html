@@ -197,6 +197,25 @@
             color: #4A4540;
         }
 
+        .hero-label-half {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 4px;
+        }
+
+        .hero-label-half .color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .hero-label-half .color-text {
+            font-size: 8px;
+            color: #4A4540;
+        }
+
         .hero-image-small {
             height: 30px;
             background-color: #EDE9E3;
@@ -642,17 +661,17 @@
         <div class="hero-section">
             <div class="hero-image-half">
                 <img src="image/cert_color_beige.jpg" alt="米色證書套">
-                <div class="hero-color-label">
-                    <div class="color-dot" style="background-color: #f6dba6;"></div>
-                    <span class="color-text">米色 · 亞麻布</span>
-                </div>
             </div>
             <div class="hero-image-half">
                 <img src="image/cert_color_blue.jpg" alt="藍色證書套">
-                <div class="hero-color-label">
-                    <div class="color-dot" style="background-color: #0a477e;"></div>
-                    <span class="color-text">藍色 · 磨砂珠光</span>
-                </div>
+            </div>
+            <div class="hero-label-half">
+                <div class="color-dot" style="background-color: #f6dba6;"></div>
+                <span class="color-text">米色 · 亞麻布</span>
+            </div>
+            <div class="hero-label-half">
+                <div class="color-dot" style="background-color: #0a477e;"></div>
+                <span class="color-text">藍色 · 磨砂珠光</span>
             </div>
         </div>
 
