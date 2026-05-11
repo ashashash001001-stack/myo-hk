@@ -347,8 +347,75 @@
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
             font-size: 6px;
             font-weight: 500;
-            color: #000000;
+            color: #6B6560;
             letter-spacing: 2px;
+        }
+
+        /* 產品特點 - 四格布局 */
+        .highlights-section {
+            padding: 0 20px;
+            margin-bottom: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 4px;
+        }
+
+        .highlight-icon {
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .highlight-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .highlight-title {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 7px;
+            font-weight: 500;
+            color: #4A4540;
+        }
+
+        .highlight-desc {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 5.5px;
+            color: #6B6560;
+            line-height: 1.3;
+        }
+
+        /* 客製化說明 */
+        .personalize-section {
+            padding: 8px 20px;
+            margin-bottom: 8px;
+            background: linear-gradient(180deg, rgba(180,170,155,0.05) 0%, transparent 100%);
+            border-top: 0.3px solid rgba(160,150,140,0.1);
+            border-bottom: 0.3px solid rgba(160,150,140,0.1);
+            text-align: center;
+        }
+
+        .personalize-title {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 7px;
+            font-weight: 500;
+            color: #5A5550;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .personalize-text {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 6px;
+            color: #6B6560;
+            line-height: 1.5;
         }
 
         /* 更多產品詳情 - 表格樣式 */
@@ -630,6 +697,44 @@
         <!-- 更多資訊 -->
         <div class="more-info">
             <span class="info-text">結婚登記 · 註冊儀式 · 終身珍藏</span>
+        </div>
+
+        <!-- 產品特點 -->
+        <div class="highlights-section">
+            <div class="highlight-item">
+                <span class="highlight-icon">💖</span>
+                <div class="highlight-content">
+                    <span class="highlight-title">完美尺寸</span>
+                    <span class="highlight-desc">適用香港婚姻登記處 A4 證書<br>約 30.7cm × 22.6cm</span>
+                </div>
+            </div>
+            <div class="highlight-item">
+                <span class="highlight-icon">✨</span>
+                <div class="highlight-content">
+                    <span class="highlight-title">高質感封面</span>
+                    <span class="highlight-desc">硬殼包覆磨砂珠光或亞麻布紋<br>手感細緻</span>
+                </div>
+            </div>
+            <div class="highlight-item">
+                <span class="highlight-icon">🛡️</span>
+                <div class="highlight-content">
+                    <span class="highlight-title">穩妥保護</span>
+                    <span class="highlight-desc">厚卡內襯、固定帶<br>防潮防塵</span>
+                </div>
+            </div>
+            <div class="highlight-item">
+                <span class="highlight-icon">🎨</span>
+                <div class="highlight-content">
+                    <span class="highlight-title">精緻印刷</span>
+                    <span class="highlight-desc">熱轉印燙印工藝<br>呈現燙金/銀質感</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 客製化說明 -->
+        <div class="personalize-section">
+            <span class="personalize-title">客製化您的愛</span>
+            <span class="personalize-text">從新人名字、結婚日期到豐富的設計樣式，我們提供多樣客製化選項。無需自備圖稿，即可打造一份真正專屬、彰顯您們風格的珍貴證書套。</span>
         </div>
 
         <!-- 更多產品詳情 -->
