@@ -96,7 +96,7 @@
         .brand {
             font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
             font-size: 34px;
-            font-weight: 500;
+            font-weight: 700;
             letter-spacing: 6px;
             color: #000000;
             margin-bottom: 3px;
@@ -105,7 +105,7 @@
         .brand-sub {
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
             font-size: 10px;
-            font-weight: 500;
+            font-weight: 700;
             letter-spacing: 4px;
             color: #8B8378;
             margin-top: 3px;
@@ -198,7 +198,7 @@
         .title {
             font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 600;
             color: #000000;
             line-height: 1.8;
             letter-spacing: 2px;
@@ -228,7 +228,7 @@
         .product-label-small {
             font-family: 'Montserrat', sans-serif;
             font-size: 6px;
-            font-weight: 300;
+            font-weight: 500;
             letter-spacing: 2px;
             color: #958B80;
             text-transform: uppercase;
@@ -260,7 +260,7 @@
             color: #5D5852;
             margin-top: 3px;
             letter-spacing: 0.5px;
-            font-weight: 500;
+            font-weight: 700;
         }
 
         /* 顏色選項 - 水平排列 */
@@ -288,7 +288,7 @@
         .color-text {
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
             font-size: 9px;
-            font-weight: 500;
+            font-weight: 700;
             color: #4A4540;
             letter-spacing: 1px;
         }
@@ -333,7 +333,7 @@
             font-size: 8px;
             color: #4A4540;
             letter-spacing: 0.5px;
-            font-weight: 500;
+            font-weight: 700;
         }
 
         /* 更多資訊 */
@@ -346,7 +346,7 @@
         .info-text {
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
             font-size: 6px;
-            font-weight: 300;
+            font-weight: 500;
             color: #958B80;
             letter-spacing: 2px;
         }
@@ -385,7 +385,7 @@
         .detail-label {
             font-family: 'Montserrat', sans-serif;
             font-size: 5px;
-            font-weight: 400;
+            font-weight: 600;
             color: #8B8378;
             letter-spacing: 2px;
             margin-bottom: 2px;
@@ -395,7 +395,7 @@
         .detail-value {
             font-family: 'Noto Sans TC', sans-serif;
             font-size: 9px;
-            font-weight: 500;
+            font-weight: 700;
             color: #000000;
             letter-spacing: 0.5px;
         }
@@ -420,21 +420,23 @@
         .contact-label {
             font-family: 'Montserrat', sans-serif;
             font-size: 6px;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 3px;
             color: #958B80;
             text-transform: uppercase;
             margin-bottom: 2px;
         }
 
-        .contact-item {
+        .contact-item, a.contact-item {
             font-family: 'Montserrat', sans-serif;
             font-size: 9px;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 1px;
             display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
+            color: inherit;
         }
 
         .contact-item.ig {
@@ -452,7 +454,7 @@
         .contact-item span {
             font-size: 11px;
             color: #000000;
-            font-weight: 500;
+            font-weight: 700;
         }
 
         /* QR Code - 油墨沉積感 */
@@ -485,7 +487,7 @@
         .qr-text {
             font-family: 'Montserrat', sans-serif;
             font-size: 6px;
-            font-weight: 300;
+            font-weight: 500;
             letter-spacing: 1px;
             color: #8B8378;
         }
@@ -493,7 +495,7 @@
         .qr-url {
             font-family: 'Montserrat', sans-serif;
             font-size: 5px;
-            font-weight: 300;
+            font-weight: 500;
             color: #958B80;
             letter-spacing: 0.5px;
         }
@@ -649,14 +651,14 @@
         <!-- 底部區域 -->
         <div class="footer-section">
             <div class="contact-info">
-                <div class="contact-item ig">
+                <a href="https://www.instagram.com/myo.makeyourown/" target="_blank" class="contact-item ig">
                     <i class="fab fa-instagram" style="font-size: 14px; color: #E1306C;"></i>
                     <span>@myo.makeyourown</span>
-                </div>
-                <div class="contact-item wa">
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=85263796410" target="_blank" class="contact-item wa">
                     <i class="fab fa-whatsapp" style="font-size: 14px; color: #25D366;"></i>
                     <span>6379 6410</span>
-                </div>
+                </a>
             </div>
             <div class="qr-section">
                 <div class="qr-code">
