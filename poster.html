@@ -49,6 +49,27 @@
             overflow: visible;
         }
 
+        /* 邊框裝飾 */
+        .frame-outer {
+            position: absolute;
+            top: clamp(4px, 1.5vw, 8px);
+            left: clamp(4px, 1.5vw, 8px);
+            right: clamp(4px, 1.5vw, 8px);
+            bottom: clamp(4px, 1.5vw, 8px);
+            border: 0.5px solid rgba(160, 150, 140, 0.4);
+            pointer-events: none;
+        }
+
+        .frame-inner {
+            position: absolute;
+            top: clamp(6px, 2vw, 10px);
+            left: clamp(6px, 2vw, 10px);
+            right: clamp(6px, 2vw, 10px);
+            bottom: clamp(6px, 2vw, 10px);
+            border: 0.3px solid rgba(160, 150, 140, 0.25);
+            pointer-events: none;
+        }
+
         /* 品牌區域 - 不置中設計 */
         .brand-section {
             display: flex;
@@ -113,10 +134,10 @@
         .hero-section {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
             gap: 4px;
             flex-shrink: 0;
-            margin-bottom: 3px;
+            margin-bottom: 12px;
         }
 
         .hero-image-main {
@@ -141,12 +162,12 @@
         .hero-image-half {
             width: 160px;
             height: 120px;
-            border: 0.3px solid rgba(160, 150, 140, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            overflow: visible;
             position: relative;
+            padding-bottom: 12px;
         }
 
         .hero-image-half img {
@@ -181,7 +202,7 @@
 
         .hero-label-half {
             position: absolute;
-            bottom: 3px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -399,11 +420,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3px;
+            text-align: center;
         }
 
         .highlight-item {
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             gap: 2px;
             padding: 1px;
         }
@@ -416,6 +439,7 @@
         .highlight-content {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 0;
         }
 
@@ -424,6 +448,7 @@
             font-size: clamp(6px, 1.3vw, 8px);
             font-weight: 600;
             color: #4A4540;
+            text-align: center;
         }
 
         .highlight-desc {
@@ -431,6 +456,7 @@
             font-size: clamp(4px, 1vw, 6px);
             color: #6B6560;
             line-height: 1.2;
+            text-align: center;
         }
 
         /* 客製化說明 */
@@ -510,19 +536,21 @@
         /* 底部區域 - 更突出 */
         .footer-section {
             margin-top: auto;
-            padding: 4px 8px;
+            padding: 4px 6px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             background: linear-gradient(180deg, rgba(180,170,155,0.08) 0%, transparent 100%);
             border-top: 0.5px solid rgba(160, 150, 140, 0.3);
             flex-shrink: 0;
+            gap: 4px;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 2px;
+            flex: 1;
         }
 
         .contact-label {
@@ -565,8 +593,16 @@
             font-weight: 400;
         }
 
-        /* QR Code - 油墨沉積感 */
+        /* QR Code - 三個並排 */
         .qr-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 6px;
+            flex: 2;
+        }
+
+        .qr-item {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -574,8 +610,8 @@
         }
 
         .qr-code {
-            width: clamp(20px, 8vw, 35px);
-            height: clamp(20px, 8vw, 35px);
+            width: clamp(22px, 7vw, 38px);
+            height: clamp(22px, 7vw, 38px);
             background-color: #F7F5F0;
             border: 0.3px solid rgba(160, 150, 140, 0.2);
             display: flex;
@@ -676,6 +712,10 @@
 </head>
 <body>
     <div class="a5-flyer">
+        <!-- 邊框裝飾 -->
+        <div class="frame-outer"></div>
+        <div class="frame-inner"></div>
+
         <!-- 品牌區域 -->
         <div class="brand-section">
             <div class="brand-left">
@@ -795,6 +835,7 @@
         <!-- 底部區域 -->
         <div class="footer-section">
             <div class="contact-info">
+                <div class="contact-label">聯絡我們</div>
                 <a href="https://www.instagram.com/myo.makeyourown/" target="_blank" class="contact-item ig">
                     <i class="fab fa-instagram" style="font-size: clamp(10px, 2.5vw, 14px); color: #E1306C;"></i>
                     <span>@myo.makeyourown</span>
@@ -805,11 +846,24 @@
                 </a>
             </div>
             <div class="qr-section">
-                <div class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://myo-makeyourown.pages.dev&bgcolor=faf8f3&color=4a4540&format=png" alt="QR Code">
+                <div class="qr-item">
+                    <div class="qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/myo.makeyourown/&bgcolor=faf8f3&color=E1306C&format=png" alt="Instagram QR">
+                    </div>
+                    <span class="qr-text">Instagram</span>
                 </div>
-                <span class="qr-text">掃碼瀏覽更多</span>
-                <span class="qr-url">myo-makeyourown.pages.dev</span>
+                <div class="qr-item">
+                    <div class="qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://api.whatsapp.com/send?phone=85263796410&bgcolor=faf8f3&color=25D366&format=png" alt="WhatsApp QR">
+                    </div>
+                    <span class="qr-text">WhatsApp</span>
+                </div>
+                <div class="qr-item">
+                    <div class="qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://myo-makeyourown.pages.dev&bgcolor=faf8f3&color=4a4540&format=png" alt="Website QR">
+                    </div>
+                    <span class="qr-text">網站</span>
+                </div>
             </div>
         </div>
     </div>
