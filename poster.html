@@ -273,29 +273,46 @@
             letter-spacing: 1px;
         }
 
-        /* 產品特色 */
+        /* 產品特色 - 帶分隔線 */
         .features-section {
             padding: 0 20px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
-            justify-content: space-around;
-            gap: 5px;
+            justify-content: space-between;
+            border-top: 0.3px solid rgba(180,170,155,0.1);
+            border-bottom: 0.3px solid rgba(180,170,155,0.1);
         }
 
         .feature-item {
+            flex: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 3px;
+            padding: 5px 0;
+            gap: 2px;
+            position: relative;
+        }
+
+        .feature-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 0.3px;
+            background: rgba(180,170,155,0.15);
         }
 
         .feature-icon {
-            font-size: 8px;
+            font-size: 9px;
+            color: #B8A080;
         }
 
         .feature-text {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 6px;
-            color: #8A8578;
+            font-size: 5.5px;
+            color: #6B6661;
             letter-spacing: 0.5px;
         }
 
@@ -314,35 +331,52 @@
             letter-spacing: 2px;
         }
 
-        /* 更多產品詳情 */
+        /* 更多產品詳情 - 表格樣式 */
         .product-details {
             padding: 0 20px;
             margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
-            gap: 8px;
+            background: linear-gradient(180deg, transparent 0%, rgba(180,170,155,0.05) 50%, transparent 100%);
+            border-top: 0.3px solid rgba(180,170,155,0.15);
+            border-bottom: 0.3px solid rgba(180,170,155,0.15);
         }
 
         .detail-item {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px;
+            padding: 6px 0;
+            position: relative;
+        }
+
+        .detail-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0.5px;
+            height: 60%;
+            background: rgba(180,170,155,0.2);
         }
 
         .detail-label {
             font-family: 'Montserrat', sans-serif;
             font-size: 5px;
-            font-weight: 300;
-            color: #A09888;
-            letter-spacing: 1px;
+            font-weight: 400;
+            color: #9A9388;
+            letter-spacing: 2px;
+            margin-bottom: 2px;
+            text-transform: uppercase;
         }
 
         .detail-value {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 6px;
-            font-weight: 400;
-            color: #6B6661;
+            font-size: 7px;
+            font-weight: 500;
+            color: #5A5550;
             letter-spacing: 0.5px;
         }
 
