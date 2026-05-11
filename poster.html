@@ -10,7 +10,7 @@
 
     <style>
         /* 匯入高級字體 - 優雅版 */
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=Ma+Shan+Zheng&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Fondamento:ital@0;1&family=LXGW+WenKai+TC&family=Noto+Serif+HK:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap');
 
         /* 打印優化 - A5 尺寸 */
         @page {
@@ -31,55 +31,38 @@
             min-height: 100vh;
             background-color: #D8D4CB;
             margin: 0;
-            padding: 20px;
+            padding: clamp(10px, 4vw, 20px);
         }
 
         /* A5 尺寸比例容器 - 畫廊風格 */
         .a5-flyer {
-            width: 420px;
-            min-height: 594px;
+            width: 100%;
+            max-width: 420px;
+            min-height: 500px;
             background-color: #F7F5F0;
-            padding: 0;
+            padding: 2%;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             position: relative;
             page-break-after: always;
-        }
-
-        /* 雜誌級邊框系統 (Passepartout) */
-        .frame-outer {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            right: 12px;
-            bottom: 12px;
-            border: 0.5px solid rgba(160, 150, 140, 0.4);
-            pointer-events: none;
-        }
-
-        .frame-inner {
-            position: absolute;
-            top: 18px;
-            left: 18px;
-            right: 18px;
-            bottom: 18px;
-            border: 0.3px solid rgba(160, 150, 140, 0.25);
-            pointer-events: none;
+            overflow: visible;
         }
 
         /* 品牌區域 - 不置中設計 */
         .brand-section {
-            padding: 20px 20px 0;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
+            flex-shrink: 0;
+            margin-bottom: 2px;
         }
 
         .brand-left {
             display: flex;
-            align-items: center;
-            gap: 12px;
+            align-items: baseline;
+            gap: clamp(4px, 1.5vw, 8px);
+            white-space: nowrap;
         }
 
         .brand-logo {
@@ -87,30 +70,29 @@
         }
 
         .brand-logo img {
-            width: 45px;
-            height: 45px;
+            width: clamp(24px, 8vw, 36px);
+            height: clamp(24px, 8vw, 36px);
             border-radius: 50%;
             border: 0.8px solid rgba(180, 150, 100, 0.5);
+            transform: translateY(clamp(2px, 1vw, 4px));
         }
 
         .brand {
-            font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive;
-            font-size: 32px;
+            font-family: 'Alex Brush', 'Noto Serif TC', cursive;
+            font-size: clamp(16px, 5vw, 26px);
             font-weight: 400;
-            letter-spacing: 4px;
+            letter-spacing: clamp(1px, 0.8vw, 3px);
             color: #2D2926;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .brand-sub {
-            font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
-            font-size: 32px;
+            font-family: 'Noto Serif HK', 'Noto Serif TC', serif;
+            font-size: clamp(10px, 4vw, 18px);
             font-weight: 400;
-            letter-spacing: 3px;
+            letter-spacing: clamp(0.5px, 0.6vw, 2px);
             color: #6B6560;
-            margin-top: 2px;
-        }
-            text-transform: uppercase;
+            line-height: 1.2;
         }
 
         /* 右側裝飾線 */
@@ -118,27 +100,28 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 4px;
+            gap: 2px;
         }
 
         .brand-line {
-            width: 40px;
+            width: clamp(15px, 6vw, 30px);
             height: 0.3px;
             background: rgba(180, 150, 100, 0.4);
         }
 
         /* 主視覺區 - 不對稱網格 */
         .hero-section {
-            padding: 12px 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+            margin-bottom: 3px;
         }
 
         .hero-image-main {
             grid-column: span 2;
-            height: 80px;
+            aspect-ratio: 16 / 9;
             background-color: #EDE9E3;
             border: 0.3px solid rgba(160, 150, 140, 0.2);
             display: flex;
@@ -156,8 +139,8 @@
 
         /* 兩色並排 - 放大 */
         .hero-image-half {
-            height: 110px;
-            background-color: #EDE9E3;
+            width: 160px;
+            height: 120px;
             border: 0.3px solid rgba(160, 150, 140, 0.2);
             display: flex;
             justify-content: center;
@@ -170,35 +153,60 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background-color: #fff;
         }
 
         .hero-color-label {
             position: absolute;
-            bottom: 5px;
+            bottom: 3px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
             background: rgba(255,255,255,0.9);
-            padding: 3px 8px;
-            border-radius: 10px;
+            padding: 2px 6px;
+            border-radius: 8px;
         }
 
         .hero-color-label .color-dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
         }
 
         .hero-color-label .color-text {
-            font-size: 6px;
+            font-size: clamp(4px, 1vw, 6px);
+            color: #4A4540;
+        }
+
+        .hero-label-half {
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            padding: 2px 6px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .hero-label-half .color-dot {
+            width: clamp(5px, 1.5vw, 8px);
+            height: clamp(5px, 1.5vw, 8px);
+            border-radius: 50%;
+        }
+
+        .hero-label-half .color-text {
+            font-size: clamp(5px, 1.2vw, 7px);
             color: #4A4540;
         }
 
         .hero-image-small {
-            height: 30px;
+            aspect-ratio: 4 / 3;
             background-color: #EDE9E3;
             border: 0.3px solid rgba(160, 150, 140, 0.2);
             display: flex;
@@ -216,26 +224,26 @@
 
         /* 標題區 - 散文式排版 */
         .title-section {
-            padding: 0 20px;
             text-align: center;
+            flex-shrink: 0;
+            margin-bottom: 2px;
         }
 
         .title {
             font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
-            font-size: 15px;
+            font-size: clamp(9px, 2vw, 12px);
             font-weight: 400;
             color: #4A4540;
-            line-height: 1.8;
-            letter-spacing: 1.5px;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 2px;
         }
 
-        
+
         /* 裝飾分隔線 */
         .divider {
-            padding: 0 20px;
-            margin-bottom: 10px;
+            margin-bottom: 4px;
         }
 
         .divider-line {
@@ -246,82 +254,92 @@
 
         /* 產品展示 - 畫廊網格 */
         .product-section {
-            padding: 0 20px;
-            margin-bottom: 10px;
+            flex-shrink: 0;
+            margin-bottom: 3px;
         }
 
         .product-label-small {
             font-family: 'Montserrat', sans-serif;
-            font-size: 7px;
-            font-weight: 400;
-            letter-spacing: 3px;
+            font-size: clamp(7px, 1.5vw, 10px);
+            font-weight: 600;
+            letter-spacing: clamp(1px, 0.6vw, 2px);
             color: #8A8578;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
 
         .product-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 4px;
+            gap: 2px;
         }
 
         .product-item {
             background: #fff;
             border: 0.3px solid rgba(160, 150, 140, 0.15);
-            padding: 3px;
+            padding: 1px;
             text-align: center;
         }
 
         .product-item img {
             width: 100%;
-            height: 24px;
+            height: clamp(8px, 2.5vw, 14px);
             object-fit: contain;
         }
 
         .product-label {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 7px;
+            font-size: clamp(5px, 1.2vw, 7px);
             color: #5A5550;
-            margin-top: 2px;
-            letter-spacing: 0.3px;
+            margin-top: 0;
+            letter-spacing: 0.2px;
             font-weight: 400;
         }
 
         /* 顏色選項 - 水平排列 */
         .color-section {
-            padding: 0 20px;
-            margin-bottom: 10px;
+            margin-bottom: 4px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: clamp(6px, 2vw, 12px);
+        }
+
+        .color-combo-section {
+            display: flex;
+            justify-content: center;
+            margin: 2px 0;
+        }
+
+        .color-combo-img {
+            max-width: clamp(100px, 40vw, 180px);
+            width: 100%;
+            height: auto;
         }
 
         .color-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 3px;
         }
 
         .color-dot {
-            width: 8px;
-            height: 8px;
+            width: clamp(4px, 1.2vw, 6px);
+            height: clamp(4px, 1.2vw, 6px);
             border-radius: 50%;
             border: 0.3px solid rgba(160, 150, 140, 0.3);
         }
 
         .color-text {
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
-            font-size: 8px;
+            font-size: clamp(4px, 1vw, 6px);
             font-weight: 400;
             color: #5D5852;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         /* 產品特色 - 帶分隔線 */
         .features-section {
-            padding: 0 20px;
-            margin-bottom: 6px;
+            margin-bottom: 3px;
             display: flex;
             justify-content: space-between;
             border-top: 0.3px solid rgba(180,170,155,0.1);
@@ -333,8 +351,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 5px 0;
-            gap: 2px;
+            padding: 3px 0;
+            gap: 1px;
             position: relative;
         }
 
@@ -350,77 +368,75 @@
         }
 
         .feature-icon {
-            font-size: 12px;
+            font-size: clamp(7px, 1.5vw, 10px);
         }
 
         .feature-text {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 7px;
+            font-size: clamp(4px, 1vw, 6px);
             color: #5A5550;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
             font-weight: 400;
         }
 
         /* 更多資訊 */
         .more-info {
-            padding: 0 20px;
-            margin-bottom: 8px;
+            margin-bottom: 3px;
             text-align: center;
         }
 
         .info-text {
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
-            font-size: 6px;
+            font-size: clamp(4px, 1vw, 6px);
             font-weight: 500;
             color: #6B6560;
-            letter-spacing: 2px;
+            letter-spacing: clamp(0.5px, 0.4vw, 1px);
         }
 
         /* 產品特點 - 四格布局 */
         .highlights-section {
-            padding: 0 20px;
-            margin-bottom: 8px;
+            margin-bottom: 3px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px;
+            gap: 3px;
         }
 
         .highlight-item {
             display: flex;
             align-items: flex-start;
-            gap: 6px;
-            padding: 4px;
+            gap: 2px;
+            padding: 1px;
         }
 
         .highlight-icon {
-            font-size: 12px;
+            font-size: clamp(7px, 1.5vw, 10px);
             flex-shrink: 0;
         }
 
         .highlight-content {
             display: flex;
             flex-direction: column;
-            gap: 1px;
+            gap: 0;
         }
 
         .highlight-title {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 7px;
-            font-weight: 500;
+            font-size: clamp(6px, 1.3vw, 8px);
+            font-weight: 600;
             color: #4A4540;
         }
 
         .highlight-desc {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 5.5px;
+            font-size: clamp(4px, 1vw, 6px);
             color: #6B6560;
-            line-height: 1.3;
+            line-height: 1.2;
         }
 
         /* 客製化說明 */
         .personalize-section {
-            padding: 8px 20px;
-            margin-bottom: 8px;
+            padding: 3px;
+            margin-bottom: 3px;
             background: linear-gradient(180deg, rgba(180,170,155,0.05) 0%, transparent 100%);
             border-top: 0.3px solid rgba(160,150,140,0.1);
             border-bottom: 0.3px solid rgba(160,150,140,0.1);
@@ -429,24 +445,23 @@
 
         .personalize-title {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 7px;
-            font-weight: 500;
+            font-size: clamp(6px, 1.3vw, 8px);
+            font-weight: 600;
             color: #5A5550;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 1px;
         }
 
         .personalize-text {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 6px;
+            font-size: clamp(4px, 1vw, 6px);
             color: #6B6560;
-            line-height: 1.5;
+            line-height: 1.3;
         }
 
         /* 更多產品詳情 - 表格樣式 */
         .product-details {
-            padding: 0 20px;
-            margin-bottom: 8px;
+            margin-bottom: 3px;
             display: flex;
             justify-content: space-between;
             background: linear-gradient(180deg, transparent 0%, rgba(180,170,155,0.05) 50%, transparent 100%);
@@ -459,7 +474,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 6px 0;
+            padding: 3px 0;
             position: relative;
         }
 
@@ -476,57 +491,58 @@
 
         .detail-label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 5px;
+            font-size: clamp(3px, 0.6vw, 4px);
             font-weight: 600;
             color: #000000;
-            letter-spacing: 2px;
-            margin-bottom: 2px;
+            letter-spacing: clamp(0.5px, 0.3vw, 1px);
+            margin-bottom: 1px;
             text-transform: uppercase;
         }
 
         .detail-value {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 8px;
+            font-size: clamp(4px, 1vw, 6px);
             font-weight: 400;
             color: #5A5550;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
         }
 
         /* 底部區域 - 更突出 */
         .footer-section {
             margin-top: auto;
-            padding: 18px 25px;
+            padding: 4px 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(180deg, rgba(180,170,155,0.08) 0%, transparent 100%);
             border-top: 0.5px solid rgba(160, 150, 140, 0.3);
+            flex-shrink: 0;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 2px;
         }
 
         .contact-label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 6px;
+            font-size: clamp(4px, 1vw, 6px);
             font-weight: 600;
-            letter-spacing: 3px;
+            letter-spacing: clamp(0.5px, 0.4vw, 2px);
             color: #000000;
             text-transform: uppercase;
-            margin-bottom: 2px;
+            margin-bottom: 0;
         }
 
         .contact-item, a.contact-item {
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
+            font-size: clamp(5px, 1.2vw, 7px);
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.3px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 3px;
             text-decoration: none;
             color: inherit;
         }
@@ -540,11 +556,11 @@
         }
 
         .contact-item i {
-            font-size: 18px;
+            font-size: clamp(8px, 2vw, 12px);
         }
 
         .contact-item span {
-            font-size: 10px;
+            font-size: clamp(6px, 1.4vw, 8px);
             color: #4A4540;
             font-weight: 400;
         }
@@ -554,18 +570,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
+            gap: 1px;
         }
 
         .qr-code {
-            width: 55px;
-            height: 55px;
+            width: clamp(20px, 8vw, 35px);
+            height: clamp(20px, 8vw, 35px);
             background-color: #F7F5F0;
             border: 0.3px solid rgba(160, 150, 140, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2px;
+            padding: 1px;
             mix-blend-mode: multiply;
             opacity: 0.85;
         }
@@ -578,18 +594,18 @@
 
         .qr-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: 6px;
+            font-size: clamp(3px, 0.8vw, 5px);
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.3px;
             color: #000000;
         }
 
         .qr-url {
             font-family: 'Montserrat', sans-serif;
-            font-size: 5px;
+            font-size: clamp(2px, 0.6vw, 4px);
             font-weight: 500;
             color: #000000;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         /* 打印優化 */
@@ -602,9 +618,7 @@
                 box-shadow: none;
                 width: 100%;
                 height: auto;
-            }
-            .frame-outer, .frame-inner {
-                border-color: #C0B8AC;
+                max-width: none;
             }
         }
 
@@ -614,14 +628,54 @@
                 box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             }
         }
+
+        /* 小螢幕優化 */
+        @media (max-width: 480px) {
+            .brand-left {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+            .brand-sub {
+                margin-top: 0;
+            }
+            .hero-label-half {
+                flex-direction: column;
+                gap: 2px;
+            }
+            .highlights-section {
+                grid-template-columns: 1fr;
+            }
+            .footer-section {
+                flex-direction: column;
+                gap: clamp(8px, 3vw, 16px);
+                text-align: center;
+            }
+            .contact-info {
+                align-items: center;
+            }
+            .qr-section {
+                align-items: center;
+            }
+        }
+
+        /* 中等螢幕 */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .footer-section {
+                gap: clamp(10px, 3vw, 20px);
+            }
+        }
+
+        /* 大螢幕 */
+        @media (min-width: 1024px) {
+            .a5-flyer {
+                max-width: 500px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="a5-flyer">
-        <!-- 邊框裝飾 -->
-        <div class="frame-outer"></div>
-        <div class="frame-inner"></div>
-
         <!-- 品牌區域 -->
         <div class="brand-section">
             <div class="brand-left">
@@ -633,23 +687,23 @@
             </div>
             <div class="brand-decoration">
                 <div class="brand-line"></div>
-                <div class="brand-line" style="width: 25px;"></div>
-                <div class="brand-line" style="width: 15px;"></div>
+                <div class="brand-line" style="width: clamp(15px, 5vw, 25px);"></div>
+                <div class="brand-line" style="width: clamp(10px, 3vw, 15px);"></div>
             </div>
         </div>
 
         <!-- 主視覺區 -->
         <div class="hero-section">
             <div class="hero-image-half">
-                <img src="image/cert_color_beige.jpg" alt="米色證書套">
-                <div class="hero-color-label">
+                <img src="image/cert_color_beige_texture.png" alt="米色證書套">
+                <div class="hero-label-half">
                     <div class="color-dot" style="background-color: #f6dba6;"></div>
                     <span class="color-text">米色 · 亞麻布</span>
                 </div>
             </div>
             <div class="hero-image-half">
-                <img src="image/cert_color_blue.jpg" alt="藍色證書套">
-                <div class="hero-color-label">
+                <img src="image/cert_color_blue_texture.png" alt="藍色證書套">
+                <div class="hero-label-half">
                     <div class="color-dot" style="background-color: #0a477e;"></div>
                     <span class="color-text">藍色 · 磨砂珠光</span>
                 </div>
@@ -695,6 +749,11 @@
                 </div>
         </div>
 
+        <!-- 顏色選擇 -->
+        <div class="color-combo-section">
+            <img src="image/cert_color_beige_and_blue.png" alt="米色藍色组合" class="color-combo-img">
+        </div>
+
         <!-- 產品特點 -->
         <div class="highlights-section">
             <div class="highlight-item">
@@ -737,11 +796,11 @@
         <div class="footer-section">
             <div class="contact-info">
                 <a href="https://www.instagram.com/myo.makeyourown/" target="_blank" class="contact-item ig">
-                    <i class="fab fa-instagram" style="font-size: 14px; color: #E1306C;"></i>
+                    <i class="fab fa-instagram" style="font-size: clamp(10px, 2.5vw, 14px); color: #E1306C;"></i>
                     <span>@myo.makeyourown</span>
                 </a>
                 <a href="https://api.whatsapp.com/send?phone=85263796410" target="_blank" class="contact-item wa">
-                    <i class="fab fa-whatsapp" style="font-size: 14px; color: #25D366;"></i>
+                    <i class="fab fa-whatsapp" style="font-size: clamp(10px, 2.5vw, 14px); color: #25D366;"></i>
                     <span>6379 6410</span>
                 </a>
             </div>
