@@ -10,7 +10,7 @@
 
     <style>
         /* 匯入高級字體 - 優雅版 */
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=Ma+Shan+Zheng&display=swap');
 
         /* 打印優化 - A5 尺寸 */
         @page {
@@ -94,7 +94,7 @@
         }
 
         .brand {
-            font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+            font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive;
             font-size: 32px;
             font-weight: 400;
             letter-spacing: 4px;
@@ -103,8 +103,8 @@
         }
 
         .brand-sub {
-            font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
-            font-size: 9px;
+            font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
+            font-size: 32px;
             font-weight: 400;
             letter-spacing: 3px;
             color: #6B6560;
@@ -163,6 +163,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            position: relative;
         }
 
         .hero-image-half img {
@@ -170,6 +171,30 @@
             height: 100%;
             object-fit: contain;
             background-color: #fff;
+        }
+
+        .hero-color-label {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255,255,255,0.9);
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+
+        .hero-color-label .color-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .hero-color-label .color-text {
+            font-size: 6px;
+            color: #4A4540;
         }
 
         .hero-image-small {
@@ -192,7 +217,7 @@
         /* 標題區 - 散文式排版 */
         .title-section {
             padding: 0 20px;
-            text-align: justify;
+            text-align: center;
         }
 
         .title {
@@ -202,7 +227,7 @@
             color: #4A4540;
             line-height: 1.8;
             letter-spacing: 1.5px;
-            text-align: justify;
+            text-align: center;
             margin-bottom: 10px;
         }
 
@@ -617,16 +642,24 @@
         <div class="hero-section">
             <div class="hero-image-half">
                 <img src="image/cert_color_beige.jpg" alt="米色證書套">
+                <div class="hero-color-label">
+                    <div class="color-dot" style="background-color: #f6dba6;"></div>
+                    <span class="color-text">米色 · 亞麻布</span>
+                </div>
             </div>
             <div class="hero-image-half">
                 <img src="image/cert_color_blue.jpg" alt="藍色證書套">
+                <div class="hero-color-label">
+                    <div class="color-dot" style="background-color: #0a477e;"></div>
+                    <span class="color-text">藍色 · 磨砂珠光</span>
+                </div>
             </div>
         </div>
 
         <!-- 標題區 - 散文式 -->
         <div class="title-section">
             <div class="title">
-                為人生最重要的一頁，留下最溫柔的觸感。
+                為人生最重要的一頁，留下最溫柔的觸感
             </div>
         </div>
 
@@ -637,7 +670,7 @@
 
         <!-- 產品展示 -->
         <div class="product-section">
-            <div class="product-label-small">精選款式</div>
+            <div class="product-label-small"><strong>精選款式</strong></div>
             <div class="product-grid">
                 <div class="product-item">
                     <img src="image/cert_style_1.png" alt="款式1">
@@ -657,46 +690,9 @@
                 </div>
                 <div class="product-item">
                     <img src="image/cert_style_5.png" alt="款式5">
-                    <div class="product-label">更多選擇</div>
+                    <div class="product-label">愛在框中</div>
                 </div>
                 </div>
-        </div>
-
-        <!-- 顏色選項 -->
-        <div class="color-section">
-            <div class="color-item">
-                <div class="color-dot" style="background-color: #f6dba6;"></div>
-                <span class="color-text">米色 · 亞麻布</span>
-            </div>
-            <div class="color-item">
-                <div class="color-dot" style="background-color: #0a477e;"></div>
-                <span class="color-text">藍色 · 磨砂珠光</span>
-            </div>
-        </div>
-
-        <!-- 產品特色 -->
-        <div class="features-section">
-            <div class="feature-item">
-                <i class="fas fa-ruler-horizontal feature-icon" style="color: #8B7355;"></i>
-                <span class="feature-text">A4尺寸</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-stamp feature-icon" style="color: #D4AF37;"></i>
-                <span class="feature-text">燙金工藝</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-layer-group feature-icon" style="color: #7A9A7A;"></i>
-                <span class="feature-text">內襯保護</span>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-signature feature-icon" style="color: #9A7B7B;"></i>
-                <span class="feature-text">名字燙印</span>
-            </div>
-        </div>
-
-        <!-- 更多資訊 -->
-        <div class="more-info">
-            <span class="info-text">結婚登記 · 註冊儀式 · 終身珍藏</span>
         </div>
 
         <!-- 產品特點 -->
@@ -735,22 +731,6 @@
         <div class="personalize-section">
             <span class="personalize-title">客製化您的愛</span>
             <span class="personalize-text">從新人名字、結婚日期到豐富的設計樣式，我們提供多樣客製化選項。無需自備圖稿，即可打造一份真正專屬、彰顯您們風格的珍貴證書套。</span>
-        </div>
-
-        <!-- 更多產品詳情 -->
-        <div class="product-details">
-            <div class="detail-item">
-                <span class="detail-label">材質</span>
-                <span class="detail-value">進口棉麻 / 磨砂珠光紙</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">工藝</span>
-                <span class="detail-value">熱轉印燙金</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">內頁</span>
-                <span class="detail-value">絨布內襯 + 固定帶</span>
-            </div>
         </div>
 
         <!-- 底部區域 -->
