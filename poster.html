@@ -401,7 +401,7 @@
         /* 底部區域 - 更突出 */
         .footer-section {
             margin-top: auto;
-            padding: 12px 25px;
+            padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -461,8 +461,8 @@
         }
 
         .qr-code {
-            width: 45px;
-            height: 45px;
+            width: 55px;
+            height: 55px;
             background-color: #FAF8F3;
             border: 0.3px solid rgba(180, 170, 155, 0.2);
             display: flex;
@@ -485,6 +485,14 @@
             font-weight: 300;
             letter-spacing: 1px;
             color: #9A9388;
+        }
+
+        .qr-url {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5px;
+            font-weight: 300;
+            color: #A09888;
+            letter-spacing: 0.5px;
         }
 
         /* 打印優化 */
@@ -652,6 +660,7 @@
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://myo-makeyourown.pages.dev&bgcolor=faf8f3&color=4a4540&format=png" alt="QR Code">
                 </div>
                 <span class="qr-text">掃碼瀏覽更多</span>
+                <span class="qr-url">myo-makeyourown.pages.dev</span>
             </div>
         </div>
     </div>
