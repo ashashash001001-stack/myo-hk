@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* 匯入高級字體 */
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@300;400&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+        /* 匯入高級字體 - 增大版 */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap');
 
         /* 打印優化 - A5 尺寸 */
         @page {
@@ -95,20 +95,20 @@
 
         .brand {
             font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
-            font-size: 28px;
-            font-weight: 300;
-            letter-spacing: 8px;
+            font-size: 34px;
+            font-weight: 500;
+            letter-spacing: 6px;
             color: #4A4540;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
         .brand-sub {
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
-            font-size: 7px;
-            font-weight: 300;
-            letter-spacing: 3px;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 4px;
             color: #9A9388;
-            margin-top: 2px;
+            margin-top: 3px;
         }
             text-transform: uppercase;
         }
@@ -132,7 +132,8 @@
             padding: 12px 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px;
+            grid-template-rows: auto auto;
+            gap: 6px;
         }
 
         .hero-image-main {
@@ -153,8 +154,26 @@
             background-color: #fff;
         }
 
+        /* 兩色並排 - 放大 */
+        .hero-image-half {
+            height: 110px;
+            background-color: #F2EEE8;
+            border: 0.3px solid rgba(180, 170, 155, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-image-half img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
         .hero-image-small {
-            height: 45px;
+            height: 30px;
             background-color: #F2EEE8;
             border: 0.3px solid rgba(180, 170, 155, 0.2);
             display: flex;
@@ -178,13 +197,13 @@
 
         .title {
             font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
-            font-size: 13px;
-            font-weight: 300;
+            font-size: 16px;
+            font-weight: 400;
             color: #4A4540;
-            line-height: 2;
+            line-height: 1.8;
             letter-spacing: 2px;
             text-align: justify;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         
@@ -218,8 +237,8 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
         }
 
         .product-item {
@@ -231,16 +250,17 @@
 
         .product-item img {
             width: 100%;
-            height: 28px;
+            height: 24px;
             object-fit: contain;
         }
 
         .product-label {
             font-family: 'Noto Sans TC', sans-serif;
-            font-size: 6px;
-            color: #8A8578;
-            margin-top: 2px;
+            font-size: 8px;
+            color: #6B6661;
+            margin-top: 3px;
             letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
         /* 顏色選項 - 水平排列 */
@@ -267,16 +287,123 @@
 
         .color-text {
             font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
-            font-size: 7px;
-            font-weight: 300;
-            color: #7A7568;
+            font-size: 9px;
+            font-weight: 500;
+            color: #5A5550;
             letter-spacing: 1px;
+        }
+
+        /* 產品特色 - 帶分隔線 */
+        .features-section {
+            padding: 0 20px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 0.3px solid rgba(180,170,155,0.1);
+            border-bottom: 0.3px solid rgba(180,170,155,0.1);
+        }
+
+        .feature-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px 0;
+            gap: 2px;
+            position: relative;
+        }
+
+        .feature-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 0.3px;
+            background: rgba(180,170,155,0.15);
+        }
+
+        .feature-icon {
+            font-size: 12px;
+        }
+
+        .feature-text {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 8px;
+            color: #5A5550;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        /* 更多資訊 */
+        .more-info {
+            padding: 0 20px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .info-text {
+            font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+            font-size: 6px;
+            font-weight: 300;
+            color: #A09888;
+            letter-spacing: 2px;
+        }
+
+        /* 更多產品詳情 - 表格樣式 */
+        .product-details {
+            padding: 0 20px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(180deg, transparent 0%, rgba(180,170,155,0.05) 50%, transparent 100%);
+            border-top: 0.3px solid rgba(180,170,155,0.15);
+            border-bottom: 0.3px solid rgba(180,170,155,0.15);
+        }
+
+        .detail-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6px 0;
+            position: relative;
+        }
+
+        .detail-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0.5px;
+            height: 60%;
+            background: rgba(180,170,155,0.2);
+        }
+
+        .detail-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5px;
+            font-weight: 400;
+            color: #9A9388;
+            letter-spacing: 2px;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .detail-value {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 9px;
+            font-weight: 500;
+            color: #4A4540;
+            letter-spacing: 0.5px;
         }
 
         /* 底部區域 - 更突出 */
         .footer-section {
             margin-top: auto;
-            padding: 12px 25px;
+            padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -311,15 +438,21 @@
         }
 
         .contact-item.ig {
-            color: #8B7355;
+            color: #E1306C;
         }
 
         .contact-item.wa {
-            color: #5D7A5D;
+            color: #25D366;
         }
 
         .contact-item i {
-            font-size: 10px;
+            font-size: 18px;
+        }
+
+        .contact-item span {
+            font-size: 11px;
+            color: #4A4540;
+            font-weight: 500;
         }
 
         /* QR Code - 油墨沉積感 */
@@ -331,8 +464,8 @@
         }
 
         .qr-code {
-            width: 45px;
-            height: 45px;
+            width: 55px;
+            height: 55px;
             background-color: #FAF8F3;
             border: 0.3px solid rgba(180, 170, 155, 0.2);
             display: flex;
@@ -355,6 +488,14 @@
             font-weight: 300;
             letter-spacing: 1px;
             color: #9A9388;
+        }
+
+        .qr-url {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5px;
+            font-weight: 300;
+            color: #A09888;
+            letter-spacing: 0.5px;
         }
 
         /* 打印優化 */
@@ -405,14 +546,11 @@
 
         <!-- 主視覺區 -->
         <div class="hero-section">
-            <div class="hero-image-main">
-                <img src="image/cert_color_beige.jpg" alt="證書套展示">
+            <div class="hero-image-half">
+                <img src="image/cert_color_beige.jpg" alt="米色證書套">
             </div>
-            <div class="hero-image-small">
-                <img src="image/cert_style_1.png" alt="款式1">
-            </div>
-            <div class="hero-image-small">
-                <img src="image/cert_style_2.png" alt="款式2">
+            <div class="hero-image-half">
+                <img src="image/cert_color_blue.jpg" alt="藍色證書套">
             </div>
         </div>
 
@@ -449,14 +587,10 @@
                     <div class="product-label">夢幻元素</div>
                 </div>
                 <div class="product-item">
-                    <img src="image/cert_color_beige.jpg" alt="米色">
-                    <div class="product-label">米色</div>
+                    <img src="image/cert_style_5.png" alt="款式5">
+                    <div class="product-label">更多選擇</div>
                 </div>
-                <div class="product-item">
-                    <img src="image/cert_color_blue.jpg" alt="藍色">
-                    <div class="product-label">藍色</div>
                 </div>
-            </div>
         </div>
 
         <!-- 顏色選項 -->
@@ -471,16 +605,57 @@
             </div>
         </div>
 
+        <!-- 產品特色 -->
+        <div class="features-section">
+            <div class="feature-item">
+                <i class="fas fa-ruler-horizontal feature-icon" style="color: #8B7355;"></i>
+                <span class="feature-text">A4尺寸</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-stamp feature-icon" style="color: #D4AF37;"></i>
+                <span class="feature-text">燙金工藝</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-layer-group feature-icon" style="color: #7A9A7A;"></i>
+                <span class="feature-text">內襯保護</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-signature feature-icon" style="color: #9A7B7B;"></i>
+                <span class="feature-text">名字燙印</span>
+            </div>
+        </div>
+
+        <!-- 更多資訊 -->
+        <div class="more-info">
+            <span class="info-text">結婚登記 · 註冊儀式 · 終身珍藏</span>
+        </div>
+
+        <!-- 更多產品詳情 -->
+        <div class="product-details">
+            <div class="detail-item">
+                <span class="detail-label">材質</span>
+                <span class="detail-value">進口棉麻 / 磨砂珠光紙</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">工藝</span>
+                <span class="detail-value">熱轉印燙金</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">內頁</span>
+                <span class="detail-value">絨布內襯 + 固定帶</span>
+            </div>
+        </div>
+
         <!-- 底部區域 -->
         <div class="footer-section">
             <div class="contact-info">
                 <div class="contact-item ig">
-                    <i class="fab fa-instagram" style="font-size: 8px;"></i>
-                    @myo.makeyourown
+                    <i class="fab fa-instagram" style="font-size: 14px; color: #E1306C;"></i>
+                    <span>@myo.makeyourown</span>
                 </div>
                 <div class="contact-item wa">
-                    <i class="fab fa-whatsapp" style="font-size: 8px;"></i>
-                    6379 6410
+                    <i class="fab fa-whatsapp" style="font-size: 14px; color: #25D366;"></i>
+                    <span>6379 6410</span>
                 </div>
             </div>
             <div class="qr-section">
@@ -488,6 +663,7 @@
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://myo-makeyourown.pages.dev&bgcolor=faf8f3&color=4a4540&format=png" alt="QR Code">
                 </div>
                 <span class="qr-text">掃碼瀏覽更多</span>
+                <span class="qr-url">myo-makeyourown.pages.dev</span>
             </div>
         </div>
     </div>
