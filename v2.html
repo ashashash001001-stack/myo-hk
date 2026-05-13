@@ -260,21 +260,42 @@
         /* Mobile responsive */
         @media (max-width: 639px) {
             .step-indicator {
-                padding: var(--space-sm);
+                padding: 0.5rem;
                 top: 50px;
             }
             .step-circle {
-                width: 28px;
-                height: 28px;
-                font-size: 0.8rem;
+                width: 24px;
+                height: 24px;
+                font-size: 0.7rem;
             }
             .step-label {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
             .step-line {
-                width: 30px;
-                margin: 0 0.25rem;
-                margin-bottom: 1rem;
+                width: 20px;
+                margin: 0 0.2rem;
+                margin-bottom: 0.8rem;
+            }
+        }
+
+        /* Extra small screens optimization */
+        @media (max-width: 380px) {
+            .step-indicator {
+                padding: 0.4rem;
+                top: 45px;
+            }
+            .step-circle {
+                width: 20px;
+                height: 20px;
+                font-size: 0.65rem;
+            }
+            .step-label {
+                font-size: 0.55rem;
+                display: none;
+            }
+            .step-line {
+                width: 15px;
+                margin-bottom: 0.5rem;
             }
         }
 
