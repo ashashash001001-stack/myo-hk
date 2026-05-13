@@ -80,25 +80,31 @@
         .brand-section {
             display: flex;
             align-items: center;
-            justify-content: center;
             flex-shrink: 0;
             margin-bottom: 2px;
-            position: relative;
         }
 
         .brand-link:hover .brand-section {
             opacity: 0.8;
         }
 
-        .brand-left {
-            display: flex;
-            align-items: baseline;
-            gap: clamp(4px, 1.5vw, 8px);
-            white-space: nowrap;
+        .brand-logo {
+            flex-shrink: 0;
         }
 
-        .brand-logo {
-            margin-bottom: 0;
+        .brand-center {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-decoration {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 2px;
         }
 
         .brand-logo img {
@@ -106,7 +112,6 @@
             height: clamp(24px, 8vw, 36px);
             border-radius: 50%;
             border: 0.8px solid rgba(180, 150, 100, 0.5);
-            transform: translateY(clamp(2px, 1vw, 4px));
         }
 
         .brand {
@@ -782,10 +787,10 @@
         <!-- 品牌區域 -->
         <a href="index.html" class="brand-link">
             <div class="brand-section">
-                <div class="brand-left">
-                    <div class="brand-logo">
-                        <img src="image/01_company_logo.png" alt="My O! Logo">
-                    </div>
+                <div class="brand-logo">
+                    <img src="image/01_company_logo.png" alt="My O! Logo">
+                </div>
+                <div class="brand-center">
                     <div class="brand">My O!</div>
                     <div class="brand-sub">結婚證書套</div>
                 </div>
