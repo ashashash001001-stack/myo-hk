@@ -79,10 +79,11 @@
 
         .brand-section {
             display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
             margin-bottom: 2px;
+            position: relative;
         }
 
         .brand-link:hover .brand-section {
@@ -128,6 +129,10 @@
 
         /* 右側裝飾線 */
         .brand-decoration {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             align-items: flex-end;
