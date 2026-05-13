@@ -194,7 +194,7 @@
             border-bottom: 1px solid rgba(183, 110, 121, 0.1);
             position: sticky;
             top: 60px;
-            z-index: 40;
+            z-index: 45;
         }
 
         .step-item {
@@ -317,29 +317,37 @@
                 right: 0;
                 background: white;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-                transform: translateY(-10px);
                 opacity: 0;
                 visibility: hidden;
-                transition: all 0.3s ease-in-out;
+                transition: opacity 0.2s ease, visibility 0.2s ease;
                 z-index: 999;
+                padding: 0;
+                margin: 0;
             }
              .mobile-nav-links.active {
-                transform: translateY(0);
                 opacity: 1;
                 visibility: visible;
              }
              /* 選單項目觸控回饋 */
              .mobile-nav-links a {
+                display: block;
                 transition: all 0.2s ease;
-                border-radius: 0.5rem;
-                margin: 2px 8px;
+                border-radius: 0;
+                margin: 0;
+                padding: 12px 16px;
+                border-bottom: 1px solid #f0f0f0;
+             }
+             .mobile-nav-links a:last-child {
+                border-bottom: none;
              }
              .mobile-nav-links a:hover {
                 background-color: #fef3c7;
              }
              .mobile-nav-links a:active {
                 background-color: #fcd34d;
-                transform: scale(0.98);
+             }
+             .mobile-nav-links a:first-child {
+                border-top: none;
              }
              /* 漢堡選單圖標動畫 */
              .hamburger-menu {
@@ -1617,7 +1625,7 @@
             </button>
         </div>
 
-        <div class="mobile-nav-links md:hidden bg-white py-2" id="mobile-menu">
+        <div class="mobile-nav-links md:hidden bg-white" id="mobile-menu">
             <a href="#product-overview" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">產品概覽</a>
             <a href="#designs" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">款式與設計</a>
             <a href="./blog/" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">教學指南</a>
