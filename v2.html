@@ -69,6 +69,25 @@
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        /* 改善行動版滾動體驗 */
+        @media (max-width: 767px) {
+            html {
+                scroll-padding-top: 120px;
+            }
+        }
+
+        /* 減少錨點跳轉的突兀感 */
+        :target {
+            scroll-margin-top: 100px;
         }
 
         h1, h2, h3, .section-title {
@@ -2274,14 +2293,20 @@
             function handleFloatingVisibility() {
                 const currentScrollY = window.scrollY;
 
-                if (currentScrollY > 150) {
+                // 增加閾值減少快速出現/消失
+                if (currentScrollY > 200) {
                     floatingActions.classList.add('visible');
                 } else {
                     floatingActions.classList.remove('visible');
                 }
             }
 
-            window.addEventListener('scroll', handleFloatingVisibility, { passive: true });
+            // 使用防抖減少滾動事件觸發頻率
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (scrollTimeout) clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(handleFloatingVisibility, 50);
+            }, { passive: true });
 
             const favoriteKey = 'myo_favorite_products';
 
