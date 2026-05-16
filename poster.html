@@ -34,6 +34,16 @@
             padding: clamp(10px, 4vw, 20px);
         }
 
+        /* 打印時身體全螢幕置中 */
+        @media print {
+            body {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: flex-start !important;
+                min-height: auto !important;
+            }
+        }
+
         /* A5 尺寸比例容器 - 畫廊風格 */
         .a5-flyer {
             width: 420px;
@@ -701,7 +711,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* 打印優化 - A5 尺寸 */
+        /* 打印優化 - A5 尺寸，填滿頁面 */
         @media print {
             body {
                 background: white !important;
@@ -713,7 +723,9 @@
                 width: 148mm !important;
                 height: 210mm !important;
                 min-width: 148mm !important;
-                transform: none !important;
+                /* 填滿 A5 頁面: 148mm ≈ 558px, 內容 420px, 需要放大約 1.33x */
+                transform: scale(1.33) !important;
+                transform-origin: center center !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 page-break-after: always;
