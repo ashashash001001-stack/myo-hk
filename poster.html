@@ -722,43 +722,6 @@
             }
         }
 
-        /* 小螢幕優化 - 使用 JS 等比縮放 */
-        @media (max-width: 480px) {
-            .brand-left {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 2px;
-            }
-            .brand-sub {
-                margin-top: 0;
-            }
-            .hero-label-half {
-                flex-direction: column;
-                gap: 2px;
-            }
-            .highlights-section {
-                grid-template-columns: 1fr;
-            }
-            .footer-section {
-                flex-direction: column;
-                gap: clamp(8px, 3vw, 16px);
-                text-align: center;
-            }
-            .contact-info {
-                align-items: center;
-            }
-            .qr-section {
-                align-items: center;
-            }
-        }
-
-        /* 中等螢幕 */
-        @media (min-width: 481px) and (max-width: 768px) {
-            .footer-section {
-                gap: clamp(10px, 3vw, 20px);
-            }
-        }
-
         /* 大螢幕 */
         @media (min-width: 1024px) {
             .a5-flyer {
@@ -939,24 +902,20 @@
         </div>
     </div>
 <script>
-        // 等比縮放海報以適應螢幕
+        // 等比縮放海報以適應螢幕 - 永遠按比例縮放
         (function() {
             const poster = document.querySelector('.a5-flyer');
             const baseWidth = 420;
 
             function scalePoster() {
                 const viewportWidth = window.innerWidth;
-                const padding = 20; // 兩側保留的空間
+                const padding = 20;
                 const availableWidth = viewportWidth - padding;
 
-                if (availableWidth < baseWidth) {
-                    const scale = availableWidth / baseWidth;
-                    poster.style.transform = 'scale(' + scale + ')';
-                    // 調整 transform-origin 以保持置中
-                    poster.style.transformOrigin = 'top center';
-                } else {
-                    poster.style.transform = 'scale(1)';
-                }
+                // 永遠計算比例，讓海報永遠按比例顯示
+                const scale = Math.min(1, availableWidth / baseWidth);
+                poster.style.transform = 'scale(' + scale + ')';
+                poster.style.transformOrigin = 'top center';
             }
 
             // 初始執行
