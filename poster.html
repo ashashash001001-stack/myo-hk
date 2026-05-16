@@ -711,7 +711,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* 打印優化 - 與網頁一致 */
+        /* 打印優化 - 按比例填滿頁面 */
         @media print {
             body {
                 background: white !important;
@@ -723,7 +723,9 @@
                 width: 420px !important;
                 min-width: 420px !important;
                 height: auto !important;
-                transform: none !important;
+                /* 按比例放大填滿頁面 */
+                transform: scale(1.2) !important;
+                transform-origin: center top !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 page-break-after: always;
