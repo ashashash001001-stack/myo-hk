@@ -701,17 +701,25 @@
             letter-spacing: 0.3px;
         }
 
-        /* 打印優化 */
+        /* 打印優化 - A5 尺寸 */
         @media print {
             body {
                 background: white;
                 padding: 0;
+                margin: 0;
             }
             .a5-flyer {
                 box-shadow: none;
-                width: 100%;
-                height: auto;
-                max-width: none;
+                width: 148mm;
+                height: 210mm;
+                transform: none !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                page-break-after: always;
+            }
+            @page {
+                size: A5;
+                margin: 0;
             }
         }
 
@@ -908,6 +916,12 @@
             const baseWidth = 420;
 
             function scalePoster() {
+                // 打印時不縮放
+                if (window.matchMedia('print').matches) {
+                    poster.style.transform = 'none';
+                    return;
+                }
+
                 const viewportWidth = window.innerWidth;
                 const padding = 20;
                 const availableWidth = viewportWidth - padding;
