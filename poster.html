@@ -711,21 +711,25 @@
             letter-spacing: 0.3px;
         }
 
-        /* 打印優化 - 按比例填滿頁面 */
+        /* 打印優化 - 置中並放大填滿頁面 */
         @media print {
             body {
                 background: white !important;
                 padding: 0 !important;
                 margin: 0 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                min-height: 100vh !important;
             }
             .a5-flyer {
                 box-shadow: none !important;
                 width: 420px !important;
                 min-width: 420px !important;
                 height: auto !important;
-                /* 按比例放大填滿頁面 */
-                transform: scale(1.2) !important;
-                transform-origin: center top !important;
+                /* 置中並放大 1.3 倍 */
+                transform: scale(1.3) !important;
+                transform-origin: center center !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 page-break-after: always;
