@@ -724,8 +724,13 @@
             }
         }
 
-        /* 小螢幕優化 */
+        /* 小螢幕優化 - 禁用 aspect-ratio，讓內容自然流動 */
         @media (max-width: 480px) {
+            .a5-flyer {
+                aspect-ratio: auto;
+                height: auto;
+                max-height: none;
+            }
             .brand-left {
                 flex-direction: column;
                 align-items: flex-start;
@@ -754,8 +759,13 @@
             }
         }
 
-        /* 中等螢幕 */
+        /* 中等螢幕 - 禁用 aspect-ratio */
         @media (min-width: 481px) and (max-width: 768px) {
+            .a5-flyer {
+                aspect-ratio: auto;
+                height: auto;
+                max-height: none;
+            }
             .footer-section {
                 gap: clamp(10px, 3vw, 20px);
             }
