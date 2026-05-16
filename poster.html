@@ -704,18 +704,20 @@
         /* 打印優化 - A5 尺寸 */
         @media print {
             body {
-                background: white;
-                padding: 0;
-                margin: 0;
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
             .a5-flyer {
-                box-shadow: none;
-                width: 148mm;
-                height: 210mm;
+                box-shadow: none !important;
+                width: 148mm !important;
+                height: 210mm !important;
+                min-width: 148mm !important;
                 transform: none !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
                 page-break-after: always;
+                overflow: visible !important;
             }
             @page {
                 size: A5;
@@ -914,14 +916,9 @@
         (function() {
             const poster = document.querySelector('.a5-flyer');
             const baseWidth = 420;
+            let savedScale = '';
 
             function scalePoster() {
-                // 打印時不縮放
-                if (window.matchMedia('print').matches) {
-                    poster.style.transform = 'none';
-                    return;
-                }
-
                 const viewportWidth = window.innerWidth;
                 const padding = 20;
                 const availableWidth = viewportWidth - padding;
@@ -930,6 +927,7 @@
                 const scale = Math.min(1, availableWidth / baseWidth);
                 poster.style.transform = 'scale(' + scale + ')';
                 poster.style.transformOrigin = 'top center';
+                savedScale = 'scale(' + scale + ')';
             }
 
             // 初始執行
@@ -939,6 +937,16 @@
             window.addEventListener('resize', scalePoster);
             window.addEventListener('orientationchange', function() {
                 setTimeout(scalePoster, 100);
+            });
+
+            // 打印前禁用縮放
+            window.addEventListener('beforeprint', function() {
+                poster.style.transform = 'none';
+            });
+
+            // 打印後恢復縮放
+            window.addEventListener('afterprint', function() {
+                poster.style.transform = savedScale;
             });
         })();
     </script>
