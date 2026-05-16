@@ -737,6 +737,53 @@
             }
             @page {
                 margin: 0;
+                size: auto;
+            }
+            /* 隱藏 URL 和頁數 */
+            @page {
+                size: auto;
+                margin: 10mm;
+            }
+        }
+
+        /* iOS Safari 打印優化 */
+        @media print and (-webkit-min-device-pixel-ratio: 0) {
+            body {
+                -webkit-flex: display !important;
+                display: flex !important;
+            }
+            .a5-flyer {
+                /* iOS 上更強的置中 */
+                margin-left: auto !important;
+                margin-right: auto !important;
+                -webkit-transform: scale(1.35) !important;
+                transform: scale(1.35) !important;
+            }
+        }
+
+        /* 隱藏打印時的 URL 和頁碼 */
+        @page {
+            @bottom-left {
+                content: none;
+            }
+            @bottom-right {
+                content: none;
+            }
+            @top-left {
+                content: none;
+            }
+            @top-right {
+                content: none;
+            }
+        }
+
+        /* 打印時隱藏 header/footer */
+        @media print {
+            header, footer {
+                display: none !important;
+            }
+            :after, :before {
+                content: none !important;
             }
         }
 
