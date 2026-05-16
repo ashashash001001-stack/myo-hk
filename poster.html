@@ -36,19 +36,17 @@
 
         /* A5 尺寸比例容器 - 畫廊風格 */
         .a5-flyer {
-            width: 100%;
-            max-width: 420px;
-            aspect-ratio: 148 / 210;
-            height: auto;
-            max-height: 90vh;
+            width: 420px;
+            min-width: 420px;
             background-color: #F7F5F0;
-            padding: 2%;
+            padding: 8.4px; /* 2% of 420px */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             position: relative;
             page-break-after: always;
             overflow: visible;
+            transform-origin: top center;
         }
 
         /* 邊框裝飾 */
@@ -724,13 +722,8 @@
             }
         }
 
-        /* 小螢幕優化 - 禁用 aspect-ratio，讓內容自然流動 */
+        /* 小螢幕優化 - 使用 JS 等比縮放 */
         @media (max-width: 480px) {
-            .a5-flyer {
-                aspect-ratio: auto;
-                height: auto;
-                max-height: none;
-            }
             .brand-left {
                 flex-direction: column;
                 align-items: flex-start;
@@ -759,13 +752,8 @@
             }
         }
 
-        /* 中等螢幕 - 禁用 aspect-ratio */
+        /* 中等螢幕 */
         @media (min-width: 481px) and (max-width: 768px) {
-            .a5-flyer {
-                aspect-ratio: auto;
-                height: auto;
-                max-height: none;
-            }
             .footer-section {
                 gap: clamp(10px, 3vw, 20px);
             }
@@ -950,5 +938,36 @@
             </div>
         </div>
     </div>
+<script>
+        // 等比縮放海報以適應螢幕
+        (function() {
+            const poster = document.querySelector('.a5-flyer');
+            const baseWidth = 420;
+
+            function scalePoster() {
+                const viewportWidth = window.innerWidth;
+                const padding = 20; // 兩側保留的空間
+                const availableWidth = viewportWidth - padding;
+
+                if (availableWidth < baseWidth) {
+                    const scale = availableWidth / baseWidth;
+                    poster.style.transform = 'scale(' + scale + ')';
+                    // 調整 transform-origin 以保持置中
+                    poster.style.transformOrigin = 'top center';
+                } else {
+                    poster.style.transform = 'scale(1)';
+                }
+            }
+
+            // 初始執行
+            scalePoster();
+
+            // 監聽視窗大小變化
+            window.addEventListener('resize', scalePoster);
+            window.addEventListener('orientationchange', function() {
+                setTimeout(scalePoster, 100);
+            });
+        })();
+    </script>
 </body>
 </html>
