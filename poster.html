@@ -1028,9 +1028,10 @@
                 downloadBtn.disabled = true;
                 downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>生成中...';
 
+                let originalTransform = '';
                 try {
                     // 暫時移除 transform 以獲取真實尺寸
-                    const originalTransform = poster.style.transform;
+                    originalTransform = poster.style.transform;
                     poster.style.transform = 'none';
 
                     // 等待下一幀確保 DOM 更新
