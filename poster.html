@@ -741,22 +741,19 @@
                 page-break-after: always;
                 overflow: visible !important;
             }
-            @page {
-                margin: 0;
-                size: auto;
-            }
-            /* 隱藏 URL 和頁數 */
-            @page {
-                size: auto;
-                margin: 10mm;
-            }
+        }
+
+        /* 統一 @page 規則 - 隱藏 header/footer */
+        @page {
+            margin: 0 !important;
+            size: auto !important;
             /* 隱藏瀏覽器預設 header/footer */
-            @page {
-                @bottom-left { content: none; }
-                @bottom-right { content: none; }
-                @top-left { content: none; }
-                @top-right { content: none; }
-            }
+            @bottom-left { content: none !important; }
+            @bottom-right { content: none !important; }
+            @top-left { content: none !important; }
+            @top-right { content: none !important; }
+            @bottom-center { content: none !important; }
+            @top-center { content: none !important; }
         }
 
         /* iOS Safari 打印優化 */
