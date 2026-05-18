@@ -1034,8 +1034,25 @@
                     originalTransform = poster.style.transform;
                     poster.style.transform = 'none';
 
-                    // 等待下一幀確保 DOM 更新
+                    // 等待 DOM 更新
                     await new Promise(resolve => requestAnimationFrame(resolve));
+
+                    // 等待所有圖片加載完成
+                    const images = poster.querySelectorAll('img');
+                    await Promise.all(
+                        Array.from(images).map(img => {
+                            if (img.complete) return Promise.resolve();
+                            return new Promise((resolve, reject) => {
+                                img.onload = resolve;
+                                img.onerror = resolve; // 繼續即使圖片加載失敗
+                            });
+                        })
+                    );
+
+                    // 確保 poster 有實際尺寸
+                    if (poster.offsetWidth === 0 || poster.offsetHeight === 0) {
+                        throw new Error('海報尺寸為 0，無法生成 PDF');
+                    }
 
                     // 使用 html2canvas 捕獲海報
                     const canvas = await html2canvas(poster, {
@@ -1044,7 +1061,17 @@
                         allowTaint: true,
                         backgroundColor: '#F7F5F0',
                         width: poster.offsetWidth,
-                        height: poster.offsetHeight
+                        height: poster.offsetHeight,
+                        imageTimeout: 0, // 不等待圖片超時
+                        onclone: function(clonedDoc) {
+                            // 確保克隆的文檔中圖片已加載
+                            const clonedImages = clonedDoc.querySelectorAll('img');
+                            clonedImages.forEach(img => {
+                                if (!img.complete) {
+                                    img.src = img.src; // 強制重新加載
+                                }
+                            });
+                        }
                     });
 
                     // 恢復 transform
