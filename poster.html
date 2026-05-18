@@ -724,6 +724,10 @@
                 align-items: center !important;
                 min-height: 100vh !important;
             }
+            /* 隱藏下載按鈕 */
+            #downloadPdfBtn {
+                display: none !important;
+            }
             .a5-flyer {
                 box-shadow: none !important;
                 width: 420px !important;
@@ -745,6 +749,13 @@
             @page {
                 size: auto;
                 margin: 10mm;
+            }
+            /* 隱藏瀏覽器預設 header/footer */
+            @page {
+                @bottom-left { content: none; }
+                @bottom-right { content: none; }
+                @top-left { content: none; }
+                @top-right { content: none; }
             }
         }
 
