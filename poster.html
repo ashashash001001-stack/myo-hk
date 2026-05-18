@@ -1049,6 +1049,42 @@
                         })
                     );
 
+                    // 預加載外部圖片（QR code）並轉換為 data URL
+                    async function preloadImageAsDataURL(src) {
+                        try {
+                            const response = await fetch(src);
+                            const blob = await response.blob();
+                            return new Promise((resolve, reject) => {
+                                const reader = new FileReader();
+                                reader.onloadend = () => resolve(reader.result);
+                                reader.onerror = reject;
+                                reader.readAsDataURL(blob);
+                            });
+                        } catch (e) {
+                            console.warn('圖片預加載失敗:', src, e);
+                            return null;
+                        }
+                    }
+
+                    // 預加載所有圖片
+                    const imagePromises = Array.from(images).map(img => {
+                        // 如果是外部 URL，先轉換為 data URL
+                        if (img.src.startsWith('http') && !img.src.startsWith(window.location.origin)) {
+                            return preloadImageAsDataURL(img.src).then(dataURL => {
+                                if (dataURL) {
+                                    img.dataset.originalSrc = img.src;
+                                    img.src = dataURL;
+                                }
+                            });
+                        }
+                        return Promise.resolve();
+                    });
+
+                    await Promise.all(imagePromises);
+
+                    // 等待 DOM 更新
+                    await new Promise(resolve => requestAnimationFrame(resolve));
+
                     // 確保 poster 有實際尺寸
                     if (poster.offsetWidth === 0 || poster.offsetHeight === 0) {
                         throw new Error('海報尺寸為 0，無法生成 PDF');
@@ -1062,15 +1098,33 @@
                         backgroundColor: '#F7F5F0',
                         width: poster.offsetWidth,
                         height: poster.offsetHeight,
-                        imageTimeout: 0, // 不等待圖片超時
+                        imageTimeout: 15000, // 15秒超時等待圖片加載
+                        logging: false, // 設置為 true 可調試
+                        renderBackgroundImages: false, // 禁用背景圖片以避免 pattern 錯誤
                         onclone: function(clonedDoc) {
-                            // 確保克隆的文檔中圖片已加載
+                            // 等待克隆文檔中的所有圖片加載完成
                             const clonedImages = clonedDoc.querySelectorAll('img');
-                            clonedImages.forEach(img => {
-                                if (!img.complete) {
-                                    img.src = img.src; // 強制重新加載
-                                }
-                            });
+                            return Promise.all(
+                                Array.from(clonedImages).map(img => {
+                                    return new Promise((resolve) => {
+                                        if (img.complete && img.naturalWidth > 0) {
+                                            resolve();
+                                        } else {
+                                            img.onload = () => {
+                                                if (img.naturalWidth > 0) resolve();
+                                                else resolve(); // 即使失敗也繼續
+                                            };
+                                            img.onerror = resolve; // 即使失敗也繼續
+                                            // 強制重新加載
+                                            if (img.src) {
+                                                const currentSrc = img.src;
+                                                img.src = '';
+                                                img.src = currentSrc;
+                                            }
+                                        }
+                                    });
+                                })
+                            );
                         }
                     });
 
