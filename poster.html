@@ -1090,60 +1090,6 @@
                         throw new Error('海報尺寸為 0，無法生成 PDF');
                     }
 
-                    // 使用 html2canvas 捕獲海報
-                    const canvas = await html2canvas(poster, {
-                        scale: 2, // 2x 解析度確保清晰
-                        useCORS: true,
-                        allowTaint: true,
-                        backgroundColor: '#F7F5F0',
-                        width: poster.offsetWidth,
-                        height: poster.offsetHeight,
-                        imageTimeout: 15000, // 15秒超時等待圖片加載
-                        logging: false, // 設置為 true 可調試
-                        onclone: function(clonedDoc) {
-                            // 移除所有背景圖片樣式以避免 createPattern 錯誤
-                            const allElements = clonedDoc.querySelectorAll('*');
-                            allElements.forEach(el => {
-                                el.style.backgroundImage = 'none';
-                                el.style.background = 'none';
-                            });
-
-                            // 等待克隆文檔中的所有圖片加載完成
-                            const clonedImages = clonedDoc.querySelectorAll('img');
-                            return Promise.all(
-                                Array.from(clonedImages).map(img => {
-                                    return new Promise((resolve) => {
-                                        if (img.complete && img.naturalWidth > 0) {
-                                            resolve();
-                                        } else {
-                                            img.onload = () => {
-                                                if (img.naturalWidth > 0) resolve();
-                                                else resolve(); // 即使失敗也繼續
-                                            };
-                                            img.onerror = resolve; // 即使失敗也繼續
-                                            // 強制重新加載
-                                            if (img.src) {
-                                                const currentSrc = img.src;
-                                                img.src = '';
-                                                img.src = currentSrc;
-                                            }
-                                        }
-                                    });
-                                })
-                            );
-                        }
-                    });
-
-                    // 恢復 transform
-                    poster.style.transform = originalTransform;
-
-                    // 強制 reflow 確保尺寸正確
-                    void poster.offsetWidth;
-
-                    // 再次移除 transform 確保準確尺寸
-                    poster.style.transform = 'none';
-                    void poster.offsetWidth;
-
                     // 確保 poster 有實際尺寸
                     const posterWidth = poster.offsetWidth;
                     const posterHeight = poster.offsetHeight;
