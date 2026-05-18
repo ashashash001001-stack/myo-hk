@@ -1137,12 +1137,66 @@
                     // 恢復 transform
                     poster.style.transform = originalTransform;
 
+                    // 強制 reflow 確保尺寸正確
+                    void poster.offsetWidth;
+
+                    // 再次移除 transform 確保準確尺寸
+                    poster.style.transform = 'none';
+                    void poster.offsetWidth;
+
+                    // 確保 poster 有實際尺寸
+                    const posterWidth = poster.offsetWidth;
+                    const posterHeight = poster.offsetHeight;
+                    if (posterWidth === 0 || posterHeight === 0) {
+                        throw new Error('海報尺寸為 0，無法生成 PDF');
+                    }
+
+                    // 使用 html2canvas 捕獲海報 - 使用精確尺寸
+                    const canvas = await html2canvas(poster, {
+                        scale: 2, // 2x 解析度確保清晰
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: '#F7F5F0',
+                        width: posterWidth,
+                        height: posterHeight,
+                        imageTimeout: 15000,
+                        logging: false,
+                        onclone: function(clonedDoc) {
+                            // 移除所有背景圖片樣式以避免 createPattern 錯誤
+                            const allElements = clonedDoc.querySelectorAll('*');
+                            allElements.forEach(el => {
+                                el.style.backgroundImage = 'none';
+                                el.style.background = 'none';
+                            });
+
+                            // 等待克隆文檔中的所有圖片加載完成
+                            const clonedImages = clonedDoc.querySelectorAll('img');
+                            return Promise.all(
+                                Array.from(clonedImages).map(img => {
+                                    return new Promise((resolve) => {
+                                        if (img.complete && img.naturalWidth > 0) {
+                                            resolve();
+                                        } else {
+                                            img.onload = () => resolve();
+                                            img.onerror = resolve;
+                                            if (img.src) {
+                                                const currentSrc = img.src;
+                                                img.src = '';
+                                                img.src = currentSrc;
+                                            }
+                                        }
+                                    });
+                                })
+                            );
+                        }
+                    });
+
+                    // 恢復 transform
+                    poster.style.transform = originalTransform;
+
                     // 計算 A4 尺寸 (210mm x 297mm in pixels at 96 DPI)
                     const a4WidthMm = 210;
                     const a4HeightMm = 297;
-                    const dpi = 96;
-                    const a4WidthPx = Math.round(a4WidthMm * dpi / 25.4); // ~794px
-                    const a4HeightPx = Math.round(a4HeightMm * dpi / 25.4); // ~1123px
 
                     // 創建 jsPDF 實例 (縱向 A4)
                     const { jsPDF } = window.jspdf;
@@ -1152,16 +1206,20 @@
                         format: 'a4'
                     });
 
+                    // 使用 html2canvas 返回的实际 canvas 尺寸（已经包含 scale）
+                    const canvasWidth = canvas.width;
+                    const canvasHeight = canvas.height;
+
                     // 計算圖片在 A4 上的尺寸 (保持比例)
                     const imgWidthMm = a4WidthMm; // 寬度充滿
-                    const imgHeightMm = (canvas.height / canvas.width) * imgWidthMm;
+                    const imgHeightMm = (canvasHeight / canvasWidth) * imgWidthMm;
 
                     // 如果高度超過 A4，則縮小以容納
                     let finalWidthMm = imgWidthMm;
                     let finalHeightMm = imgHeightMm;
                     if (imgHeightMm > a4HeightMm) {
                         finalHeightMm = a4HeightMm;
-                        finalWidthMm = (canvas.width / canvas.height) * a4HeightMm;
+                        finalWidthMm = (canvasWidth / canvasHeight) * a4HeightMm;
                     }
 
                     // 居中放置
