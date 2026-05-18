@@ -1017,6 +1017,90 @@
                 poster.style.transform = savedScale;
             });
         })();
+
+        // PDF 下載功能
+        (function() {
+            const downloadBtn = document.getElementById('downloadPdfBtn');
+            const poster = document.querySelector('.a5-flyer');
+
+            downloadBtn.addEventListener('click', async function() {
+                // 禁用按鈕防止重複點擊
+                downloadBtn.disabled = true;
+                downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>生成中...';
+
+                try {
+                    // 暫時移除 transform 以獲取真實尺寸
+                    const originalTransform = poster.style.transform;
+                    poster.style.transform = 'none';
+
+                    // 等待下一幀確保 DOM 更新
+                    await new Promise(resolve => requestAnimationFrame(resolve));
+
+                    // 使用 html2canvas 捕獲海報
+                    const canvas = await html2canvas(poster, {
+                        scale: 2, // 2x 解析度確保清晰
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: '#F7F5F0',
+                        width: poster.offsetWidth,
+                        height: poster.offsetHeight
+                    });
+
+                    // 恢復 transform
+                    poster.style.transform = originalTransform;
+
+                    // 計算 A4 尺寸 (210mm x 297mm in pixels at 96 DPI)
+                    const a4WidthMm = 210;
+                    const a4HeightMm = 297;
+                    const dpi = 96;
+                    const a4WidthPx = Math.round(a4WidthMm * dpi / 25.4); // ~794px
+                    const a4HeightPx = Math.round(a4HeightMm * dpi / 25.4); // ~1123px
+
+                    // 創建 jsPDF 實例 (縱向 A4)
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'mm',
+                        format: 'a4'
+                    });
+
+                    // 計算圖片在 A4 上的尺寸 (保持比例)
+                    const imgWidthMm = a4WidthMm; // 寬度充滿
+                    const imgHeightMm = (canvas.height / canvas.width) * imgWidthMm;
+
+                    // 如果高度超過 A4，則縮小以容納
+                    let finalWidthMm = imgWidthMm;
+                    let finalHeightMm = imgHeightMm;
+                    if (imgHeightMm > a4HeightMm) {
+                        finalHeightMm = a4HeightMm;
+                        finalWidthMm = (canvas.width / canvas.height) * a4HeightMm;
+                    }
+
+                    // 居中放置
+                    const xOffset = (a4WidthMm - finalWidthMm) / 2;
+                    const yOffset = (a4HeightMm - finalHeightMm) / 2;
+
+                    // 將 canvas 轉換為圖片數據
+                    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+
+                    // 添加圖片到 PDF
+                    pdf.addImage(imgData, 'JPEG', xOffset, yOffset, finalWidthMm, finalHeightMm);
+
+                    // 下載 PDF
+                    pdf.save('myo-poster.pdf');
+
+                } catch (error) {
+                    console.error('PDF 生成失敗:', error);
+                    alert('PDF 生成失敗，請稍後再試。');
+                    // 恢復 transform
+                    poster.style.transform = originalTransform;
+                }
+
+                // 恢復按鈕狀態
+                downloadBtn.disabled = false;
+                downloadBtn.innerHTML = '<i class="fas fa-download" style="margin-right: 8px;"></i>下載 PDF';
+            });
+        })();
     </script>
 </body>
 </html>
