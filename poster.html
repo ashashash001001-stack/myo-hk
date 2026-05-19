@@ -1053,29 +1053,11 @@
                         throw new Error('海報尺寸為 0，無法生成 PDF');
                     }
 
-                    // 診斷：記錄圖片尺寸信息
-                    const imageDiagnostics = [];
-                    const originalImages = poster.querySelectorAll('img');
-                    originalImages.forEach((img, i) => {
-                        imageDiagnostics.push({
-                            index: i,
-                            src: img.src.substring(0, 50) + '...',
-                            natural: { w: img.naturalWidth, h: img.naturalHeight },
-                            rendered: { w: img.offsetWidth, h: img.offsetHeight },
-                            container: {
-                                w: img.parentElement.offsetWidth,
-                                h: img.parentElement.offsetHeight
-                            }
-                        });
-                    });
-                    console.log('=== PDF 圖片診斷 (原始) ===');
-                    imageDiagnostics.forEach(d => console.log(d));
-
                     // 使用 html2canvas 捕獲海報
                     const canvas = await html2canvas(poster, {
                         scale: 2, // 2x 解析度確保清晰
                         useCORS: true,
-                        allowTaint: true,
+                        allowTaint: false, // 改為 false，防止 canvas 被污染
                         backgroundColor: '#F7F5F0',
                         width: posterWidth,
                         height: posterHeight,
@@ -1089,43 +1071,19 @@
                                 el.style.background = 'none';
                             });
 
-                            // 診斷：記錄克隆後的圖片尺寸
-                            const clonedDiagnostics = [];
-                            const clonedImages = clonedDoc.querySelectorAll('img');
-                            clonedImages.forEach((img, i) => {
-                                clonedDiagnostics.push({
-                                    index: i,
-                                    natural: { w: img.naturalWidth, h: img.naturalHeight },
-                                    rendered: { w: img.offsetWidth, h: img.offsetHeight },
-                                    style: { width: img.style.width, height: img.style.height }
-                                });
-                            });
-                            console.log('=== PDF 圖片診斷 (克隆後) ===');
-                            clonedDiagnostics.forEach(d => console.log(d));
-
                             // 修復圖片 - 讓高度自適應，width 撐滿容器
                             // 同時調整容器尺寸，因為 html2canvas 捕獲的是計算後的佈局
                             const images = clonedDoc.querySelectorAll('img');
                             images.forEach(img => {
-                                // 移除 QR code 圖片（會有 CORS 問題，無法 toDataURL）
-                                // 檢查多種可能判斷 QR code 的方式
+                                // 在 clone 中直接修改 src，防止跨域圖片污染 canvas
                                 const srcLower = img.src.toLowerCase();
                                 const parentClass = img.parentElement?.classList?.toString() || '';
                                 const isQRCode = srcLower.includes('qrserver') ||
                                                  srcLower.includes('qr-code') ||
                                                  parentClass.includes('qr-code');
-                                console.log('圖片檢查:', { src: img.src.substring(0, 60), parentClass, isQRCode });
                                 if (isQRCode) {
-                                    // 替換為空白 div 保持佈局
-                                    const placeholder = clonedDoc.createElement('div');
-                                    placeholder.style.width = img.offsetWidth + 'px';
-                                    placeholder.style.height = img.offsetHeight + 'px';
-                                    placeholder.style.backgroundColor = '#F7F5F0';
-                                    placeholder.style.display = 'block';
-                                    if (img.parentNode) {
-                                        img.parentNode.replaceChild(placeholder, img);
-                                    }
-                                    return;
+                                    // 直接將 src 設為透明像素，防止加載跨域 QR code
+                                    img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
                                 }
 
                                 const container = img.parentElement;
@@ -1150,28 +1108,8 @@
                                 container.style.height = properHeight + 'px';
                                 container.style.flexShrink = '0';
                             });
-
-                            // 診斷：驗證修復後的圖片尺寸
-                            const afterFixDiagnostics = [];
-                            const afterImages = clonedDoc.querySelectorAll('img');
-                            afterImages.forEach((img, i) => {
-                                afterFixDiagnostics.push({
-                                    index: i,
-                                    rendered: { w: img.offsetWidth, h: img.offsetHeight },
-                                    style: { width: img.style.width, height: img.style.height },
-                                    container: {
-                                        w: img.parentElement.offsetWidth,
-                                        h: img.parentElement.offsetHeight
-                                    }
-                                });
-                            });
-                            console.log('=== PDF 圖片診斷 (修復後) ===');
-                            afterFixDiagnostics.forEach(d => console.log(d));
                         }
                     });
-
-                    console.log('=== Canvas 尺寸 ===');
-                    console.log({ width: canvas.width, height: canvas.height, aspectRatio: canvas.width / canvas.height });
 
                     // 恢復 transform
                     poster.style.transform = originalTransform;
@@ -1199,9 +1137,6 @@
                         finalHeightMm = a4HeightMm;
                         finalWidthMm = (canvas.width / canvas.height) * a4HeightMm;
                     }
-
-                    console.log('=== PDF 尺寸計算 ===');
-                    console.log({ canvasAspect: canvas.height / canvas.width, imgWidthMm, imgHeightMm, finalWidthMm, finalHeightMm });
 
                     // 居中放置
                     const xOffset = (a4WidthMm - finalWidthMm) / 2;
