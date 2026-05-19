@@ -727,8 +727,9 @@
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
-                /* A4 at 96dpi = 794px, poster = 420px, zoom = 794/420 = 1.89 */
-                zoom: 189% !important;
+                /* Scale the entire content to fit A4 */
+                transform: scale(1.4) !important;
+                transform-origin: center center !important;
             }
             /* 隱藏下載按鈕 */
             #downloadPdfBtn {
