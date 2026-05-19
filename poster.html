@@ -1071,12 +1071,15 @@
                                 el.style.background = 'none';
                             });
 
-                            // 修復圖片尺寸 - 讓圖片使用自然比例
+                            // 修復圖片 - 讓高度自適應，width 撐滿容器
                             const images = clonedDoc.querySelectorAll('img');
                             images.forEach(img => {
-                                // 移除固定高度，讓寬度決定大小
+                                // 設置寬度為容器寬度
+                                const container = img.parentElement;
+                                const containerWidth = container.offsetWidth || 100;
+                                img.style.width = containerWidth + 'px';
+                                // 高度自動，保持比例
                                 img.style.height = 'auto';
-                                img.style.width = '100%';
                                 img.style.objectFit = 'contain';
                             });
                         }
