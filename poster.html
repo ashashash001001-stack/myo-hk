@@ -721,13 +721,13 @@
                 margin: 0 !important;
                 width: 210mm !important;
                 height: 297mm !important;
-                overflow: visible !important;
+                overflow: hidden !important;
             }
             body {
                 display: flex !important;
                 justify-content: center !important;
-                align-items: flex-start !important;
-                /* A4 寬度 210mm ≈ 794px at 96dpi, 視口約 794px, poster 420px, 需要放大 794/420 ≈ 1.89 */
+                align-items: center !important;
+                /* A4 at 96dpi = 794px, poster = 420px, zoom = 794/420 = 1.89 */
                 zoom: 189% !important;
             }
             /* 隱藏下載按鈕 */
