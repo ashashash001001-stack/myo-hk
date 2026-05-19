@@ -1144,6 +1144,7 @@
 
                     // 將 canvas 轉換為圖片數據
                     const imgData = canvas.toDataURL('image/jpeg', 0.98);
+                    window.lastCanvasData = imgData;
 
                     // 添加圖片到 PDF
                     pdf.addImage(imgData, 'JPEG', xOffset, yOffset, finalWidthMm, finalHeightMm);
