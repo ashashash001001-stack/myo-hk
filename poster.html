@@ -1070,6 +1070,15 @@
                                 el.style.backgroundImage = 'none';
                                 el.style.background = 'none';
                             });
+
+                            // 修復圖片尺寸 - 讓圖片使用自然比例
+                            const images = clonedDoc.querySelectorAll('img');
+                            images.forEach(img => {
+                                // 移除固定高度，讓寬度決定大小
+                                img.style.height = 'auto';
+                                img.style.width = '100%';
+                                img.style.objectFit = 'contain';
+                            });
                         }
                     });
 
