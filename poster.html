@@ -713,23 +713,19 @@
             letter-spacing: 0.3px;
         }
 
-        /* 打印優化 - 置中並放大填滿 A4 頁面 */
+        /* 打印優化 - 讓瀏覽器處理縮放 */
         @media print {
             html, body {
                 background: white !important;
                 padding: 0 !important;
                 margin: 0 !important;
-                width: 210mm !important;
-                height: 297mm !important;
-                overflow: hidden !important;
+                width: auto !important;
+                height: auto !important;
+                overflow: visible !important;
             }
             body {
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                /* Scale the entire content to fit A4 */
-                transform: scale(1.4) !important;
-                transform-origin: center center !important;
+                display: block !important;
+                text-align: center !important;
             }
             /* 隱藏下載按鈕 */
             #downloadPdfBtn {
@@ -740,6 +736,7 @@
                 width: 420px !important;
                 min-width: 420px !important;
                 height: auto !important;
+                margin: 0 auto !important;
                 transform: none !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -750,9 +747,8 @@
 
         /* 統一 @page 規則 - A4 大小，無邊距，隱藏 header/footer */
         @page {
-            size: 210mm 297mm !important;
+            size: A4 !important;
             margin: 0 !important;
-            padding: 0 !important;
             /* 隱藏瀏覽器預設 header/footer */
             @bottom-left { content: none !important; }
             @bottom-right { content: none !important; }
