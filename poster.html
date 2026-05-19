@@ -715,14 +715,20 @@
 
         /* 打印優化 - 置中並放大填滿 A4 頁面 */
         @media print {
-            body {
+            html, body {
                 background: white !important;
                 padding: 0 !important;
                 margin: 0 !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                overflow: visible !important;
+            }
+            body {
                 display: flex !important;
                 justify-content: center !important;
-                align-items: center !important;
-                min-height: 100vh !important;
+                align-items: flex-start !important;
+                /* A4 寬度 210mm ≈ 794px at 96dpi, 視口約 794px, poster 420px, 需要放大 794/420 ≈ 1.89 */
+                zoom: 189% !important;
             }
             /* 隱藏下載按鈕 */
             #downloadPdfBtn {
@@ -733,9 +739,7 @@
                 width: 420px !important;
                 min-width: 420px !important;
                 height: auto !important;
-                /* A4 寬度 210mm ≈ 794px at 96dpi, poster 420px, 需要放大 794/420 ≈ 1.89 */
-                transform: scale(1.89) !important;
-                transform-origin: center center !important;
+                transform: none !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 page-break-after: always;
@@ -745,8 +749,9 @@
 
         /* 統一 @page 規則 - A4 大小，無邊距，隱藏 header/footer */
         @page {
-            size: A4 !important;
+            size: 210mm 297mm !important;
             margin: 0 !important;
+            padding: 0 !important;
             /* 隱藏瀏覽器預設 header/footer */
             @bottom-left { content: none !important; }
             @bottom-right { content: none !important; }
