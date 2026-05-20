@@ -712,21 +712,14 @@
             letter-spacing: 0.3px;
         }
 
-        /* 打印優化 - A4 滿版，吸底頁尾 */
+        /* 打印優化 - transform: scale() 等比例縮放至 A4 */
         @media print {
             html, body {
-                background: white !important;
+                background: #F7F5F0 !important;
                 padding: 0 !important;
                 margin: 0 !important;
                 width: 100% !important;
-                height: 100% !important;
                 overflow: hidden !important;
-            }
-            body {
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                background: #F7F5F0 !important;
             }
             /* 隱藏下載按鈕 */
             #downloadPdfBtn {
@@ -734,33 +727,21 @@
             }
             .a5-flyer {
                 box-shadow: none !important;
-                width: 210mm !important;
-                height: 297mm !important;
-                min-width: auto !important;
+                width: 420px !important;
+                min-width: 0 !important;
+                height: auto !important;
                 margin: 0 !important;
-                padding: 12mm 14mm !important;
+                padding: 8.4px !important;
                 box-sizing: border-box !important;
                 display: flex !important;
                 flex-direction: column !important;
-                align-items: stretch !important;
-                transform: none !important;
+                /* 等比例縮放：420px → 210mm */
+                transform: scale(calc(210mm / 420px)) !important;
+                transform-origin: top left !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 page-break-after: always;
-                overflow: hidden !important;
                 background-color: #F7F5F0 !important;
-            }
-            /* 上方內容區塊的緊湊間距 */
-            .a5-flyer > * {
-                margin-bottom: 5mm !important;
-            }
-            .a5-flyer > *:last-child {
-                margin-bottom: 0 !important;
-            }
-            /* 吸底頁尾：自動推到 A4 最底部 */
-            .footer-section {
-                margin-top: auto !important;
-                margin-bottom: 0 !important;
             }
         }
 
