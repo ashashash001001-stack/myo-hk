@@ -1072,6 +1072,34 @@
                                 el.style.backgroundImage = 'none';
                                 el.style.background = 'none';
                             });
+
+                            // 修復圖片 - 讓高度自適應，width 撐滿容器
+                            // 同時調整容器尺寸，因為 html2canvas 捕獲的是計算後的佈局
+                            const images = clonedDoc.querySelectorAll('img');
+                            images.forEach(img => {
+                                const container = img.parentElement;
+                                if (!container) return;
+
+                                const naturalWidth = img.naturalWidth;
+                                const naturalHeight = img.naturalHeight;
+                                if (naturalWidth === 0 || naturalHeight === 0) return;
+
+                                const containerWidth = container.offsetWidth || 100;
+                                const aspectRatio = naturalWidth / naturalHeight;
+
+                                // 計算正確的高度以保持寬高比
+                                const properHeight = containerWidth / aspectRatio;
+
+                                // 設置圖片樣式
+                                img.style.width = containerWidth + 'px';
+                                img.style.height = properHeight + 'px';
+                                img.style.objectFit = 'contain';
+
+                                // 調整容器尺寸，讓 html2canvas 捕獲正確的佈局
+                                container.style.width = containerWidth + 'px';
+                                container.style.height = properHeight + 'px';
+                                container.style.flexShrink = '0';
+                            });
                         }
                     });
 
