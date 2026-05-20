@@ -712,19 +712,21 @@
             letter-spacing: 0.3px;
         }
 
-        /* 打印優化 - 讓瀏覽器處理縮放 */
+        /* 打印優化 - A4 滿版 */
         @media print {
             html, body {
                 background: white !important;
                 padding: 0 !important;
                 margin: 0 !important;
-                width: auto !important;
-                height: auto !important;
-                overflow: visible !important;
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden !important;
             }
             body {
-                display: block !important;
-                text-align: center !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                background: #F7F5F0 !important;
             }
             /* 隱藏下載按鈕 */
             #downloadPdfBtn {
@@ -732,15 +734,22 @@
             }
             .a5-flyer {
                 box-shadow: none !important;
-                width: 420px !important;
-                min-width: 420px !important;
-                height: auto !important;
-                margin: 0 auto !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                min-width: auto !important;
+                margin: 0 !important;
+                padding: 12mm 14mm !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                align-items: stretch !important;
                 transform: none !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 page-break-after: always;
-                overflow: visible !important;
+                overflow: hidden !important;
+                background-color: #F7F5F0 !important;
             }
         }
 
@@ -757,20 +766,7 @@
             @top-center { content: none !important; }
         }
 
-        /* iOS Safari 打印優化 */
-        @media print and (-webkit-min-device-pixel-ratio: 0) {
-            body {
-                -webkit-flex: display !important;
-                display: flex !important;
-            }
-            .a5-flyer {
-                /* iOS 上更強的置中 */
-                margin-left: auto !important;
-                margin-right: auto !important;
-                -webkit-transform: scale(1.35) !important;
-                transform: scale(1.35) !important;
-            }
-        }
+        /* iOS Safari 打印 - 使用 A4 滿版，不需要 scale */
 
         /* 隱藏打印時的 URL 和頁碼 */
         @page {
