@@ -20,6 +20,7 @@
 - [部署指南](#部署指南)
 - [專案結構](#專案結構)
 - [開發規範](#開發規範)
+- [PDF 列印除錯筆記](#pdf-列印除錯筆記)
 
 ---
 
@@ -370,3 +371,44 @@ git push
 ## 授權
 
 © 2026 My O! 版權所有。
+
+---
+
+## PDF 列印除錯筆記
+
+### 背景
+`poster.html` 提供「下載 PDF」功能，透過 `window.print()` 讓瀏覽器原生輸出 A4 PDF。
+
+### 遇到的問題與解決方案
+
+| # | 嘗試 | 問題 | 學到的教訓 |
+|---|------|------|-----------|
+| 1 | `html2canvas` + `jsPDF` | 圖片被 CSS 壓扁（`object-fit: cover`、`flex`、`padding` 無法被正確捕捉） | html2canvas 不支援現代 CSS 佈局（flexbox、gap、object-fit、transform），只能用於簡單 DOM |
+| 2 | `window.print()` 原生列印 | POPUP 視窗中所有圖片變空白 | `window.open()` + `document.write()` 重建 DOM 會丟失圖片資源參照，**必須在原頁面觸發 `window.print()`** |
+| 3 | `@media print` + `transform: scale(calc(...))` | 海報被推到右下，左邊大片空白、右邊內容飛出 A4 | 網頁的 `margin: 0 auto` / flex 居中會在 print 時將容器推到畫面中央，`transform-origin: top left` 在此基礎上縮放 → 位移放大 |
+| 4 | **✅ 最終解法**: `position: absolute; left: 0; top: 0` + 精確 `scale(1.8898)` | 完美 | **核心洞察**：print 時必須先「釘死」容器在 (0,0)，再從左上角縮放 |
+
+### 最終實現（第 4 版）
+
+```css
+@media print {
+  .a5-flyer {
+    position: absolute !important;   /* 脫離排版流，避免居中位移 */
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;            /* 拔除 margin: 0 auto */
+    width: 420px !important;         /* 海報原始設計寬度 */
+    transform: scale(1.8898) !important;  /* A4 width(793.7px) / poster(420px) */
+    transform-origin: top left !important;
+  }
+}
+```
+
+### 關鍵數字
+
+| 參數 | 數值 | 來源 |
+|------|------|------|
+| 海報設計寬度 | 420px | `poster.html` `.a5-flyer` |
+| A4 寬度（96 DPI） | 793.7px | `210mm × 3.7795 px/mm` |
+| A4 高度 | 1123px | 海報高度 530px × 1.8898 = 1002px（< A4 高度，正常留白） |
+| 縮放倍數 | 1.8898 | `793.7 / 420`，硬編碼避免 `calc()` 單位混算 |
