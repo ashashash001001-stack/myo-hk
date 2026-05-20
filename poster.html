@@ -1034,17 +1034,19 @@
             const poster = document.querySelector('.a5-flyer');
 
             downloadBtn.addEventListener('click', async function() {
-                // 禁用按鈕防止重複點擊
                 downloadBtn.disabled = true;
                 downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>生成中...';
 
                 try {
+                    // 隱藏下載按鈕，避免出現在截圖中
+                    downloadBtn.style.display = 'none';
+
                     // 暫時移除 transform 以獲取真實尺寸
                     const originalTransform = poster.style.transform;
                     poster.style.transform = 'none';
 
                     // 等待 DOM 更新
-                    await new Promise(resolve => requestAnimationFrame(resolve));
+                    await new Promise(resolve => setTimeout(resolve, 100));
 
                     // 確保 poster 有實際尺寸
                     const posterWidth = poster.offsetWidth;
@@ -1053,11 +1055,11 @@
                         throw new Error('海報尺寸為 0，無法生成 PDF');
                     }
 
-                    // 使用 html2canvas 捕獲海報
+                    // 使用 html2canvas 截圖（直接截取可見區域，不再修復 DOM）
                     const canvas = await html2canvas(poster, {
-                        scale: 2, // 2x 解析度確保清晰
+                        scale: 2,
                         useCORS: true,
-                        allowTaint: false, // 改為 false，防止 canvas 被污染
+                        allowTaint: false,
                         backgroundColor: '#F7F5F0',
                         width: posterWidth,
                         height: posterHeight,
@@ -1070,49 +1072,12 @@
                                 el.style.backgroundImage = 'none';
                                 el.style.background = 'none';
                             });
-
-                            // 修復圖片 - 讓高度自適應，width 撐滿容器
-                            // 同時調整容器尺寸，因為 html2canvas 捕獲的是計算後的佈局
-                            const images = clonedDoc.querySelectorAll('img');
-                            images.forEach(img => {
-                                // 在 clone 中直接修改 src，防止跨域圖片污染 canvas
-                                const srcLower = img.src.toLowerCase();
-                                const parentClass = img.parentElement?.classList?.toString() || '';
-                                const isQRCode = srcLower.includes('qrserver') ||
-                                                 srcLower.includes('qr-code') ||
-                                                 parentClass.includes('qr-code');
-                                if (isQRCode) {
-                                    // 直接將 src 設為透明像素，防止加載跨域 QR code
-                                    img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-                                }
-
-                                const container = img.parentElement;
-                                const naturalWidth = img.naturalWidth;
-                                const naturalHeight = img.naturalHeight;
-
-                                if (naturalWidth === 0 || naturalHeight === 0) return;
-
-                                const containerWidth = container.offsetWidth || 100;
-                                const aspectRatio = naturalWidth / naturalHeight;
-
-                                // 計算正確的高度以保持寬高比
-                                const properHeight = containerWidth / aspectRatio;
-
-                                // 設置圖片樣式
-                                img.style.width = containerWidth + 'px';
-                                img.style.height = properHeight + 'px';
-                                img.style.objectFit = 'contain';
-
-                                // 調整容器尺寸，讓 html2canvas 捕獲正確的佈局
-                                container.style.width = containerWidth + 'px';
-                                container.style.height = properHeight + 'px';
-                                container.style.flexShrink = '0';
-                            });
                         }
                     });
 
-                    // 恢復 transform
+                    // 恢復 transform 和按鈕
                     poster.style.transform = originalTransform;
+                    downloadBtn.style.display = '';
 
                     // A4 尺寸 (210mm x 297mm)
                     const a4WidthMm = 210;
@@ -1127,7 +1092,7 @@
                     });
 
                     // 計算 poster 在 A4 上的尺寸 - 寬度充滿 A4，高度按比例
-                    const imgWidthMm = a4WidthMm; // 寬度充滿
+                    const imgWidthMm = a4WidthMm;
                     const imgHeightMm = (canvas.height / canvas.width) * imgWidthMm;
 
                     // 如果高度超過 A4，則縮小以容納
@@ -1153,6 +1118,8 @@
 
                 } catch (error) {
                     console.error('PDF 生成失敗:', error);
+                    poster.style.transform = originalTransform;
+                    downloadBtn.style.display = '';
                     alert('PDF 生成失敗，請稍後再試。');
                 }
 
