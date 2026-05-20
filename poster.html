@@ -7,8 +7,7 @@
     <meta name="robots" content="index, follow">
     <link rel="icon" href="image/01_company_logo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
 
     <style>
         /* 匯入高級字體 - 優雅版 */
@@ -794,9 +793,6 @@
             header, footer {
                 display: none !important;
             }
-            :after, :before {
-                content: none !important;
-            }
         }
 
         /* 屏幕預覽 */
@@ -1028,125 +1024,15 @@
             });
         })();
 
-// PDF 下載功能
+// PDF 下載功能 — 使用瀏覽器原生打印，保證 CSS 完全正確
         (function() {
             const downloadBtn = document.getElementById('downloadPdfBtn');
-            const poster = document.querySelector('.a5-flyer');
 
-            downloadBtn.addEventListener('click', async function() {
-                downloadBtn.disabled = true;
-                downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>生成中...';
-
-                try {
-                    // 隱藏下載按鈕，避免出現在截圖中
-                    downloadBtn.style.display = 'none';
-
-                    // 暫時移除 transform 以獲取真實尺寸
-                    const originalTransform = poster.style.transform;
-                    poster.style.transform = 'none';
-
-                    // 等待 DOM 更新
-                    await new Promise(resolve => setTimeout(resolve, 100));
-
-                    // 確保 poster 有實際尺寸
-                    const posterWidth = poster.offsetWidth;
-                    const posterHeight = poster.offsetHeight;
-                    if (posterWidth === 0 || posterHeight === 0) {
-                        throw new Error('海報尺寸為 0，無法生成 PDF');
-                    }
-
-                    // 使用 html2canvas 截圖
-                    const canvas = await html2canvas(poster, {
-                        scale: 2,
-                        useCORS: true,
-                        allowTaint: false,
-                        backgroundColor: '#F7F5F0',
-                        width: posterWidth,
-                        height: posterHeight,
-                        imageTimeout: 15000,
-                        logging: false,
-                        onclone: function(clonedDoc) {
-                            // 移除所有背景圖片樣式
-                            const allElements = clonedDoc.querySelectorAll('*');
-                            allElements.forEach(el => {
-                                el.style.backgroundImage = 'none';
-                                el.style.background = 'none';
-                            });
-
-                            // 修復圖片 - 移除 object-fit，改用 width/height
-                            const images = clonedDoc.querySelectorAll('img');
-                            images.forEach(img => {
-                                const container = img.parentElement;
-                                if (!container) return;
-
-                                const naturalWidth = img.naturalWidth;
-                                const naturalHeight = img.naturalHeight;
-                                if (naturalWidth === 0 || naturalHeight === 0) return;
-
-                                const containerWidth = container.offsetWidth || 100;
-                                const containerHeight = container.offsetHeight || 100;
-                                const aspectRatio = naturalWidth / naturalHeight;
-
-                                // 計算正確的顯示尺寸（以寬度為準，保持比例）
-                                const properWidth = containerWidth;
-                                const properHeight = containerWidth / aspectRatio;
-
-                                // 強制圖片尺寸
-                                img.style.width = properWidth + 'px';
-                                img.style.height = properHeight + 'px';
-                                img.style.objectFit = 'unset';  // 禁用 object-fit
-                                img.style.flexShrink = '0';
-
-                                // 調整容器高度
-                                container.style.height = properHeight + 'px';
-                                container.style.flexShrink = '0';
-                            });
-                        }
-                    });
-
-                    // 恢復 transform 和按鈕
-                    poster.style.transform = originalTransform;
-                    downloadBtn.style.display = '';
-
-                    // A4 尺寸 (210mm x 297mm)
-                    const a4WidthMm = 210;
-                    const a4HeightMm = 297;
-
-                    // 創建 jsPDF 實例
-                    const { jsPDF } = window.jspdf;
-                    const pdf = new jsPDF({
-                        orientation: 'portrait',
-                        unit: 'mm',
-                        format: 'a4'
-                    });
-
-                    // 充滿 A4 寬度
-                    const imgWidthMm = a4WidthMm;
-                    const imgHeightMm = (canvas.height / canvas.width) * imgWidthMm;
-
-                    let finalWidthMm = imgWidthMm;
-                    let finalHeightMm = imgHeightMm;
-                    if (imgHeightMm > a4HeightMm) {
-                        finalHeightMm = a4HeightMm;
-                        finalWidthMm = (canvas.width / canvas.height) * a4HeightMm;
-                    }
-
-                    const xOffset = (a4WidthMm - finalWidthMm) / 2;
-                    const yOffset = (a4HeightMm - finalHeightMm) / 2;
-
-                    const imgData = canvas.toDataURL('image/jpeg', 0.98);
-                    pdf.addImage(imgData, 'JPEG', xOffset, yOffset, finalWidthMm, finalHeightMm);
-                    pdf.save('myo-poster.pdf');
-
-                } catch (error) {
-                    console.error('PDF 生成失敗:', error);
-                    poster.style.transform = originalTransform;
-                    downloadBtn.style.display = '';
-                    alert('PDF 生成失敗，請稍後再試。');
-                }
-
-                downloadBtn.disabled = false;
-                downloadBtn.innerHTML = '<i class="fas fa-download" style="margin-right: 8px;"></i>下載 PDF';
+            downloadBtn.addEventListener('click', function() {
+                // 瀏覽器原生打印（已有 @media print CSS 規則）
+                // 打印時只顯示 .a5-flyer，下載按鈕自動隱藏
+                // A4 頁面，無邊距，所有 CSS（flex、gap、object-fit）都正確
+                window.print();
             });
         })();
     </script>
