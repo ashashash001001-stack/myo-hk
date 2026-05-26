@@ -1,6 +1,6 @@
 import "./Documents.css";
 interface Props { step: number; }
-export function Ch03({ step }: Props) {
+export function Documents({ step }: Props) {
   if (step === 0) return (
     <div className="Ch03 step-0"><h2>📄 所需文件</h2></div>
   );

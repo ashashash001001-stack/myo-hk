@@ -4,7 +4,7 @@ interface Props {
   step: number;
 }
 
-export function Info4({ step }: Props) {
+export function Comparison({ step }: Props) {
   if (step === 0) return <div className="Info4 step-0"><h2>三種方式比較</h2></div>;
   if (step === 1) return (
     <div className="Info4 step-1" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", maxWidth: "600px" }}>

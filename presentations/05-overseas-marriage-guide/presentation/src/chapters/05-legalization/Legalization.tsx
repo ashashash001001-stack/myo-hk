@@ -1,6 +1,6 @@
 import "./Legalization.css";
 interface Props { step: number; }
-export function Ch05({ step }: Props) {
+export function Legalization({ step }: Props) {
   if (step === 0) return (
     <div className="Ch05 step-0"><h2>⚖️ 法律認受</h2></div>
   );

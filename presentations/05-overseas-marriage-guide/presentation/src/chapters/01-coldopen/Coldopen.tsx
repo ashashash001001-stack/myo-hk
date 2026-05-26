@@ -1,6 +1,6 @@
 import "./Coldopen.css";
 interface Props { step: number; }
-export function Ch01({ step }: Props) {
+export function Coldopen({ step }: Props) {
   if (step === 0) return (
     <div className="Ch01 step-0"><h2>🌍 海外人士結婚</h2></div>
   );

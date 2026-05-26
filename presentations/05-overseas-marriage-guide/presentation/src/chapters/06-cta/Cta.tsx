@@ -1,6 +1,6 @@
-import "./Cta.css";
+import "./CTA.css";
 interface Props { step: number; }
-export function Ch06({ step }: Props) {
+export function CTA({ step }: Props) {
   if (step === 0) return (
     <div className="Ch06 step-0"><h2>總結</h2></div>
   );

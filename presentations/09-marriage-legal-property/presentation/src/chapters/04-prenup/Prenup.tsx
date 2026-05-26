@@ -1,11 +1,11 @@
 import "./Prenup.css";
-import { narrations } from "./narrations";
+import { NARRATIONS as narrations } from "./narrations";
 
 interface Props {
   step: number;
 }
 
-export function Component({ step }: Props) {
+export function Prenup({ step }: Props) {
   if (step === 0) {
     return (
       <div className="Component step-0">

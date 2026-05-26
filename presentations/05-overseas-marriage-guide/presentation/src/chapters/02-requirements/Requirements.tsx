@@ -1,6 +1,6 @@
 import "./Requirements.css";
 interface Props { step: number; }
-export function Ch02({ step }: Props) {
+export function Requirements({ step }: Props) {
   if (step === 0) return (
     <div className="Ch02 step-0"><h2>✓ 資格要求</h2></div>
   );

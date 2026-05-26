@@ -1,6 +1,6 @@
 import "./Process.css";
 interface Props { step: number; }
-export function Ch04({ step }: Props) {
+export function Process({ step }: Props) {
   if (step === 0) return (
     <div className="Ch04 step-0"><h2>📋 登記流程</h2></div>
   );
