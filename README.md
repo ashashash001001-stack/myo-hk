@@ -20,6 +20,7 @@
 - [部署指南](#部署指南)
 - [專案結構](#專案結構)
 - [開發規範](#開發規範)
+- [婚禮視頻 presentations](#婚禮視頻-presentations)
 - [品牌資訊](#品牌資訊)
 - [PDF 列印除錯筆記](#pdf-列印除錯筆記)
 
@@ -399,6 +400,10 @@ myo-hk/
 │   └── mobile.spec.ts          # 手機版 Playwright 測試
 │
 ├── docs/                       # 文件資源
+├── presentations/              # 40 個婚禮視頻展示項目
+│   ├── index.html              # 視頻索引頁面
+│   ├── _scaffold.sh            # 腳手架生成腳本
+│   └── [01-40]-*/presentation/ # 40 個獨立 Vite + React 項目
 │
 ├── fix_json_ld_and_table.py    # JSON-LD 合併 + 表格無障礙修復
 ├── fix_medium_issues.py        # SEO 中等問題批量修復
@@ -448,6 +453,133 @@ myo-hk/
 git add .
 git commit -m "feat: 描述更改"
 git push
+```
+
+---
+
+## 婚禮視頻 presentations
+
+40 個獨立婚禮視頻展示項目已完成，部署於 `presentations/` 目錄。
+
+### 功能特點
+
+- **40 個主題視頻** — 涵蓋香港結婚籌備各個環節（場地、習俗、婚紗、攝影等）
+- **6 章節結構** — 每個視頻包含 6 個章節（開場 → 內容 → 結尾 CTA）
+- **繁體中文** — 全部內容使用繁體中文
+- **TypeScript + React + Vite** — 現代前端技術棧
+- **無障礙支援** — `prefers-reduced-motion` 媒體查詢支援
+- **響應式設計** — 適配桌面和移動設備
+
+### 目錄結構
+
+每個視頻項目位於 `presentations/XX-主題-slug/presentation/`，結構如下：
+
+```
+presentations/
+├── index.html                  # 全部 40 個視頻的索引頁面
+├── _scaffold.sh               # 視頻項目腳手架生成腳本
+├── 01-hong-kong-wedding-flow/
+│   └── presentation/
+│       ├── src/
+│       │   ├── chapters/       # 6 個章節目錄（01-coldopen ~ 06-cta）
+│       │   │   └── 01-coldopen/
+│       │   │       ├── Coldopen.tsx
+│       │   │       ├── Coldopen.css
+│       │   │       └── narrations.ts
+│       │   ├── registry/
+│       │   │   ├── chapters.ts  # 章節註冊表
+│       │   │   └── types.ts      # 類型定義
+│       │   ├── hooks/
+│       │   │   └── useStepper.ts
+│       │   ├── App.tsx
+│       │   └── main.tsx
+│       └── tsconfig.json
+└── [39 more video projects...]
+```
+
+### 40 個視頻主題
+
+| # | 主題 | 主題 |
+|---|---|---|
+| 01 | 香港結婚流程 | 結婚資格與文件 |
+| 02 | 結婚 checklist 時間表 | 海外結婚指南 |
+| 03 | 結婚習俗完整攻略 | 婚姻習俗傳統 |
+| 04 | 婚禮場地選擇 | 教堂婚禮指南 |
+| 05 | 海外結婚指南 | 結婚年齡須知 |
+| 06 | 結婚年齡法律 | 同性婚姻 |
+| 07 | 求婚策劃攻略 | 求婚驚喜創意 |
+| 08 | 情人節求婚創意 | 婚禮驚喜策劃 |
+| 09 | 求婚方式創意 | 訂婚派對策劃 |
+| 10 | 求婚戒指選擇 | 求婚成功後準備 |
+| 11 | 結婚領證流程 | 婚姻登記預約 |
+| 12 | 結婚文件代辦 | 證婚人須知 |
+| 13 | 結婚年齡規定 | 婚姻法新規 |
+| 14 | 海外結婚代辦 | 跨境婚姻指南 |
+| 15 | 婚紗挑選攻略 | 婚紗款式選擇 |
+| 16 | 婚紗試穿準備 | 婚紗尺碼選擇 |
+| 17 | 婚紗保養保存 | 婚紗拍攝技巧 |
+| 18 | 求婚攻略完整版 | 婚禮策劃時間表 |
+| 19 | 婚禮預算規劃 | 婚禮省錢技巧 |
+| 20 | 婚禮賓客名單 | 婚禮座位安排 |
+| 21 | 婚禮音樂選擇 | 婚禮歌單推薦 |
+| 22 | 婚禮流程策劃 | 婚禮當天時間表 |
+| 23 | 婚禮化妝造型 | 新娘妝容教程 |
+| 24 | 新娘美甲建議 | 婚禮美髮造型 |
+| 25 | 婚紗拍攝技巧 | 婚禮攝影指南 |
+| 26 | 婚禮場地佈置 | 婚禮花藝設計 |
+| 27 | 婚禮蛋糕選擇 | 婚禮甜品桌 |
+| 28 | 婚禮回禮禮物 | 婚禮賓客禮品 |
+| 29 | 婚禮統籌技巧 | 婚禮公司選擇 |
+| 30 | 婚禮保險須知 | 婚禮保障 |
+| 31 | 結婚證書套選擇 | 結婚證書設計 |
+| 32 | 結婚請柬設計 | 結婚請帖款式 |
+| 33 | 敬茶禮儀習俗 | 結婚敬茶準備 |
+| 34 | 安床習俗詳解 | 結婚安床攻略 |
+| 35 | 过大礼传统习俗 | 結婚過大禮攻略 |
+| 36 | 回門習俗攻略 | 結婚回門禮俗 |
+| 37 | 蜜月旅行攻略 | 蜜月目的地推薦 |
+| 38 | 婚姻生活適應 | 婚後生活調適 |
+| 39 | 婚後財務規劃 | 婚後理財攻略 |
+| 40 | 結婚回禮創意 | 婚禮優惠資訊 |
+
+### 技術架構
+
+| 層面 | 技術 |
+|------|------|
+| 框架 | React 18 + TypeScript |
+| 構建工具 | Vite |
+| 樣式 | CSS 變量 + 傳統 CSS |
+| 類型檢查 | TypeScript strict mode |
+| 部署 | GitHub Pages (每視頻獨立部署) |
+
+### 開發命令
+
+```bash
+cd presentations/01-hong-kong-wedding-flow/presentation
+
+# 安裝依賴
+npm install
+
+# 本地開發
+npm run dev
+
+# 類型檢查
+npx tsc --noEmit
+
+# 生產構建
+npm run build
+```
+
+### 創建新視頻
+
+```bash
+# 使用腳手架腳本
+cd presentations
+./_scaffold.sh
+
+# 或手動創建
+mkdir -p presentations/XX-topic-slug/presentation/src/{chapters,registry,hooks}
+# 複製 package.json, tsconfig.json, vite.config.ts 等
 ```
 
 ---
