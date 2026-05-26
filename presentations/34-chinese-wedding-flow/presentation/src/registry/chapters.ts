@@ -1,4 +1,4 @@
-import type { Chapter } from "./types";
+import type { ChapterDef } from "./types";
 import { Coldopen } from "../chapters/01-coldopen/Coldopen";
 import { Proposal } from "../chapters/02-proposal/Proposal";
 import { Guoda } from "../chapters/03-guoda/Guoda";
@@ -12,7 +12,7 @@ import { NARRATIONS as N04 } from "../chapters/04-wedding/narrations";
 import { NARRATIONS as N05 } from "../chapters/05-honeymoon/narrations";
 import { NARRATIONS as N06 } from "../chapters/06-cta/narrations";
 
-export const CHAPTERS: Chapter[] = [
+export const CHAPTERS: ChapterDef[] = [
   { id: "01-coldopen", title: "傳統婚禮流程", narrations: N01, Component: Coldopen },
   { id: "02-proposal", title: "提親", narrations: N02, Component: Proposal },
   { id: "03-guoda", title: "過大禮", narrations: N03, Component: Guoda },
