@@ -1,0 +1,4 @@
+.Taiwan { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Taiwan.step-0, .Taiwan.step-1, .Taiwan.step-2, .Taiwan.final { flex-direction: column; text-align: center; gap: 16px; }
+.Taiwan h2 { font-size: 2.5rem; font-weight: 700; }
+.Taiwan p { font-size: 1.2rem; max-width: 400px; }

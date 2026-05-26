@@ -1,0 +1,4 @@
+.Display { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Display.step-0, .Display.step-1, .Display.step-2, .Display.final { flex-direction: column; text-align: center; gap: 16px; }
+.Display h2 { font-size: 2.5rem; font-weight: 700; }
+.Display p { font-size: 1.2rem; max-width: 400px; }

@@ -1,0 +1,4 @@
+.Engagement { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Engagement.step-0, .Engagement.step-1, .Engagement.step-2, .Engagement.final { flex-direction: column; text-align: center; gap: 16px; }
+.Engagement h2 { font-size: 2.5rem; font-weight: 700; }
+.Engagement p { font-size: 1.2rem; max-width: 400px; }

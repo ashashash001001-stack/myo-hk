@@ -1,0 +1,4 @@
+.Japan { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Japan.step-0, .Japan.step-1, .Japan.step-2, .Japan.final { flex-direction: column; text-align: center; gap: 16px; }
+.Japan h2 { font-size: 2.5rem; font-weight: 700; }
+.Japan p { font-size: 1.2rem; max-width: 400px; }

@@ -1,0 +1,10 @@
+.coldopen { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-0 { flex-direction: column; text-align: center; gap: 24px; }
+.hook-icon { font-size: 4rem; }
+.hook-text { font-size: 2.5rem; font-weight: 700; }
+.hook-sub { font-size: 1.2rem; color: var(--text-muted); }
+.step-1 { flex-direction: column; text-align: center; gap: 16px; }
+.big-number { font-size: 6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.step-2 { flex-direction: column; gap: 24px; }
+.preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 500px; }
+.preview-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; font-weight: 500; box-shadow: var(--shadow); }

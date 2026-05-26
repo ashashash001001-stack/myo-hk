@@ -1,0 +1,8 @@
+.calendar { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-container { flex-direction: column; gap: 20px; text-align: center; }
+.cal-month { font-size: 2rem; font-weight: 700; color: var(--accent); }
+.cal-dates { font-size: 1.3rem; font-weight: 500; }
+.cal-note { font-size: 1rem; color: var(--text-muted); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 20px; }
+.final { gap: 16px; }
+.final h2 { font-size: 2rem; }
+.final p { color: var(--text-muted); font-size: 1.1rem; }

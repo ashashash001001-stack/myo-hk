@@ -1,0 +1,60 @@
+.Component {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.step-0 {
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+}
+
+.step-0 h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.step-1 {
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.step-1 .requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-1 .req-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  padding: 12px 24px;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+.step-1 .req-icon {
+  font-size: 1.5rem;
+}
+
+.step-2 {
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.step-2 p {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--warning, #e65100);
+}

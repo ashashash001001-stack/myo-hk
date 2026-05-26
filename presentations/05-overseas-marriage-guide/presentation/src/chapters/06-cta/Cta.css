@@ -1,0 +1,13 @@
+.Ch06 { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-0 { flex-direction: column; text-align: center; gap: 16px; }
+.step-0 h2 { font-size: 2.5rem; font-weight: 700; }
+.step-0 p { font-size: 1.2rem; line-height: 1.6; }
+.step-1 { flex-direction: column; text-align: center; gap: 16px; max-width: 400px; }
+.step-1 .Ch06-steps { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.step-1 .Ch06-step { background: var(--surface); padding: 16px 20px; border-radius: 12px; display: flex; align-items: center; gap: 12px; font-size: 1.1rem; }
+.step-1 .Ch06-step span { background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
+.step-2 { flex-direction: column; text-align: center; gap: 16px; max-width: 400px; }
+.step-2 .Ch06-cta { display: flex; flex-direction: column; gap: 16px; align-items: center; }
+.step-2 .Ch06-cta p { font-size: 1.2rem; }
+.step-2 .Ch06-btn { background: var(--primary); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: opacity 0.2s; }
+.step-2 .Ch06-btn:hover { opacity: 0.9; }

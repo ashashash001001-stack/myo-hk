@@ -1,0 +1,4 @@
+.Couple { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Couple.step-0, .Couple.step-1, .Couple.step-2, .Couple.final { flex-direction: column; text-align: center; gap: 16px; }
+.Couple h2 { font-size: 2.5rem; font-weight: 700; }
+.Couple p { font-size: 1.2rem; max-width: 400px; }

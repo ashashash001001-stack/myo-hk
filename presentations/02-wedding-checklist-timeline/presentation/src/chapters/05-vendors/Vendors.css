@@ -1,0 +1,8 @@
+.vendors { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-0 { flex-direction: column; text-align: center; }
+.big-q { font-size: 2.5rem; font-weight: 700; }
+.step-card { flex-direction: column; text-align: center; gap: 16px; }
+.vendor-icon { font-size: 4rem; }
+.vendor-tip { color: var(--text-muted); font-size: 1.1rem; max-width: 300px; }
+.step-final { flex-direction: column; text-align: center; gap: 16px; }
+.step-final p { line-height: 1.8; }

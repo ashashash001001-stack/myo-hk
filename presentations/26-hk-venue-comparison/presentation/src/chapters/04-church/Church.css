@@ -1,0 +1,4 @@
+.Church { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Church.step-0, .Church.step-1, .Church.step-2, .Church.final { flex-direction: column; text-align: center; gap: 16px; }
+.Church h2 { font-size: 2.5rem; font-weight: 700; }
+.Church p { font-size: 1.2rem; max-width: 400px; }

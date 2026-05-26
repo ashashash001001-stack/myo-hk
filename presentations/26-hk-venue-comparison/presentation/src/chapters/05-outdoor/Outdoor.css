@@ -1,0 +1,4 @@
+.Outdoor { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Outdoor.step-0, .Outdoor.step-1, .Outdoor.step-2, .Outdoor.final { flex-direction: column; text-align: center; gap: 16px; }
+.Outdoor h2 { font-size: 2.5rem; font-weight: 700; }
+.Outdoor p { font-size: 1.2rem; max-width: 400px; }

@@ -1,0 +1,4 @@
+.Durability { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Durability.step-0, .Durability.step-1, .Durability.step-2, .Durability.final { flex-direction: column; text-align: center; gap: 16px; }
+.Durability h2 { font-size: 2.5rem; font-weight: 700; }
+.Durability p { font-size: 1.2rem; max-width: 400px; }

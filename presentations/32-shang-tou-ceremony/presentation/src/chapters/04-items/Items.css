@@ -1,0 +1,4 @@
+.Items { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Items.step-0, .Items.step-1, .Items.step-2, .Items.final { flex-direction: column; text-align: center; gap: 16px; }
+.Items h2 { font-size: 2.5rem; font-weight: 700; }
+.Items p { font-size: 1.2rem; max-width: 400px; }

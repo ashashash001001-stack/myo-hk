@@ -1,0 +1,7 @@
+.checklist { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-container { flex-direction: column; gap: 24px; text-align: center; }
+.cat-title { font-size: 2rem; color: var(--accent); }
+.items-col { display: flex; flex-direction: column; gap: 16px; max-width: 350px; }
+.check-item { font-size: 1.2rem; padding: 12px 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: left; }
+.final { gap: 16px; }
+.final h2 { font-size: 2rem; }

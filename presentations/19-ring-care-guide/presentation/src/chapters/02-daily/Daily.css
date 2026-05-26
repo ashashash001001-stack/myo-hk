@@ -1,0 +1,4 @@
+.Daily { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Daily.step-0, .Daily.step-1, .Daily.step-2, .Daily.final { flex-direction: column; text-align: center; gap: 16px; }
+.Daily h2 { font-size: 2.5rem; font-weight: 700; }
+.Daily p { font-size: 1.2rem; max-width: 400px; }

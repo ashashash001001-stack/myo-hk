@@ -1,0 +1,4 @@
+.Current { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-0 { flex-direction: column; text-align: center; gap: 16px; }
+.step-0 h2 { font-size: 2.5rem; font-weight: 700; }
+.step-1, .step-2 { flex-direction: column; text-align: center; gap: 16px; max-width: 400px; }

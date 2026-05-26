@@ -1,0 +1,4 @@
+.Gifts { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Gifts.step-0, .Gifts.step-1, .Gifts.step-2, .Gifts.final { flex-direction: column; text-align: center; gap: 16px; }
+.Gifts h2 { font-size: 2.5rem; font-weight: 700; }
+.Gifts p { font-size: 1.2rem; max-width: 400px; }

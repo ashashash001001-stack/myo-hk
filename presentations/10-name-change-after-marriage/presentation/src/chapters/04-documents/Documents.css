@@ -1,0 +1,4 @@
+.Documents { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Documents.step-0, .Documents.step-1, .Documents.step-2, .Documents.final { flex-direction: column; text-align: center; gap: 16px; }
+.Documents h2 { font-size: 2.5rem; font-weight: 700; }
+.Documents p { font-size: 1.2rem; max-width: 400px; }

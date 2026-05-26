@@ -1,0 +1,4 @@
+.Words { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Words.step-0, .Words.step-1, .Words.step-2, .Words.final { flex-direction: column; text-align: center; gap: 16px; }
+.Words h2 { font-size: 2.5rem; font-weight: 700; }
+.Words p { font-size: 1.2rem; max-width: 400px; }

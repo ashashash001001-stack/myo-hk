@@ -1,0 +1,9 @@
+.methods { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-container { flex-direction: column; gap: 20px; text-align: center; }
+.method-num { font-size: 1rem; font-weight: 600; color: var(--accent); background: var(--accent-light); padding: 4px 16px; border-radius: 20px; }
+.method-title { font-size: 2rem; font-weight: 700; }
+.method-desc { font-size: 1.2rem; color: var(--text-muted); max-width: 400px; }
+.method-detail { font-size: 1rem; color: var(--accent); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 20px; }
+.final { gap: 16px; }
+.final h2 { font-size: 2rem; }
+.final p { color: var(--text-muted); font-size: 1.1rem; }

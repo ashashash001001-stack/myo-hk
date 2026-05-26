@@ -1,0 +1,4 @@
+.Hybrid { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Hybrid.step-0, .Hybrid.step-1, .Hybrid.step-2, .Hybrid.final { flex-direction: column; text-align: center; gap: 16px; }
+.Hybrid h2 { font-size: 2.5rem; font-weight: 700; }
+.Hybrid p { font-size: 1.2rem; max-width: 400px; }

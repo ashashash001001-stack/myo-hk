@@ -1,0 +1,4 @@
+.Restaurant { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Restaurant.step-0, .Restaurant.step-1, .Restaurant.step-2, .Restaurant.final { flex-direction: column; text-align: center; gap: 16px; }
+.Restaurant h2 { font-size: 2.5rem; font-weight: 700; }
+.Restaurant p { font-size: 1.2rem; max-width: 400px; }

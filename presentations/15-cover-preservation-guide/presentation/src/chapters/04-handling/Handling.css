@@ -1,0 +1,4 @@
+.Handling { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Handling.step-0, .Handling.step-1, .Handling.step-2, .Handling.final { flex-direction: column; text-align: center; gap: 16px; }
+.Handling h2 { font-size: 2.5rem; font-weight: 700; }
+.Handling p { font-size: 1.2rem; max-width: 400px; }

@@ -1,0 +1,4 @@
+.Year10 { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Year10.step-0, .Year10.step-1, .Year10.step-2, .Year10.final { flex-direction: column; text-align: center; gap: 16px; }
+.Year10 h2 { font-size: 2.5rem; font-weight: 700; }
+.Year10 p { font-size: 1.2rem; max-width: 400px; }

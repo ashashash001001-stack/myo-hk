@@ -1,0 +1,4 @@
+.Dress { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Dress.step-0, .Dress.step-1, .Dress.step-2, .Dress.final { flex-direction: column; text-align: center; gap: 16px; }
+.Dress h2 { font-size: 2.5rem; font-weight: 700; }
+.Dress p { font-size: 1.2rem; max-width: 400px; }

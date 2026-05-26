@@ -1,0 +1,11 @@
+.Ch04 { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-0 { flex-direction: column; text-align: center; gap: 16px; }
+.step-0 h2 { font-size: 2.5rem; font-weight: 700; }
+.step-0 .Ch04-icon { font-size: 4rem; }
+.step-1 { flex-direction: column; text-align: center; gap: 16px; max-width: 400px; }
+.step-1 .Ch04-fee { font-size: 3.5rem; font-weight: 700; color: var(--primary); }
+.step-1 p { font-size: 1.2rem; line-height: 1.6; }
+.step-2 { flex-direction: column; text-align: center; gap: 16px; max-width: 400px; }
+.step-2 .Ch04-wait { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.step-2 .Ch04-days { font-size: 4rem; font-weight: 700; color: var(--primary); }
+.step-2 p { font-size: 1.2rem; line-height: 1.6; }

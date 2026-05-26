@@ -1,0 +1,68 @@
+.Component {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.step-0 {
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+}
+
+.step-0 h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.step-1 {
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.step-1 .recap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-1 .recap-item {
+  font-size: 1.25rem;
+  padding: 12px 24px;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+.step-2 {
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.step-2 p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.step-2 .cta-button {
+  display: inline-block;
+  padding: 12px 32px;
+  background: var(--primary);
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: opacity 0.2s;
+}
+
+.step-2 .cta-button:hover {
+  opacity: 0.9;
+}

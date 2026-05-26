@@ -1,0 +1,4 @@
+.Fit { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Fit.step-0, .Fit.step-1, .Fit.step-2, .Fit.final { flex-direction: column; text-align: center; gap: 16px; }
+.Fit h2 { font-size: 2.5rem; font-weight: 700; }
+.Fit p { font-size: 1.2rem; max-width: 400px; }

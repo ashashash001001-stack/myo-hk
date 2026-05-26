@@ -1,0 +1,4 @@
+.Cleaning { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Cleaning.step-0, .Cleaning.step-1, .Cleaning.step-2, .Cleaning.final { flex-direction: column; text-align: center; gap: 16px; }
+.Cleaning h2 { font-size: 2.5rem; font-weight: 700; }
+.Cleaning p { font-size: 1.2rem; max-width: 400px; }

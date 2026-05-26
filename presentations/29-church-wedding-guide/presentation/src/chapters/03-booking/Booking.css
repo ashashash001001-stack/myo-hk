@@ -1,0 +1,4 @@
+.Booking { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Booking.step-0, .Booking.step-1, .Booking.step-2, .Booking.final { flex-direction: column; text-align: center; gap: 16px; }
+.Booking h2 { font-size: 2.5rem; font-weight: 700; }
+.Booking p { font-size: 1.2rem; max-width: 400px; }

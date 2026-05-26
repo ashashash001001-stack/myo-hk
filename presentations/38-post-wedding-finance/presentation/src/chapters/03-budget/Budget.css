@@ -1,0 +1,4 @@
+.Budget { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Budget.step-0, .Budget.step-1, .Budget.step-2, .Budget.final { flex-direction: column; text-align: center; gap: 16px; }
+.Budget h2 { font-size: 2.5rem; font-weight: 700; }
+.Budget p { font-size: 1.2rem; max-width: 400px; }

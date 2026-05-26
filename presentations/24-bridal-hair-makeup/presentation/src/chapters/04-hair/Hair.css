@@ -1,0 +1,4 @@
+.Hair { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Hair.step-0, .Hair.step-1, .Hair.step-2, .Hair.final { flex-direction: column; text-align: center; gap: 16px; }
+.Hair h2 { font-size: 2.5rem; font-weight: 700; }
+.Hair p { font-size: 1.2rem; max-width: 400px; }

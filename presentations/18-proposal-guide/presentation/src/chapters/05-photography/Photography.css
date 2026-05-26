@@ -1,0 +1,4 @@
+.Photography { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Photography.step-0, .Photography.step-1, .Photography.step-2, .Photography.final { flex-direction: column; text-align: center; gap: 16px; }
+.Photography h2 { font-size: 2.5rem; font-weight: 700; }
+.Photography p { font-size: 1.2rem; max-width: 400px; }

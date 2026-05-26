@@ -1,0 +1,4 @@
+.Thailand { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Thailand.step-0, .Thailand.step-1, .Thailand.step-2, .Thailand.final { flex-direction: column; text-align: center; gap: 16px; }
+.Thailand h2 { font-size: 2.5rem; font-weight: 700; }
+.Thailand p { font-size: 1.2rem; max-width: 400px; }

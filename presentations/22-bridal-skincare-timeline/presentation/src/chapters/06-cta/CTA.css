@@ -1,0 +1,4 @@
+.CTA { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.CTA.step-0, .CTA.step-1, .CTA.step-2, .CTA.final { flex-direction: column; text-align: center; gap: 16px; }
+.CTA h2 { font-size: 2.5rem; font-weight: 700; }
+.CTA p { font-size: 1.2rem; max-width: 400px; }

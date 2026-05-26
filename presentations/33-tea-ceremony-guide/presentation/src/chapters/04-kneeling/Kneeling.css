@@ -1,0 +1,4 @@
+.Kneeling { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Kneeling.step-0, .Kneeling.step-1, .Kneeling.step-2, .Kneeling.final { flex-direction: column; text-align: center; gap: 16px; }
+.Kneeling h2 { font-size: 2.5rem; font-weight: 700; }
+.Kneeling p { font-size: 1.2rem; max-width: 400px; }

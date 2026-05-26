@@ -1,0 +1,4 @@
+.Coldopen { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Coldopen.step-0, .Coldopen.step-1, .Coldopen.step-2, .Coldopen.final { flex-direction: column; text-align: center; gap: 16px; }
+.Coldopen h2 { font-size: 2.5rem; font-weight: 700; }
+.Coldopen p { font-size: 1.2rem; max-width: 400px; }

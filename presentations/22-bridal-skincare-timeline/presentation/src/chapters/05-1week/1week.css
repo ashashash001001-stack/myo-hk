@@ -1,0 +1,4 @@
+.1week { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.1week.step-0, .1week.step-1, .1week.step-2, .1week.final { flex-direction: column; text-align: center; gap: 16px; }
+.1week h2 { font-size: 2.5rem; font-weight: 700; }
+.1week p { font-size: 1.2rem; max-width: 400px; }

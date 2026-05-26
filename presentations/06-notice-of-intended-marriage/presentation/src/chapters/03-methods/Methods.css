@@ -1,0 +1,4 @@
+.Methods { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Methods.step-0, .Methods.step-1, .Methods.step-2, .Methods.final { flex-direction: column; text-align: center; gap: 16px; }
+.Methods h2 { font-size: 2.5rem; font-weight: 700; }
+.Methods p { font-size: 1.2rem; max-width: 400px; }

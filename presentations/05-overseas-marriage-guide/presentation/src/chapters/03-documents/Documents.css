@@ -1,0 +1,9 @@
+.Ch03 { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-0 { flex-direction: column; text-align: center; gap: 16px; }
+.step-0 h2 { font-size: 2.5rem; font-weight: 700; }
+.step-0 .Ch03-icon { font-size: 4rem; }
+.step-1 { flex-direction: column; text-align: center; gap: 16px; max-width: 400px; }
+.step-1 .Ch03-card, .step-2 .Ch03-card { background: var(--surface); padding: 32px 24px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.step-1 .Ch03-card span, .step-2 .Ch03-card span { font-size: 3rem; }
+.step-1 .Ch03-card p, .step-2 .Ch03-card p { font-size: 1.15rem; line-height: 1.6; }
+.step-2 { flex-direction: column; text-align: center; gap: 16px; max-width: 400px; }

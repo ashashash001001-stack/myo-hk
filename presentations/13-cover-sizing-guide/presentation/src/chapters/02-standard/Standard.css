@@ -1,0 +1,4 @@
+.Standard { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Standard.step-0, .Standard.step-1, .Standard.step-2, .Standard.final { flex-direction: column; text-align: center; gap: 16px; }
+.Standard h2 { font-size: 2.5rem; font-weight: 700; }
+.Standard p { font-size: 1.2rem; max-width: 400px; }

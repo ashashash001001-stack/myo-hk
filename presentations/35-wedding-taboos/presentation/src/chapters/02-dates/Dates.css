@@ -1,0 +1,4 @@
+.Dates { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Dates.step-0, .Dates.step-1, .Dates.step-2, .Dates.final { flex-direction: column; text-align: center; gap: 16px; }
+.Dates h2 { font-size: 2.5rem; font-weight: 700; }
+.Dates p { font-size: 1.2rem; max-width: 400px; }

@@ -1,0 +1,4 @@
+.Midrange { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.Midrange.step-0, .Midrange.step-1, .Midrange.step-2, .Midrange.final { flex-direction: column; text-align: center; gap: 16px; }
+.Midrange h2 { font-size: 2.5rem; font-weight: 700; }
+.Midrange p { font-size: 1.2rem; max-width: 400px; }

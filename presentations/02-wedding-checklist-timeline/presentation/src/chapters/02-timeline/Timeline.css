@@ -1,0 +1,8 @@
+.timeline { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
+.step-container { flex-direction: column; gap: 24px; text-align: center; }
+.month-badge { font-size: 2rem; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 8px 24px; border-radius: 30px; }
+.items-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 400px; }
+.item-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; font-weight: 500; }
+.final { gap: 16px; }
+.final h2 { font-size: 2rem; }
+.final p { color: var(--text-muted); font-size: 1.1rem; }
