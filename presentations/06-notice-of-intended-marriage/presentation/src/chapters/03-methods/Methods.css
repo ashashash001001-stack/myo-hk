@@ -1,4 +1,205 @@
-.Methods { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
-.Methods.step-0, .Methods.step-1, .Methods.step-2, .Methods.final { flex-direction: column; text-align: center; gap: 16px; }
-.Methods h2 { font-size: 2.5rem; font-weight: 700; }
-.Methods p { font-size: 1.2rem; max-width: 400px; }
+/* Methods Chapter Styles – paper-press theme */
+
+.md-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--stage-pad-y, 48px) var(--stage-pad-x, 32px);
+  background: var(--bg);
+  font-family: var(--font-display-cn, "Noto Serif TC", serif);
+  color: var(--text);
+}
+
+.md-scene-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 700px;
+}
+
+/* ─── Title & Subtitle ─── */
+.md-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.md-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Methods Row ─── */
+.md-methods-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.md-method-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 36px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  animation: md-fade-in 0.5s ease-out both;
+}
+
+.md-method-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.md-method-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ─── Info List ─── */
+.md-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.md-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  animation: md-fade-in 0.5s ease-out both;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.md-info-item svg {
+  flex-shrink: 0;
+}
+
+/* ─── Locations Grid ─── */
+.md-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.md-location-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: md-fade-in 0.5s ease-out both;
+}
+
+.md-location-area {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.md-location-place {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ─── Compare Table ─── */
+.md-compare-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.md-compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 12px 8px;
+  animation: md-fade-in 0.5s ease-out both;
+  font-size: 0.95rem;
+}
+
+.md-compare-row span {
+  text-align: center;
+}
+
+.md-compare-header {
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.md-compare-label {
+  color: var(--text-muted);
+  text-align: left !important;
+}
+
+/* ─── Transition ─── */
+.md-transition-center {
+  gap: 24px;
+}
+
+.md-transition-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.md-transition-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Animations ─── */
+@keyframes md-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes md-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,4 +1,4 @@
 .Cut { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
-.Cut.step-0, .Cut.step-1, .Cut.step-2, .Cut.final { flex-direction: column; text-align: center; gap: 16px; }
+.Cut.step-0, .Cut.step-1, .Cut.step-2, .Cut.step-3, .Cut.step-4, .Cut.step-5, .Cut.step-6, .Cut.step-7, .Cut.final { flex-direction: column; text-align: center; gap: 16px; }
 .Cut h2 { font-size: 2.5rem; font-weight: 700; }
 .Cut p { font-size: 1.2rem; max-width: 400px; }

@@ -1,4 +1,215 @@
-.Display { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
-.Display.step-0, .Display.step-1, .Display.step-2, .Display.final { flex-direction: column; text-align: center; gap: 16px; }
-.Display h2 { font-size: 2.5rem; font-weight: 700; }
-.Display p { font-size: 1.2rem; max-width: 400px; }
+/* Display Chapter Styles – paper-press theme */
+
+.ds-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--stage-pad-y, 48px) var(--stage-pad-x, 32px);
+  background: var(--bg);
+  font-family: var(--font-display-cn, "Noto Serif TC", serif);
+  color: var(--text);
+}
+
+.ds-scene-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 600px;
+}
+
+/* ─── Title & Text ─── */
+.ds-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.ds-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.ds-desc {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ─── Big Number ─── */
+.ds-big-number {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* ─── Info Row ─── */
+.ds-info-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ds-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 24px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: ds-fade-in 0.5s ease-out both;
+}
+
+.ds-info-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.ds-info-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ─── Display Items ─── */
+.ds-display-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.ds-display-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  animation: ds-fade-in 0.5s ease-out both;
+  font-size: 1.05rem;
+  text-align: left;
+}
+
+.ds-display-item svg {
+  flex-shrink: 0;
+}
+
+/* ─── Purpose Box ─── */
+.ds-purpose-box {
+  padding: 20px 24px;
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 450px;
+}
+
+.ds-purpose-box p {
+  margin: 0;
+}
+
+/* ─── Objection Info ─── */
+.ds-objection-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.ds-objection-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  animation: ds-fade-in 0.5s ease-out both;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.ds-objection-point svg {
+  flex-shrink: 0;
+}
+
+/* ─── Certificate Box ─── */
+.ds-cert-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 28px 36px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  margin-top: 8px;
+}
+
+.ds-cert-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.ds-cert-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ─── Transition ─── */
+.ds-transition-center {
+  gap: 24px;
+}
+
+.ds-transition-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.ds-transition-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Animations ─── */
+@keyframes ds-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ds-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

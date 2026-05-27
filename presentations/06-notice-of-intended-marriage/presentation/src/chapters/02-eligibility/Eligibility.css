@@ -1,4 +1,241 @@
-.Eligibility { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
-.Eligibility.step-0, .Eligibility.step-1, .Eligibility.step-2, .Eligibility.final { flex-direction: column; text-align: center; gap: 16px; }
-.Eligibility h2 { font-size: 2.5rem; font-weight: 700; }
-.Eligibility p { font-size: 1.2rem; max-width: 400px; }
+/* Eligibility Chapter Styles – paper-press theme */
+
+.el-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--stage-pad-y, 48px) var(--stage-pad-x, 32px);
+  background: var(--bg);
+  font-family: var(--font-display-cn, "Noto Serif TC", serif);
+  color: var(--text);
+}
+
+.el-scene-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 700px;
+}
+
+/* ─── Legal Reference ─── */
+.el-legal-ref {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Title & Subtitle ─── */
+.el-step-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.el-step-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Conditions List ─── */
+.el-conditions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.el-condition-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: el-fade-in 0.5s ease-out both;
+  text-align: left;
+}
+
+.el-condition-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.el-condition-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.el-condition-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ─── Check Circle ─── */
+.el-check-circle {
+  flex-shrink: 0;
+}
+
+.el-check-animated .el-check-path {
+  animation: el-draw-check 0.6s ease-out forwards;
+}
+
+@keyframes el-draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ─── Info Box ─── */
+.el-info-box {
+  padding: 20px 24px;
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 450px;
+}
+
+.el-info-box p {
+  margin: 0;
+}
+
+/* ─── Documents Row ─── */
+.el-docs-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.el-doc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 32px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: el-fade-in 0.5s ease-out both;
+}
+
+.el-doc-svg {
+  width: 56px;
+  height: 56px;
+}
+
+.el-doc-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.el-doc-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ─── Summary Grid ─── */
+.el-conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.el-summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: el-fade-in 0.5s ease-out both;
+}
+
+.el-summary-num {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.el-summary-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ─── Transition ─── */
+.el-transition-center {
+  gap: 24px;
+}
+
+.el-transition-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.el-transition-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Animations ─── */
+@keyframes el-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes el-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes el-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

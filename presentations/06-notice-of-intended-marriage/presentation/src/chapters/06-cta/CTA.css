@@ -1,4 +1,220 @@
-.CTA { min-height: 100vh; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
-.CTA.step-0, .CTA.step-1, .CTA.step-2, .CTA.final { flex-direction: column; text-align: center; gap: 16px; }
-.CTA h2 { font-size: 2.5rem; font-weight: 700; }
-.CTA p { font-size: 1.2rem; max-width: 400px; }
+/* CTA Chapter Styles – paper-press theme */
+
+.cta-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--stage-pad-y, 48px) var(--stage-pad-x, 32px);
+  background: var(--bg);
+  font-family: var(--font-display-cn, "Noto Serif TC", serif);
+  color: var(--text);
+}
+
+.cta-scene-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 600px;
+}
+
+/* ─── Title & Text ─── */
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cta-desc {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ─── Steps Flow ─── */
+.cta-steps-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.cta-flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  animation: cta-fade-in 0.5s ease-out both;
+}
+
+.cta-flow-num {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.cta-flow-text {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.cta-flow-arrow {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* ─── Key Numbers ─── */
+.cta-key-numbers {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-key-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  animation: cta-fade-in 0.5s ease-out both;
+}
+
+.cta-key-num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.cta-key-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ─── Reminder Box ─── */
+.cta-reminder-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 32px;
+  background: var(--accent-light);
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+.cta-reminder-box p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+
+.cta-reminder-note {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* ─── Links Box ─── */
+.cta-links-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.cta-link-item {
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  animation: cta-fade-in 0.5s ease-out both;
+  font-size: 1rem;
+  color: var(--text);
+  text-align: left;
+}
+
+/* ─── Final Center ─── */
+.cta-final-center {
+  gap: 16px;
+}
+
+.cta-final-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.cta-final-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.cta-website-box {
+  padding: 16px 28px;
+  background: var(--accent);
+  color: white;
+  border-radius: 24px;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.cta-bookmark {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Animations ─── */
+@keyframes cta-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cta-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
