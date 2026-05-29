@@ -1,7 +1,7 @@
-import "./restaurant.css";
+import "./Restaurant.css";
 interface Props { step: number; }
 
-export function restaurant({ step }: Props) {
+export function Restaurant({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function restaurant({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 樓底高影相靚</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

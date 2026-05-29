@@ -13,7 +13,7 @@ export function Cost1Registration({ step }: Props) {
             <path d="M52 56l4 4 8-8" stroke="var(--accent)" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <h1 className="c1-title">註冊費用</h1>
-          <p className="c1-sub">最基本嘅開支・約佔總預算 1%</p>
+          <p className="c1-sub">了解註冊費用的重點</p>
         </div>
       </div>
     );
@@ -38,7 +38,7 @@ export function Cost1Registration({ step }: Props) {
   return (
     <div className="c1-scene">
       <div className="c1-card" style={{ animationDelay: "100ms" }}>
-        <h2 className="c1-card-title">登記處 vs 監禮人</h2>
+        <h2 className="c1-card-title">註冊費用</h2>
         <div className="c1-compare">
           <div className="c1-compare-item">
             <span className="c1-compare-label">婚姻登記處</span>

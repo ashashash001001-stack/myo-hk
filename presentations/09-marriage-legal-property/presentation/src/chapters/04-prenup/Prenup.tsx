@@ -1,7 +1,7 @@
-import "./prenup.css";
+import "./Prenup.css";
 interface Props { step: number; }
 
-export function prenup({ step }: Props) {
+export function Prenup({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function prenup({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 並非所有條款都有法律效力</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

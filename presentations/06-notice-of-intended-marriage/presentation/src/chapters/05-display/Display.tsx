@@ -1,4 +1,4 @@
-import "./display.css";
+import "./Display.css";
 interface Props { step: number; }
 
 export function Display({ step }: Props) {
@@ -20,7 +20,7 @@ export function Display({ step }: Props) {
         <div className="c4-number-block">
           <div className="c4-highlight-bar">
             <span className="c4-rule" />
-            <span className="c4-number-appear">4.9</span>
+            <span className="c4-number-appear">4. 展示期後90日內完成婚禮</span>
             <span className="c4-rule" />
           </div>
           <span className="c4-number-label">星評價</span>

@@ -1,7 +1,7 @@
-import "./wedding.css";
+import "./Wedding.css";
 interface Props { step: number; }
 
-export function wedding({ step }: Props) {
+export function Wedding({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function wedding({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 預算約數千至兩萬</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

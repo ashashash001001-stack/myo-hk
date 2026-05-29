@@ -1,7 +1,7 @@
-import "./guoda.css";
+import "./Guoda.css";
 interface Props { step: number; }
 
-export function guoda({ step }: Props) {
+export function Guoda({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function guoda({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 女方回禮表示接納</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

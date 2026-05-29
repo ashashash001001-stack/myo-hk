@@ -1,4 +1,4 @@
-import "./legalization.css";
+import "./Legalization.css";
 interface Props { step: number; }
 
 export function Legalization({ step }: Props) {
@@ -20,7 +20,7 @@ export function Legalization({ step }: Props) {
         <div className="c4-number-block">
           <div className="c4-highlight-bar">
             <span className="c4-rule" />
-            <span className="c4-number-appear">4.9</span>
+            <span className="c4-number-appear">4. 結婚證書要翻譯</span>
             <span className="c4-rule" />
           </div>
           <span className="c4-number-label">星評價</span>

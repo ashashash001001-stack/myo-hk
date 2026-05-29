@@ -1,7 +1,7 @@
-import "./budget.css";
+import "./Budget.css";
 interface Props { step: number; }
 
-export function budget({ step }: Props) {
+export function Budget({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function budget({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 保險保障要足夠</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

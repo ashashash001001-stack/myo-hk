@@ -1,7 +1,7 @@
-import "./linen.css";
+import "./Linen.css";
 interface Props { step: number; }
 
-export function linen({ step }: Props) {
+export function Linen({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function linen({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 手感自然樸素</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

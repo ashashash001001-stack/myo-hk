@@ -1,7 +1,7 @@
-import "./items.css";
+import "./Items.css";
 interface Props { step: number; }
 
-export function items({ step }: Props) {
+export function Items({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function items({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 湯丸寓意團團圓圓</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

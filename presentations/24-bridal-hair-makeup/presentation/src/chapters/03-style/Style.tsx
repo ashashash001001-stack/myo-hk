@@ -1,7 +1,7 @@
-import "./style.css";
+import "./Style.css";
 interface Props { step: number; }
 
-export function style({ step }: Props) {
+export function Style({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function style({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 歐美大妝夠大膽夠氣場</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

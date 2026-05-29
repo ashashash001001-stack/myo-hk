@@ -1,7 +1,7 @@
-import "./content.css";
+import "./Content.css";
 interface Props { step: number; }
 
-export function content({ step }: Props) {
+export function Content({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function content({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 可加入愛情宣言或詩句</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

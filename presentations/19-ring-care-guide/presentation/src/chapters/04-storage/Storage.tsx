@@ -1,7 +1,7 @@
-import "./storage.css";
+import "./Storage.css";
 interface Props { step: number; }
 
-export function storage({ step }: Props) {
+export function Storage({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function storage({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 乾燥劑防止氧化</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

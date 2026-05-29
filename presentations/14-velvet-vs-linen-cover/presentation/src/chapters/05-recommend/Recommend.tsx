@@ -1,7 +1,7 @@
-import "./recommend.css";
+import "./Recommend.css";
 interface Props { step: number; }
 
-export function recommend({ step }: Props) {
+export function Recommend({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c4-scene">
@@ -20,7 +20,7 @@ export function recommend({ step }: Props) {
         <div className="c4-number-block">
           <div className="c4-highlight-bar">
             <span className="c4-rule" />
-            <span className="c4-number-appear">4.9</span>
+            <span className="c4-number-appear">4. 配襯婚禮主題最緊要</span>
             <span className="c4-rule" />
           </div>
           <span className="c4-number-label">星評價</span>

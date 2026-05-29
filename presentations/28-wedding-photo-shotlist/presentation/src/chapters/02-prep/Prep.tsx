@@ -1,14 +1,14 @@
-import "./prep.css";
+import "./Prep.css";
 interface Props { step: number; }
 
-export function prep({ step }: Props) {
+export function Prep({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c1-scene">
         <div className="c1-hook">
           <svg viewBox="0 0 80 80" class="c1-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
-          <h1 className="c1-title">02 prep</h1>
-          <p className="c1-sub">了解02 prep的重點</p>
+          <h1 className="c1-title">準備環節</h1>
+          <p className="c1-sub">了解準備環節的重點</p>
         </div>
       </div>
     );
@@ -20,7 +20,7 @@ export function prep({ step }: Props) {
         <div className="c1-number-block">
           <div className="c1-highlight-bar">
             <span className="c1-rule" />
-            <span className="c1-number-appear">4.9</span>
+            <span className="c1-number-appear">4. 拍攝順序要預先安排</span>
             <span className="c1-rule" />
           </div>
           <span className="c1-number-label">星評價</span>
@@ -33,7 +33,7 @@ export function prep({ step }: Props) {
   return (
     <div className="c1-scene">
       <div className="c1-card">
-        <h2 className="c1-card-title">02 prep</h2>
+        <h2 className="c1-card-title">準備環節</h2>
         <div className="c1-list">
           <div className="c1-list-item" style={{ animationDelay: `${0}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>

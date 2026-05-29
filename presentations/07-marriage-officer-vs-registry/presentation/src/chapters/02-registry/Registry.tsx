@@ -8,7 +8,7 @@ export function Registry({ step }: Props) {
         <div className="c1-hook">
           <svg viewBox="0 0 80 80" class="c1-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
           <h1 className="c1-title">登記處結婚</h1>
-          <p className="c1-sub">婚姻登記處係香港政府認可嘅正式結婚場所</p>
+          <p className="c1-sub">了解登記處結婚的重點</p>
         </div>
       </div>
     );
@@ -33,7 +33,7 @@ export function Registry({ step }: Props) {
   return (
     <div className="c1-scene">
       <div className="c1-card">
-        <h2 className="c1-card-title">婚姻登記處特點</h2>
+        <h2 className="c1-card-title">登記處結婚</h2>
         <div className="c1-list">
           <div className="c1-list-item" style={{ animationDelay: `${0}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>

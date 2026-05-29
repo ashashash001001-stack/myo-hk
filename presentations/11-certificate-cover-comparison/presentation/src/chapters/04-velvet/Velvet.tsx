@@ -1,7 +1,7 @@
-import "./velvet.css";
+import "./Velvet.css";
 interface Props { step: number; }
 
-export function velvet({ step }: Props) {
+export function Velvet({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function velvet({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 適合隆重場合</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

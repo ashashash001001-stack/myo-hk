@@ -1,7 +1,7 @@
-import "./durability.css";
+import "./Durability.css";
 interface Props { step: number; }
 
-export function durability({ step }: Props) {
+export function Durability({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function durability({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 唔會因為洗滌而脫落</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

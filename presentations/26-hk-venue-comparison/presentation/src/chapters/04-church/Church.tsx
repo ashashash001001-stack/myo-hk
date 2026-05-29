@@ -1,7 +1,7 @@
-import "./church.css";
+import "./Church.css";
 interface Props { step: number; }
 
-export function church({ step }: Props) {
+export function Church({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function church({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 結婚時間要配合</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

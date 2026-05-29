@@ -1,4 +1,4 @@
-import "./process.css";
+import "./Process.css";
 interface Props { step: number; }
 
 export function Process({ step }: Props) {
@@ -20,7 +20,7 @@ export function Process({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 舉行婚禮儀式</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

@@ -20,7 +20,7 @@ export function Methods({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 問長輩意見穩陣</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

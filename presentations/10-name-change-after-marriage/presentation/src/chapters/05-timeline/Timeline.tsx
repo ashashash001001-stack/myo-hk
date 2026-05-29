@@ -1,7 +1,7 @@
-import "./timeline.css";
+import "./Timeline.css";
 interface Props { step: number; }
 
-export function timeline({ step }: Props) {
+export function Timeline({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c4-scene">
@@ -20,7 +20,7 @@ export function timeline({ step }: Props) {
         <div className="c4-number-block">
           <div className="c4-highlight-bar">
             <span className="c4-rule" />
-            <span className="c4-number-appear">4.9</span>
+            <span className="c4-number-appear">4. 駕駛執照需另行處理</span>
             <span className="c4-rule" />
           </div>
           <span className="c4-number-label">星評價</span>

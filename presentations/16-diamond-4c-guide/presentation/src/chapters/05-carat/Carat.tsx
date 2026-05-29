@@ -1,7 +1,7 @@
-import "./carat.css";
+import "./Carat.css";
 interface Props { step: number; }
 
-export function carat({ step }: Props) {
+export function Carat({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c4-scene">
@@ -20,7 +20,7 @@ export function carat({ step }: Props) {
         <div className="c4-number-block">
           <div className="c4-highlight-bar">
             <span className="c4-rule" />
-            <span className="c4-number-appear">4.9</span>
+            <span className="c4-number-appear">4. 克拉越大越稀有越貴</span>
             <span className="c4-rule" />
           </div>
           <span className="c4-number-label">星評價</span>

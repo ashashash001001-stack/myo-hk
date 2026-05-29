@@ -1,7 +1,7 @@
-import "./year5.css";
+import "./Year5.css";
 interface Props { step: number; }
 
-export function year5({ step }: Props) {
+export function Year5({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function year5({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 木雕擺設有意義</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

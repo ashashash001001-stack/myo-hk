@@ -20,7 +20,7 @@ export function Calendar({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 避開三娘煞和楊公忌</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

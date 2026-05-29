@@ -1,7 +1,7 @@
-import "./modern.css";
+import "./Modern.css";
 interface Props { step: number; }
 
-export function modern({ step }: Props) {
+export function Modern({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c4-scene">
@@ -20,7 +20,7 @@ export function modern({ step }: Props) {
         <div className="c4-number-block">
           <div className="c4-highlight-bar">
             <span className="c4-rule" />
-            <span className="c4-number-appear">4.9</span>
+            <span className="c4-number-appear">4. 開心美滿係最大祝福</span>
             <span className="c4-rule" />
           </div>
           <span className="c4-number-label">星評價</span>

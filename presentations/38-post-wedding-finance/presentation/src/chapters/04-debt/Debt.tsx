@@ -1,7 +1,7 @@
-import "./debt.css";
+import "./Debt.css";
 interface Props { step: number; }
 
-export function debt({ step }: Props) {
+export function Debt({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function debt({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 共同債務共同負責</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

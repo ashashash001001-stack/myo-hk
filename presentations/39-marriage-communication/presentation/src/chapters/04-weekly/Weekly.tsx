@@ -1,7 +1,7 @@
-import "./weekly.css";
+import "./Weekly.css";
 interface Props { step: number; }
 
-export function weekly({ step }: Props) {
+export function Weekly({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function weekly({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 討論各樣大小事</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

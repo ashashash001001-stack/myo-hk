@@ -1,7 +1,7 @@
-import "./handling.css";
+import "./Handling.css";
 interface Props { step: number; }
 
-export function handling({ step }: Props) {
+export function Handling({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function handling({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 長途運輸要用硬盒</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>

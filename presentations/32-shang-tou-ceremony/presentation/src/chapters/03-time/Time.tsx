@@ -1,7 +1,7 @@
-import "./time.css";
+import "./Time.css";
 interface Props { step: number; }
 
-export function time({ step }: Props) {
+export function Time({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c2-scene">
@@ -20,7 +20,7 @@ export function time({ step }: Props) {
         <div className="c2-number-block">
           <div className="c2-highlight-bar">
             <span className="c2-rule" />
-            <span className="c2-number-appear">4.9</span>
+            <span className="c2-number-appear">4. 由好命婆負責儀式</span>
             <span className="c2-rule" />
           </div>
           <span className="c2-number-label">星評價</span>

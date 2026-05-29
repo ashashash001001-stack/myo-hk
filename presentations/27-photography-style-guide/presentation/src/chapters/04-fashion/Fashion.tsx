@@ -1,7 +1,7 @@
-import "./fashion.css";
+import "./Fashion.css";
 interface Props { step: number; }
 
-export function fashion({ step }: Props) {
+export function Fashion({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c3-scene">
@@ -20,7 +20,7 @@ export function fashion({ step }: Props) {
         <div className="c3-number-block">
           <div className="c3-highlight-bar">
             <span className="c3-rule" />
-            <span className="c3-number-appear">4.9</span>
+            <span className="c3-number-appear">4. 考驗攝影師功夫</span>
             <span className="c3-rule" />
           </div>
           <span className="c3-number-label">星評價</span>
