@@ -18,8 +18,8 @@ export function CTA({ step }: Props) {
             <circle cx="40" cy="40" r="36" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)" />
             <path d="M24 40l12 12 20-20" stroke="var(--accent)" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <h1 className="ct-title">搞掂晒！</h1>
-          <p className="ct-sub">你已經掌握晒香港結婚嘅所有開支類別</p>
+          <h1 className="ct-title">總結與下一步</h1>
+          <p className="ct-sub">準備好就開始你嘅結婚籌備旅程</p>
         </div>
       </div>
     );
