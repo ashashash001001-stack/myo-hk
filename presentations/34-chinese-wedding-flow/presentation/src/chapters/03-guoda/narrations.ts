@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "男方送禮到女家。",
-  "點收後回禮。",
-  "確定婚期。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 guoda，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,7 +1,7 @@
-export const NARRATIONS = [
-  "克拉係重量單位。",
-  "1 克拉 = 0.2 克。",
-  "視乎預算，同等級越大越貴。",
-"額外步驟 1",
-  "額外步驟 2",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 carat，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

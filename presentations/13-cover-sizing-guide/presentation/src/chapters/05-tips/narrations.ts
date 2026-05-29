@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "選擇尺寸時要考慮證書厚度。",
-  "預留少量空間更方便日常使用。",
-  "My O! 提供尺寸咨詢服務。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 tips，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

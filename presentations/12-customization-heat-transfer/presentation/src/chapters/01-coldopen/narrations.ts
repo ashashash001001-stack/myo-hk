@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "My O! 用咩技術印刷？",
-  "熱轉印係目前最優質嘅工藝。",
-  "今日介紹熱轉印嘅特點。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"想訂製獨一無二嘅證書套？等我介紹熱轉印技術同訂製流程。",
+"個性化訂製：度身訂造",
+"等我帶你逐個環節睇清楚。",
 ];

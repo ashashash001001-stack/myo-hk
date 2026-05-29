@@ -1,31 +1,62 @@
-import "./Calendar.css";
-
+import "./calendar.css";
 interface Props { step: number; }
 
-const MONTHS = [
-  { month: "2025年1月", dates: "1月1日、1月15日、1月28日", note: "年初宜嫁娶" },
-  { month: "2025年3月", dates: "3月8日、3月22日", note: "春季好日多" },
-  { month: "2025年5月", dates: "5月10日、5月24日", note: "黃金婚禮旺季" },
-  { month: "2025年10月", dates: "10月4日、10月18日、10月25日", note: "秋季最受歡迎" },
-  { month: "2025年11月", dates: "11月8日、11月22日", note: "天氣涼爽適宜" },
-  { month: "2025年12月", dates: "12月6日、12月20日", note: "聖誕婚禮熱門" },
-];
-
-export function Calendar({ step }: Props) {
-  if (step < MONTHS.length) {
-    const m = MONTHS[step];
+export function calendar({ step }: Props) {
+  if (step === 0) {
     return (
-      <div className="calendar step-container">
-        <div className="cal-month">{m.month}</div>
-        <div className="cal-dates">{m.dates}</div>
-        <div className="cal-note">{m.note}</div>
+      <div className="c3-scene">
+        <div className="c3-hook">
+          <svg viewBox="0 0 80 80" class="c3-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
+          <h1 className="c3-title">04 calendar</h1>
+          <p className="c3-sub">了解04 calendar的重點</p>
+        </div>
       </div>
     );
   }
+
+  if (step === 1) {
+    return (
+      <div className="c3-scene">
+        <div className="c3-number-block">
+          <div className="c3-highlight-bar">
+            <span className="c3-rule" />
+            <span className="c3-number-appear">4.9</span>
+            <span className="c3-rule" />
+          </div>
+          <span className="c3-number-label">星評價</span>
+          <span className="c3-number-sub">新人推薦</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="calendar step-container final">
-      <h2>📅 2025 結婚好日</h2>
-      <p>以上只係部分好日，完整列表可以去我哋網站睇</p>
+    <div className="c3-scene">
+      <div className="c3-card">
+        <h2 className="c3-card-title">04 calendar</h2>
+        <div className="c3-list">
+          <div className="c3-list-item" style={{ animationDelay: `${0}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>04 calendar基本概念</span>
+          </div>
+          <div className="c3-list-item" style={{ animationDelay: `${100}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>選擇適合自己的方案</span>
+          </div>
+          <div className="c3-list-item" style={{ animationDelay: `${200}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>預算同時間安排</span>
+          </div>
+          <div className="c3-list-item" style={{ animationDelay: `${300}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>聽取專業意見</span>
+          </div>
+          <div className="c3-list-item" style={{ animationDelay: `${400}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>最後確認</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

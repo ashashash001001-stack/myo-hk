@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "總結：海外人士結婚就係咁簡單。",
-  "準備文件 → 交通知書 → 等 15 日 → 行禮。",
-  "想睇更多？去 myo-hk.github.io！",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"undefined，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

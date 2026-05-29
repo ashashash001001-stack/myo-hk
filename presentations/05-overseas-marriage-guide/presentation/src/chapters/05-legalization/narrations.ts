@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "如果係海外註冊，要留意法律認受性。",
-  "香港結婚證書喺海外通常都承認。",
-  "可能需要做翻譯公證，視乎目的地國家。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 legalization，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

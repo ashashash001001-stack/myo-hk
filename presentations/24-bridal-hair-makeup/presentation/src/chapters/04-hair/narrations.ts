@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "髮型要配合面形。",
-  "長髮可以set，短髮可以夾。",
-  "鮮花配飾增加氣質。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 hair，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "新娘妝髮係婚禮關鍵。",
-  "靚嘅妝容令人眼前一亮。",
-  "今日分享攻略。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"新娘化妝同髮型係婚禮焦點。等我介紹試妝、風格選擇同貼士。",
+"化妝髮型開支：試妝包括",
+"等我帶你逐個環節睇清楚。",
 ];

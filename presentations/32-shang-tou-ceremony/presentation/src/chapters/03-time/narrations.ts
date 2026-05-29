@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "通常喺婚禮前晚進行。",
-  "凌晨 12 點開始。",
-  "需要用木梳梳頭。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 time，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,7 +1,7 @@
-export const NARRATIONS = [
-  "車工係最緊要嘅 C。",
-  "影響光芒閃爍程度。",
-  "建議揀 Excellent 車工。",
-"額外步驟 1",
-  "額外步驟 2",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 cut，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

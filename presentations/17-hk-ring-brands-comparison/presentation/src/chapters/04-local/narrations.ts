@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "本地小店都有好多選擇。",
-  "設計獨特，性價比高。",
-  "可以訂造心水款式。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 local，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

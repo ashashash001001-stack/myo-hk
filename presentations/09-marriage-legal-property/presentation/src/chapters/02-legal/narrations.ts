@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "結婚係一個法律契約。",
-  "年滿 16 歲、一夫一妻、非近親。",
-  "違反規定嘅婚姻可能無效。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 legal，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

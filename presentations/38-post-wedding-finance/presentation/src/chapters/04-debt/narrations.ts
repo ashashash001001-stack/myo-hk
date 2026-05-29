@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "婚前債務要分清。",
-  "婚後債務共同承擔。",
-  "建議提前傾清楚。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 debt，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

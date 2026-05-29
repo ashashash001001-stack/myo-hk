@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "座位安排要考慮陽光方向。",
-  "音響設備要測試。",
-  "食物保溫措施。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 logistics，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "結婚有啲咩禁忌要注意？",
-  "傳統習俗話你知。",
-  "今日分享婚禮禁忌。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"結婚有好多傳統禁忌。等我話你知常見嘅禁忌同現代化解釋。",
+"個常見禁忌：傳統習俗",
+"等我帶你逐個環節睇清楚。",
 ];

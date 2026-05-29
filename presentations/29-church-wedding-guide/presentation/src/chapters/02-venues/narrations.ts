@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "聖約翰座堂係熱門之選。",
-  "禮拜堂氣氛莊嚴。",
-  "其他教堂都可以申請。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 venues，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

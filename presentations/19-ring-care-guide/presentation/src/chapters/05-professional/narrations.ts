@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "建議每半年送去專業清洗。",
-  "珠寶店有超聲波清洗。",
-  "可以順便檢查鑲嵌係否穩固。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 professional，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

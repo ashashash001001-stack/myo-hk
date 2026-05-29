@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "洗手、沖涼時最好除低。",
-  "避免接觸化學品。",
-  "佩戴時都要避免撞擊。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 daily，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

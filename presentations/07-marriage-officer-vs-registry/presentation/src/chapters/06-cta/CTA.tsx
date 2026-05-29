@@ -1,28 +1,40 @@
-import "./CTA.css";
+import "./cta.css";
+interface Props { step: number; }
 
-interface Props {
-  step: number;
-}
+export function cta({ step }: Props) {
+  if (step === 0) {
+    return (
+      <div className="ct-scene">
+        <div className="ct-hook">
+          <svg viewBox="0 0 80 80" class="ct-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
+          <h1 className="ct-title">undefined</h1>
+          <p className="ct-sub"></p>
+        </div>
+      </div>
+    );
+  }
 
-export function CTA({ step }: Props) {
-  if (step === 0) return <div className="CTA step-0"><h2>總結</h2></div>;
-  if (step === 1) return (
-    <div className="CTA step-1" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", maxWidth: "600px" }}>
-      <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "16px", margin: "8px", textAlign: "center" }}>
-        <strong>登記處</strong><br/><span className="big-number" style={{ fontSize: "1.5rem" }}>HK$715</span>
+  if (step === 1) {
+    return (
+      <div className="ct-scene">
+        <div className="ct-number-block">
+          <div className="ct-highlight-bar">
+            <span className="ct-rule" />
+            <span className="ct-number-appear"></span>
+            <span className="ct-rule" />
+          </div>
+          <span className="ct-number-label"></span>
+          <span className="ct-number-sub"></span>
+        </div>
       </div>
-      <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "16px", margin: "8px", textAlign: "center" }}>
-        <strong>監禮人</strong><br/><span className="big-number" style={{ fontSize: "1.5rem" }}>$2k-5k</span>
-      </div>
-      <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "16px", margin: "8px", textAlign: "center" }}>
-        <strong>教堂</strong><br/><span className="big-number" style={{ fontSize: "1.5rem" }}>按規定</span>
+    );
+  }
+
+  return (
+    <div className="ct-scene">
+      <div className="ct-card-grid">
+
       </div>
     </div>
   );
-  if (step === 2) return (
-    <div className="CTA step-2">
-      <p>去 <strong>myo-hk.github.io</strong> 睇更多婚禮資訊！</p>
-    </div>
-  );
-  return <div className="CTA step-2"><p>去 myo-hk.github.io 睇更多婚禮資訊！</p></div>;
 }

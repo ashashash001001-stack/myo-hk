@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "改同名係一個個人選擇。",
-  "有人因為傳統，有人因為方便。",
-  "亦有人選擇保持自己嘅姓氏。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 reasons，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

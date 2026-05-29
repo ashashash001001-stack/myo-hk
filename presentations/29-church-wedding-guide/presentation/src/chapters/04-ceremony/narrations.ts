@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "詩歌、讀經、証道。",
-  "交換誓言同戒指。",
-  "由神職人員主持。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 ceremony，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

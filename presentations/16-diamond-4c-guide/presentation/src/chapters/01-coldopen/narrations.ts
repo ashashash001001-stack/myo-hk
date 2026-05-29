@@ -1,7 +1,7 @@
-export const NARRATIONS = [
-  "選購鑽石睇咩指標？",
-  "4C 係國際標準。",
-  "今日教你點樣揀鑽石。",
-"額外步驟 1",
-  "額外步驟 2",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"鑽石4C係揀戒指嘅基本知識。等我話你知Cut、Color、Clarity、Carat。",
+"鑽石評級標準：國際標準",
+"等我帶你逐個環節睇清楚。",
 ];

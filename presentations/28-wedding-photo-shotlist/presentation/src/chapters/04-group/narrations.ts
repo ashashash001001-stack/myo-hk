@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "雙方家庭合照。",
-  "兄弟姊妹團合照。",
-  "同學朋友合照。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 group，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

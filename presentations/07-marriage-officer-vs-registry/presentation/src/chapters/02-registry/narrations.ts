@@ -1,7 +1,7 @@
 import type { Narration } from "../../registry/types";
 
-export const narrations: Narration[] = [
-  "婚姻登記處係最傳統嘅選擇。",
-  "香港有 5 間婚姻登記處。",
-  "費用 HK$715，非辦公時間 HK$1,935。",
-];export { narrations as NARRATIONS };
+export const NARRATIONS: Narration[] = [
+"02 registry，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
+];

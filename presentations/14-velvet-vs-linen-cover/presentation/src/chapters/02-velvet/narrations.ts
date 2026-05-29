@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "絨布外觀高貴典雅。",
-  "手感柔軟舒適。",
-  "適合正式場合使用。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 velvet，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

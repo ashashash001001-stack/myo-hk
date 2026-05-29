@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "海外人士喺香港結婚，程序係點？",
-  "不論你係遊客定居民，香港都歡迎你嚟註冊。",
-  "今日就話你知海外人士結婚嘅步驟。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"想去海外結婚？等我介紹海外結婚嘅流程、文件同注意事項。",
+"個月前計劃：視乎目的地",
+"等我帶你逐個環節睇清楚。",
 ];

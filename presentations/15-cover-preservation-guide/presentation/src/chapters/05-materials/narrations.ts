@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "唔同材質有唔同保養方法。",
-  "皮革：定期上油。",
-  "布料：注意防潮。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 materials，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

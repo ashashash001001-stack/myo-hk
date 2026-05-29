@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "求婚戒指係標配。",
-  "預算之內選擇最好嘅。",
-  "唔需要太大，心意緊要。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 ring，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

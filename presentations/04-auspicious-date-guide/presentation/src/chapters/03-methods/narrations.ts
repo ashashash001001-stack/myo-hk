@@ -1,8 +1,7 @@
-export const NARRATIONS = [
-  "擇日有幾種常見方法，由傳統到現代都有。",
-  "第一種係查通勝，最傳統嘅方法，睇宜嫁娶嘅日子。",
-  "第二種係八字配對，根據新人時辰八字計算最夾嘅日子。",
-  "第三種係搵師傅擇日，專業風水師傅幫你揀。",
-  "第四種係用網上工具，手機 App 一按就知好日。",
-  "四種方法各有好處，睇你嘅需要同預算。"
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 methods，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

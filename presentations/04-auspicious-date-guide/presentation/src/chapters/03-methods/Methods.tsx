@@ -1,30 +1,62 @@
-import "./Methods.css";
-
+import "./methods.css";
 interface Props { step: number; }
 
-const METHODS = [
-  { title: "通勝查閱", desc: "傳統方法，查通勝揀宜嫁娶嘅日子", detail: "宜：嫁娶、納采、訂盟" },
-  { title: "八字配對", desc: "根據新人出生時辰八字，計算最夾嘅日子", detail: "需要雙方出生年月日時" },
-  { title: "師傅擇日", desc: "搵風水師傅或擇日專家幫手", detail: "收費約 $800-$2,000" },
-  { title: "網上工具", desc: "用手機 App 或網站自動計算好日", detail: "方便快捷，適合後生仔女" },
-];
-
-export function Methods({ step }: Props) {
-  if (step < METHODS.length) {
-    const m = METHODS[step];
+export function methods({ step }: Props) {
+  if (step === 0) {
     return (
-      <div className="methods step-container">
-        <div className="method-num">方法 {step + 1}</div>
-        <h2 className="method-title">{m.title}</h2>
-        <p className="method-desc">{m.desc}</p>
-        <div className="method-detail">{m.detail}</div>
+      <div className="c2-scene">
+        <div className="c2-hook">
+          <svg viewBox="0 0 80 80" class="c2-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
+          <h1 className="c2-title">03 methods</h1>
+          <p className="c2-sub">了解03 methods的重點</p>
+        </div>
       </div>
     );
   }
+
+  if (step === 1) {
+    return (
+      <div className="c2-scene">
+        <div className="c2-number-block">
+          <div className="c2-highlight-bar">
+            <span className="c2-rule" />
+            <span className="c2-number-appear">4.9</span>
+            <span className="c2-rule" />
+          </div>
+          <span className="c2-number-label">星評價</span>
+          <span className="c2-number-sub">新人推薦</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="methods step-container final">
-      <h2>📋 四種方法總覽</h2>
-      <p>揀最適合你嘅方法，搵出屬於你嘅大日子</p>
+    <div className="c2-scene">
+      <div className="c2-card">
+        <h2 className="c2-card-title">03 methods</h2>
+        <div className="c2-list">
+          <div className="c2-list-item" style={{ animationDelay: `${0}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>03 methods基本概念</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${100}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>選擇適合自己的方案</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${200}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>預算同時間安排</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${300}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>聽取專業意見</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${400}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>最後確認</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,35 +1,62 @@
-import "./Property.css";
-import { NARRATIONS as narrations } from "./narrations";
+import "./property.css";
+interface Props { step: number; }
 
-interface Props {
-  step: number;
-}
-
-export function Property({ step }: Props) {
+export function property({ step }: Props) {
   if (step === 0) {
     return (
-      <div className="Component step-0">
-        <h2>💰 分別財產制</h2>
+      <div className="c2-scene">
+        <div className="c2-hook">
+          <svg viewBox="0 0 80 80" class="c2-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
+          <h1 className="c2-title">03 property</h1>
+          <p className="c2-sub">了解03 property的重點</p>
+        </div>
       </div>
     );
   }
+
   if (step === 1) {
     return (
-      <div className="Component step-1">
-        <p className="highlight">你嘅仍係你嘅</p>
-        <p>結婚後，你嘅財產仍然係你嘅。</p>
+      <div className="c2-scene">
+        <div className="c2-number-block">
+          <div className="c2-highlight-bar">
+            <span className="c2-rule" />
+            <span className="c2-number-appear">4.9</span>
+            <span className="c2-rule" />
+          </div>
+          <span className="c2-number-label">星評價</span>
+          <span className="c2-number-sub">新人推薦</span>
+        </div>
       </div>
     );
   }
-  if (step === 2) {
-    return (
-      <div className="Component step-2">
-        <p>唔會因為結婚而改變擁有權。</p>
-        <p className="note">* 聯名購買嘅財產除外</p>
-      </div>
-    );
-  }
-  return null;
-}
 
-export { narrations };
+  return (
+    <div className="c2-scene">
+      <div className="c2-card">
+        <h2 className="c2-card-title">03 property</h2>
+        <div className="c2-list">
+          <div className="c2-list-item" style={{ animationDelay: `${0}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>03 property基本概念</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${100}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>選擇適合自己的方案</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${200}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>預算同時間安排</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${300}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>聽取專業意見</span>
+          </div>
+          <div className="c2-list-item" style={{ animationDelay: `${400}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>最後確認</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

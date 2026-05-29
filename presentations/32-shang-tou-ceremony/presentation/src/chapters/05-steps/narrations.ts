@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "點燃龍鳳燭。",
-  "由家長梳頭。",
-  "邊梳邊講吉祥語。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 steps，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

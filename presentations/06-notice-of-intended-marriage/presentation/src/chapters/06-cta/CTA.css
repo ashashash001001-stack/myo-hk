@@ -1,220 +1,177 @@
-/* CTA Chapter Styles – paper-press theme */
-
-.cta-scene {
+.ct-scene {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
   width: 100%;
-  min-height: 100vh;
-  padding: var(--stage-pad-y, 48px) var(--stage-pad-x, 32px);
-  background: var(--bg);
-  font-family: var(--font-display-cn, "Noto Serif TC", serif);
-  color: var(--text);
-}
-
-.cta-scene-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: var(--stage-pad-y) var(--stage-pad-x);
   text-align: center;
+  overflow: hidden;
+}
+.ct-hook {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  animation: ct-fade-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.ct-hook-icon {
+  animation: ct-scale-in 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.ct-title {
+  font-size: clamp(40px, 4.5vw, 72px);
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--font-display-cn);
+}
+.ct-sub {
+  font-size: 20px;
+  color: var(--text-mute);
+  font-family: var(--font-display-cn);
+}
+.ct-number-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: ct-fade-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.ct-highlight-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ct-highlight-bar .ct-rule {
+  width: 40px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.ct-number-appear {
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: var(--hero-num-weight);
+  letter-spacing: var(--hero-num-track);
+  color: var(--accent);
+  font-family: var(--font-display-en);
+  animation: ct-bump 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.ct-number-label {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  font-family: var(--font-display-cn);
+}
+.ct-number-sub {
+  font-size: 16px;
+  color: var(--text-mute);
+  font-family: var(--font-display-cn);
+}
+.ct-preview-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--font-display-cn);
+  margin-bottom: 24px;
+  animation: ct-fade-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.ct-preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 460px;
+}
+.ct-preview-card {
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-glass-border);
+  border-radius: var(--r-card, 14px);
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  font-family: var(--font-display-cn);
+  box-shadow: var(--card-shadow);
+  animation: ct-fade-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.ct-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
-  max-width: 600px;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-glass-border);
+  border-radius: var(--r-card, 24px);
+  padding: 32px 40px;
+  max-width: 420px;
+  box-shadow: var(--card-shadow);
+  animation: ct-fade-in 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-
-/* ─── Title & Text ─── */
-.cta-title {
-  font-size: 2.5rem;
+.ct-card-title {
+  font-size: 24px;
   font-weight: 700;
-  margin: 0;
   color: var(--text);
+  font-family: var(--font-display-cn);
 }
-
-.cta-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-.cta-desc {
-  font-size: 1.05rem;
-  color: var(--text);
-  margin: 0;
-}
-
-/* ─── Steps Flow ─── */
-.cta-steps-flow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 8px;
-}
-
-.cta-flow-step {
+.ct-card-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 16px;
-  background: var(--bg-card);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  animation: cta-fade-in 0.5s ease-out both;
-}
-
-.cta-flow-num {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent);
-  color: white;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.cta-flow-text {
-  font-size: 0.85rem;
-  color: var(--text);
-}
-
-.cta-flow-arrow {
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-
-/* ─── Key Numbers ─── */
-.cta-key-numbers {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.cta-key-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 20px 24px;
-  background: var(--bg-card);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  animation: cta-fade-in 0.5s ease-out both;
-}
-
-.cta-key-num {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.cta-key-label {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* ─── Reminder Box ─── */
-.cta-reminder-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 24px 32px;
-  background: var(--accent-light);
-  border-radius: 12px;
-  max-width: 400px;
-}
-
-.cta-reminder-box p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text);
-  margin: 0;
-}
-
-.cta-reminder-note {
-  font-size: 0.9rem;
-  color: var(--accent);
-}
-
-/* ─── Links Box ─── */
-.cta-links-box {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
-  max-width: 300px;
+  max-width: 420px;
 }
-
-.cta-link-item {
-  padding: 14px 20px;
-  background: var(--bg-card);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  animation: cta-fade-in 0.5s ease-out both;
-  font-size: 1rem;
+.ct-card-label {
+  font-size: 18px;
+  font-weight: 600;
   color: var(--text);
-  text-align: left;
+  font-family: var(--font-display-cn);
 }
-
-/* ─── Final Center ─── */
-.cta-final-center {
+.ct-card-desc {
+  font-size: 14px;
+  color: var(--text-mute);
+  font-family: var(--font-display-cn);
+}
+.ct-compare {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
-
-.cta-final-title {
-  font-size: 2.2rem;
+.ct-compare-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+.ct-compare-label {
+  font-size: 18px;
+  color: var(--text-2);
+  font-family: var(--font-display-cn);
+}
+.ct-compare-value {
+  font-size: 20px;
   font-weight: 700;
   color: var(--accent);
-  margin: 0;
+  font-family: var(--font-display-en);
 }
-
-.cta-final-desc {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin: 0;
+.ct-compare-divider {
+  height: 1px;
+  background: var(--card-glass-border);
 }
-
-.cta-website-box {
-  padding: 16px 28px;
-  background: var(--accent);
-  color: white;
-  border-radius: 24px;
-  font-size: 1.05rem;
-  font-weight: 500;
+.ct-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
-
-.cta-bookmark {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-/* ─── Animations ─── */
-@keyframes cta-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes cta-scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.ct-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  color: var(--text-2);
+  font-family: var(--font-display-cn);
+  animation: ct-fade-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }

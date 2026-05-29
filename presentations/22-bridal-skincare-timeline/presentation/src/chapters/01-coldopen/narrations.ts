@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "婚禮前幾耐開始護膚？",
-  "太早太晚都唔太好。",
-  "今日為你制定時間表。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"新娘護膚要提前幾耐開始？等我話你知最佳護膚時間表。",
+"護膚黃金期：提前準備",
+"等我帶你逐個環節睇清楚。",
 ];

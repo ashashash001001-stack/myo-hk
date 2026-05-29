@@ -1,8 +1,7 @@
-export const NARRATIONS = [
-  "最後，分享幾個擇日實用貼士俾你。",
-  "第一，好日好搶手，建議提早半年決定。",
-  "第二，準備最少 3 個後備日期，靈活安排。",
-  "第三，揀好日之後第一時間 book 場地。",
-  "第四，擇日都要考慮雙方家人嘅時間同意願。",
-  "記住呢幾個貼士，揀日就唔會頭痛。"
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 tips，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "婚戒係新人最重視嘅開支之一。",
-  "一對結婚戒指，約 HK$10,000 至 HK$50,000。",
-  "鑽石戒指可以更貴，視乎 4C 級別。"
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+  "結婚戒指係第二大成開支，約佔總預算 11%。",
+  "一對結婚戒指大約 HK$10,000 到 50,000，視乎品牌同款式。",
+  "鑽石戒指價格取決於 4C 級別，素色戒指就約 HK$3,000 起。",
 ];

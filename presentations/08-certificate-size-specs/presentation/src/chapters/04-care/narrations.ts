@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "點樣保護你張結婚證書？",
-  "用證書套可以有效保護。",
-  "避免摺疊同陽光直射。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 care，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

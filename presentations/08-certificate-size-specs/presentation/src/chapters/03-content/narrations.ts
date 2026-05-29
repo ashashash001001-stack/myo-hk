@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "證書上面有咩資料？",
-  "新人姓名、結婚日期、地點。",
-  "仲有登記官同見證人簽名。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 content，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "周大福、周生生係熱門之選。",
-  "款式多，價錢適中。",
-  "香港到處都有分店。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 midrange，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "傳統包括龍鳳餅、椰子。",
-  "有金器、首飾、衣料。",
-  "水果、茶葉、酒。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 gifts，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "先量度你張證書嘅尺寸。",
-  "注意闊度同高度。",
-  "預留少量空間方便放入取出。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 measure，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

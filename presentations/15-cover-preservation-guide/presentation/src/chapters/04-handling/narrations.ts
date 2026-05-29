@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "取出放入時要輕手。",
-  "避免過度摺疊。",
-  "保持乾燥，防止發霉。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 handling，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

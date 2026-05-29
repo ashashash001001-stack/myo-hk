@@ -1,37 +1,47 @@
 import "./Coldopen.css";
-import { NARRATIONS as narrations } from "./narrations";
+interface Props { step: number; }
 
-interface Props {
-  step: number;
-}
+const CATEGORIES = ["02 legal", "03 property", "04 prenup", "05 tax"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {
     return (
-      <div className="Component step-0">
-        <h2>⚖️ 結婚法律</h2>
+      <div className="co-scene">
+        <div className="co-hook">
+          <svg viewBox="0 0 80 80" class="co-hook-icon" width="80" height="80"><circle cx="40" cy="40" r="36" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><path d="M24 40l12 12 20-20" stroke="var(--accent)" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <h1 className="co-title">結婚法律與財產</h1>
+          <p className="co-sub">結婚後財產點樣分配？等我介紹香港婚姻法律同財產制度。</p>
+        </div>
       </div>
     );
   }
+
   if (step === 1) {
     return (
-      <div className="Component step-1">
-        <ul className="checklist">
-          <li>✅ 結婚除咗感情，仲涉及法律問題</li>
-          <li>✅ 香港嘅婚姻法例你知幾多？</li>
-        </ul>
+      <div className="co-scene">
+        <div className="co-number-block">
+          <div className="co-highlight-bar">
+            <span className="co-rule" />
+            <span className="co-number-appear">HKM</span>
+            <span className="co-rule" />
+          </div>
+          <span className="co-number-label">資產門檻</span>
+          <span className="co-number-sub">視乎情況</span>
+        </div>
       </div>
     );
   }
-  if (step === 2) {
-    return (
-      <div className="Component step-2">
-        <p>今日講下結婚嘅法律知識。</p>
-        <p className="preview">法律契約 · 財產制度 · 婚前協議 · 稅務優惠</p>
-      </div>
-    );
-  }
-  return null;
-}
 
-export { narrations };
+  return (
+    <div className="co-scene">
+      <h2 className="co-preview-title">主要環節</h2>
+      <div className="co-preview-grid">
+        {CATEGORIES.map((cat, i) => (
+          <div key={i} className="co-preview-card" style={{ animationDelay: `${i * 80}ms` }}>
+            {cat}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

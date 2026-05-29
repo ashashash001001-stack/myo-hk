@@ -1,7 +1,7 @@
 import type { Narration } from "../../registry/types";
 
-export const narrations: Narration[] = [
-  "三種選擇各有好處，比較下就知邊個適合你。",
-  "登記處最平，監禮人最自由，教堂最莊嚴。",
-  "睇你嘅預算同喜好啦。",
-];export { narrations as NARRATIONS };
+export const NARRATIONS: Narration[] = [
+"05 comparison，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
+];

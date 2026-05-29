@@ -1,7 +1,7 @@
-export const NARRATIONS = [
-  "淨度反映內含物多寡。",
-  "IF-VS2 肉眼睇唔到雜質。",
-  "SI 系列係入門之選。",
-"額外步驟 1",
-  "額外步驟 2",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 clarity，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

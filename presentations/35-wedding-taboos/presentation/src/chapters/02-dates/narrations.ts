@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "避免喺新娘月經期間結婚。",
-  "傳統認為帶喪氣。",
-  "鬼月結婚被認為不吉利。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 dates，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "總結：兩款都係高質量之選。",
-  "視乎你嘅風格同用途。",
-  "去 myo-hk.github.io 選購！",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"undefined，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,15 +1,47 @@
 import "./Coldopen.css";
-
 interface Props { step: number; }
 
+const CATEGORIES = ["02 cut", "03 color", "04 clarity", "05 carat"];
+
 export function Coldopen({ step }: Props) {
-  if (step === 0) return <div className="Coldopen step-0"><h2>鑽石 4C</h2></div>;
-  if (step === 1) return <div className="Coldopen step-1"><p>4C 係國際標準。</p></div>;
-  if (step === 2) return <div className="Coldopen step-2"><p>今日教你點樣揀鑽石。</p></div>;
-  if (step === 3) return <div className="Coldopen step-3"><p>額外步驟 1</p></div>;
-if (step === 4) return <div className="Coldopen step-4"><p>額外步驟 2</p></div>;
-if (step === 5) return <div className="Coldopen step-5"><p>額外步驟 3</p></div>;
-if (step === 6) return <div className="Coldopen step-6"><p>額外步驟 4</p></div>;
-if (step === 7) return <div className="Coldopen step-7"><p>額外步驟 5</p></div>;
-return <div className="Coldopen final"><p>了解更多：myo-hk.github.io</p></div>;
+  if (step === 0) {
+    return (
+      <div className="co-scene">
+        <div className="co-hook">
+          <svg viewBox="0 0 80 80" class="co-hook-icon" width="80" height="80"><circle cx="40" cy="40" r="36" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><path d="M24 40l12 12 20-20" stroke="var(--accent)" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <h1 className="co-title">鑽石4C指南</h1>
+          <p className="co-sub">鑽石4C係揀戒指嘅基本知識。等我話你知Cut、Color、Clarity、Carat。</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (step === 1) {
+    return (
+      <div className="co-scene">
+        <div className="co-number-block">
+          <div className="co-highlight-bar">
+            <span className="co-rule" />
+            <span className="co-number-appear">4C</span>
+            <span className="co-rule" />
+          </div>
+          <span className="co-number-label">鑽石評級標準</span>
+          <span className="co-number-sub">國際標準</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="co-scene">
+      <h2 className="co-preview-title">主要環節</h2>
+      <div className="co-preview-grid">
+        {CATEGORIES.map((cat, i) => (
+          <div key={i} className="co-preview-card" style={{ animationDelay: `${i * 80}ms` }}>
+            {cat}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

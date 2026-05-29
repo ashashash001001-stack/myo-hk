@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "西裝最緊要係夾身。",
-  "肩膀位置要啱啱好。",
-  "褲長適中，唔好吊腳。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 fit，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

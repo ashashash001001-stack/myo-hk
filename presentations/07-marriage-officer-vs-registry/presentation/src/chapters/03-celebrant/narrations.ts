@@ -1,7 +1,7 @@
 import type { Narration } from "../../registry/types";
 
-export const narrations: Narration[] = [
-  "婚姻監禮人係律師或者公證人。",
-  "可以去任何地方行禮，時間更彈性。",
-  "費用約 HK$2,000 至 HK$5,000。",
-];export { narrations as NARRATIONS };
+export const NARRATIONS: Narration[] = [
+"03 celebrant，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
+];

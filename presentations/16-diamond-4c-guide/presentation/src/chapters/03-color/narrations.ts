@@ -1,7 +1,7 @@
-export const NARRATIONS = [
-  "顏色由 D 至 Z。",
-  "D-F 最白，H 色之後開始帶黃。",
-  "性價比最高係 G-H 色。",
-"額外步驟 1",
-  "額外步驟 2",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 color，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

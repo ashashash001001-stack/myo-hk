@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "總結結婚法律要點。",
-  "分別財產制、婚前協議、稅務優惠。",
-  "去 myo-hk.github.io 睇更多！",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"undefined，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

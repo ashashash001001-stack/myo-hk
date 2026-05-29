@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "首先睇下你符唔符合資格。",
-  "任何國籍嘅人都可以喺香港結婚。",
-  "只要年滿 16 歲，唔係近親，就可以登記。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 requirements，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

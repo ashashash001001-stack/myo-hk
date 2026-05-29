@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "結婚除咗感情，仲涉及法律問題。",
-  "香港嘅婚姻法例你知幾多？",
-  "今日講下結婚嘅法律知識。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"結婚後財產點樣分配？等我介紹香港婚姻法律同財產制度。",
+"資產門檻：視乎情況",
+"等我帶你逐個環節睇清楚。",
 ];

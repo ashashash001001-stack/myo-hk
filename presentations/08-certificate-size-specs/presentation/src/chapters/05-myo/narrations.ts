@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "My O! 證書套專為香港證書設計。",
-  "尺寸精準，完美收納。",
-  "多種材質同顏色選擇。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 myo，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

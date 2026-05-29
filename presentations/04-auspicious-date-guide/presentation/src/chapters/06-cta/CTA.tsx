@@ -1,27 +1,40 @@
-import "./CTA.css";
+import "./cta.css";
 interface Props { step: number; }
 
-const STEPS = ["點解要擇日", "擇日方法", "2025好日", "實用貼士"];
-
-export function CTA({ step }: Props) {
-  if (step === 0) return (
-    <div className="cta step-0"><h2>🎯 總結</h2><p>結婚擇日其實唔複雜，一步步嚟就得</p></div>
-  );
-  if (step === 1) return (
-    <div className="cta steps-list">
-      <h2>四步搞掂</h2>
-      <div className="steps-col">
-        {STEPS.map((s, i) => (
-          <div key={i} className="step-num">{i+1}. {s}</div>
-        ))}
+export function cta({ step }: Props) {
+  if (step === 0) {
+    return (
+      <div className="ct-scene">
+        <div className="ct-hook">
+          <svg viewBox="0 0 80 80" class="ct-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
+          <h1 className="ct-title">undefined</h1>
+          <p className="ct-sub"></p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (step === 1) {
+    return (
+      <div className="ct-scene">
+        <div className="ct-number-block">
+          <div className="ct-highlight-bar">
+            <span className="ct-rule" />
+            <span className="ct-number-appear"></span>
+            <span className="ct-rule" />
+          </div>
+          <span className="ct-number-label"></span>
+          <span className="ct-number-sub"></span>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="cta final-cta">
-      <h2>超過 400 篇香港婚禮教學文章</h2>
-      <a href="https://myo-hk.github.io/" className="cta-link" target="_blank">myo-hk.github.io</a>
-      <p className="cta-sub">由籌備到婚後，一站式婚禮資訊</p>
+    <div className="ct-scene">
+      <div className="ct-card-grid">
+
+      </div>
     </div>
   );
 }

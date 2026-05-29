@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "可以使用婚紗保存服務。",
-  "真空保存最徹底。",
-  "視乎你嘅保存目的。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 preserve，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

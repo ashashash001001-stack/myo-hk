@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "熱轉印係通過高温將墨水滲透物料。",
-  "圖案永不褪色。",
-  "色彩鮮艷、細節分明。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 technology，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

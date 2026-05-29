@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "比化妝師早到場。",
-  "預留足夠時間。",
-  "帶備後備化妝品。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 day，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

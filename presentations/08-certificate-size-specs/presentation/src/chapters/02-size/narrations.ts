@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "證書尺寸係 209mm × 298mm。",
-  "大約係 A4 紙嘅大細。",
-  "紙質係有浮水印嘅專用紙。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 size，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

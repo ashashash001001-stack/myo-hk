@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "設定每週傾偈時間。",
-  "分享一周大小事。",
-  "避免只係得家務傾計。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 weekly，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "教堂結婚要注意啲咩？",
-  "香港有邊啲教堂可以行禮？",
-  "今日為你解答。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"教堂婚禮莊嚴浪漫。等我介紹香港教堂婚禮流程、服飾同注意事項。",
+"教堂婚禮費用：視乎教堂",
+"等我帶你逐個環節睇清楚。",
 ];

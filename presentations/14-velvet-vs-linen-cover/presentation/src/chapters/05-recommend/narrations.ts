@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "如果你想要高貴感：揀絨布。",
-  "如果你想要實用性：揀亞麻布。",
-  "兩款 My O! 都有高質量選擇。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 recommend，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

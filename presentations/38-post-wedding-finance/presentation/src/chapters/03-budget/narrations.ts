@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "制定每月預算。",
-  "儲蓄目標。",
-  "控制不必要消費。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 budget，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

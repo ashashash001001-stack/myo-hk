@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "婚前協議喺香港有冇法律效力？",
-  "婚前協議可以約束離婚後嘅財產分配。",
-  "但要符合一定條件先有效。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"04 prenup，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

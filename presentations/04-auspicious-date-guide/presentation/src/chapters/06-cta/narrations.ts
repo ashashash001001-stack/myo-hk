@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "嚟到最後一步， recap 返成個擇日流程。",
-  "記住呢 4 個步驟，結婚擇日就唔再頭痛。",
-  "仲有更多婚禮資訊，去我哋網站睇啦！"
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"undefined，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

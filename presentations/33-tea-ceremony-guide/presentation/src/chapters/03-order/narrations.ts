@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "先敬父母。",
-  "再敬其他長輩。",
-  "由新郎新娘依次進行。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 order，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

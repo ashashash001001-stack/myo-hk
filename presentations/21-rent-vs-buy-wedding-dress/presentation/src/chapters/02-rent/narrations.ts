@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "租用最大優點係價錢平。",
-  "香港婚紗租賃約 HK$3,000-10,000。",
-  "選擇多，款式新。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 rent，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

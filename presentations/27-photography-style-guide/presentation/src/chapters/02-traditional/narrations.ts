@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "傳統擺拍經典穩陣。",
-  "親友大合照必備。",
-  "確保每個人都影到。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 traditional，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

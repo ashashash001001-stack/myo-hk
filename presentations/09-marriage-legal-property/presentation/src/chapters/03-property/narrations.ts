@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "香港行夫妻分別財產制。",
-  "結婚後，你嘅財產仍然係你嘅。",
-  "唔會因為結婚而改變擁有權。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 property，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

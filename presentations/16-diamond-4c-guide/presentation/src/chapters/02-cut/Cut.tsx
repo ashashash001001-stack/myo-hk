@@ -1,15 +1,62 @@
-import "./Cut.css";
-
+import "./cut.css";
 interface Props { step: number; }
 
-export function Cut({ step }: Props) {
-  if (step === 0) return <div className="Cut step-0"><h2>車工 Cut</h2></div>;
-  if (step === 1) return <div className="Cut step-1"><p>影響光芒閃爍程度。</p></div>;
-  if (step === 2) return <div className="Cut step-2"><p>建議揀 Excellent 車工。</p></div>;
-  if (step === 3) return <div className="Cut step-3"><p>額外步驟 1</p></div>;
-if (step === 4) return <div className="Cut step-4"><p>額外步驟 2</p></div>;
-if (step === 5) return <div className="Cut step-5"><p>額外步驟 3</p></div>;
-if (step === 6) return <div className="Cut step-6"><p>額外步驟 4</p></div>;
-if (step === 7) return <div className="Cut step-7"><p>額外步驟 5</p></div>;
-return <div className="Cut final"><p>了解更多：myo-hk.github.io</p></div>;
+export function cut({ step }: Props) {
+  if (step === 0) {
+    return (
+      <div className="c1-scene">
+        <div className="c1-hook">
+          <svg viewBox="0 0 80 80" class="c1-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
+          <h1 className="c1-title">02 cut</h1>
+          <p className="c1-sub">了解02 cut的重點</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (step === 1) {
+    return (
+      <div className="c1-scene">
+        <div className="c1-number-block">
+          <div className="c1-highlight-bar">
+            <span className="c1-rule" />
+            <span className="c1-number-appear">4.9</span>
+            <span className="c1-rule" />
+          </div>
+          <span className="c1-number-label">星評價</span>
+          <span className="c1-number-sub">新人推薦</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="c1-scene">
+      <div className="c1-card">
+        <h2 className="c1-card-title">02 cut</h2>
+        <div className="c1-list">
+          <div className="c1-list-item" style={{ animationDelay: `${0}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>02 cut基本概念</span>
+          </div>
+          <div className="c1-list-item" style={{ animationDelay: `${100}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>選擇適合自己的方案</span>
+          </div>
+          <div className="c1-list-item" style={{ animationDelay: `${200}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>預算同時間安排</span>
+          </div>
+          <div className="c1-list-item" style={{ animationDelay: `${300}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>聽取專業意見</span>
+          </div>
+          <div className="c1-list-item" style={{ animationDelay: `${400}ms` }}>
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <span>最後確認</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

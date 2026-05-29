@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "求婚地點好緊要。",
-  "可以係第一次約會嘅地方。",
-  "或者係浪漫嘅海邊。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 where，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

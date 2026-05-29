@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "可以左右手分別佩戴。",
-  "或者求婚戒套喺結婚戒外面。",
-  "視乎你嘅喜好。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 wear，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

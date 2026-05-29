@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "冷靜下再傾。",
-  "避免火爆時爭吵。",
-  "尋找共識。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 conflict，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

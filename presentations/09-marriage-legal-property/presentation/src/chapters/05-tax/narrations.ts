@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "結婚有稅務優惠。",
-  "已婚人士免稅額 HK$264,000。",
-  "合併報稅可能更著數。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"05 tax，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

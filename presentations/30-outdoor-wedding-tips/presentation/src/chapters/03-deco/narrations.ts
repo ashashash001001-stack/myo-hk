@@ -1,5 +1,7 @@
-export const NARRATIONS = [
-  "戶外需要更多裝飾。",
-  "可以用花拱、燈串。",
-  "確保電力供應。",
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"03 deco，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];

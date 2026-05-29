@@ -1,8 +1,7 @@
-export const NARRATIONS = [
-  "首先，點解結婚要擇日？背後有幾個重要原因。",
-  "第一，傳統習俗上，揀個好日係對雙方家庭嘅尊重。",
-  "第二，好日寓意婚姻美滿，白頭到老。",
-  "第三，揀個好日可以令長輩安心放心。",
-  "第四，擇日係為咗趨吉避凶，為婚姻開個好頭。",
-  "所以擇日唔係迷信，而係一份祝福。"
+import type { Narration } from "../../registry/types";
+
+export const NARRATIONS: Narration[] = [
+"02 why，一齊了解下。",
+"呢個環節有唔少細節要留意。",
+"搞清楚之後，就可以安心 proceed。",
 ];
