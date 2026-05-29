@@ -1,14 +1,14 @@
 import "./standard.css";
 interface Props { step: number; }
 
-export function standard({ step }: Props) {
+export function Standard({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c1-scene">
         <div className="c1-hook">
           <svg viewBox="0 0 80 80" class="c1-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
-          <h1 className="c1-title">02 standard</h1>
-          <p className="c1-sub">了解02 standard的重點</p>
+          <h1 className="c1-title">標準尺寸</h1>
+          <p className="c1-sub">了解證書套嘅標準尺寸規格</p>
         </div>
       </div>
     );
@@ -33,27 +33,27 @@ export function standard({ step }: Props) {
   return (
     <div className="c1-scene">
       <div className="c1-card">
-        <h2 className="c1-card-title">02 standard</h2>
+        <h2 className="c1-card-title">標準尺寸</h2>
         <div className="c1-list">
           <div className="c1-list-item" style={{ animationDelay: `${0}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>02 standard基本概念</span>
+            <span>A4 證書套標準尺寸</span>
           </div>
           <div className="c1-list-item" style={{ animationDelay: `${100}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>選擇適合自己的方案</span>
+            <span>常見證書尺寸對照表</span>
           </div>
           <div className="c1-list-item" style={{ animationDelay: `${200}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>預算同時間安排</span>
+            <span>證書套厚度同規格</span>
           </div>
           <div className="c1-list-item" style={{ animationDelay: `${300}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>聽取專業意見</span>
+            <span>標準尺寸嘅適用場景</span>
           </div>
           <div className="c1-list-item" style={{ animationDelay: `${400}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>最後確認</span>
+            <span>尺寸標示點樣睇</span>
           </div>
         </div>
       </div>

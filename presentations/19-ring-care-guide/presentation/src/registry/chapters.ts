@@ -15,8 +15,8 @@ import { NARRATIONS as N06 } from "../chapters/06-cta/narrations";
 
 export const CHAPTERS: ChapterDef[] = [
   { id: "01-coldopen", title: "戒指保養指南", narrations: N01, Component: Coldopen },
-  { id: "02-daily", title: "02 daily", narrations: N02, Component: daily },
-  { id: "03-cleaning", title: "03 cleaning", narrations: N03, Component: cleaning },
-  { id: "04-storage", title: "04 storage", narrations: N04, Component: storage },
-  { id: "05-professional", title: "05 professional", narrations: N05, Component: professional },
+  { id: "02-daily", title: "日常護理", narrations: N02, Component: Daily },
+  { id: "03-cleaning", title: "專業保養", narrations: N03, Component: Cleaning },
+  { id: "04-storage", title: "存放方法", narrations: N04, Component: Storage },
+  { id: "05-professional", title: "專業保養", narrations: N05, Component: Professional },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

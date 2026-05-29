@@ -15,8 +15,8 @@ import { NARRATIONS as N06 } from "../chapters/06-cta/narrations";
 
 export const CHAPTERS: ChapterDef[] = [
   { id: "01-coldopen", title: "求婚大作戰攻略", narrations: N01, Component: Coldopen },
-  { id: "02-where", title: "02 where", narrations: N02, Component: where },
-  { id: "03-ring", title: "03 ring", narrations: N03, Component: ring },
-  { id: "04-words", title: "04 words", narrations: N04, Component: words },
-  { id: "05-photography", title: "05 photography", narrations: N05, Component: photography },
+  { id: "02-where", title: "時機選擇", narrations: N02, Component: Where },
+  { id: "03-ring", title: "地點建議", narrations: N03, Component: Ring },
+  { id: "04-words", title: "戒指揀選", narrations: N04, Component: Words },
+  { id: "05-photography", title: "求婚台詞", narrations: N05, Component: Photography },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

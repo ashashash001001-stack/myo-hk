@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 registry", "03 celebrant", "04 church", "05 comparison"];
+const CATEGORIES = ["登記處結婚", "監禮人結婚", "教堂結婚", "比較與選擇"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {
@@ -22,11 +22,11 @@ export function Coldopen({ step }: Props) {
         <div className="co-number-block">
           <div className="co-highlight-bar">
             <span className="co-rule" />
-            <span className="co-number-appear"></span>
+            <span className="co-number-appear">$715</span>
             <span className="co-rule" />
           </div>
-          <span className="co-number-label">登記處婚禮費用</span>
-          <span className="co-number-sub">監禮人另計</span>
+          <span className="co-number-label">登記處基本費用</span>
+          <span className="co-number-sub">監禮人另加 $2,000 - $5,000</span>
         </div>
       </div>
     );

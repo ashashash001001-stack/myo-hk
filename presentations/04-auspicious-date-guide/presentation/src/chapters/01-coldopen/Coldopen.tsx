@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 why", "03 methods", "04 calendar", "05 tips"];
+const CATEGORIES = ["為何要揀好日子", "揀日方法", "如何睇日曆", "揀日技巧"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {
@@ -22,11 +22,11 @@ export function Coldopen({ step }: Props) {
         <div className="co-number-block">
           <div className="co-highlight-bar">
             <span className="co-rule" />
-            <span className="co-number-appear"></span>
+            <span className="co-number-appear">$3K-8K</span>
             <span className="co-rule" />
           </div>
           <span className="co-number-label">擇日費用</span>
-          <span className="co-number-sub">視乎師傅</span>
+          <span className="co-number-sub">視乎師傅經驗及名氣</span>
         </div>
       </div>
     );

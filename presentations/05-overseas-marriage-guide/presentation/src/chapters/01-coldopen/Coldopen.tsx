@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 requirements", "03 documents", "04 process", "05 legalization"];
+const CATEGORIES = ["申請資格", "所需文件", "辦理流程", "文件認證"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {

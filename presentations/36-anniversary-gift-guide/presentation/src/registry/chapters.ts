@@ -15,8 +15,8 @@ import { NARRATIONS as N06 } from "../chapters/06-cta/narrations";
 
 export const CHAPTERS: ChapterDef[] = [
   { id: "01-coldopen", title: "結婚週年禮物指南", narrations: N01, Component: Coldopen },
-  { id: "02-year1", title: "02 year1", narrations: N02, Component: year1 },
-  { id: "03-year5", title: "03 year5", narrations: N03, Component: year5 },
-  { id: "04-year10", title: "04 year10", narrations: N04, Component: year10 },
+  { id: "02-year1", title: "週年慶祝", narrations: N02, Component: year1 },
+  { id: "03-year5", title: "重要里程碑", narrations: N03, Component: year5 },
+  { id: "04-year10", title: "禮物推薦", narrations: N04, Component: year10 },
   { id: "05-year15", title: "05 year15", narrations: N05, Component: year15 },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

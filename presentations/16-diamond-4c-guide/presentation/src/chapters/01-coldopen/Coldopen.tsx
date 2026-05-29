@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 cut", "03 color", "04 clarity", "05 carat"];
+const CATEGORIES = ["切割grading", "成色grading", "淨度grading", "克拉重量"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {

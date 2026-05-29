@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 eligibility", "03 methods", "04 fee", "05 display"];
+const CATEGORIES = ["申請資格", "遞交方式", "費用說明", "展示通知書"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {
@@ -22,11 +22,11 @@ export function Coldopen({ step }: Props) {
         <div className="co-number-block">
           <div className="co-highlight-bar">
             <span className="co-rule" />
-            <span className="co-number-appear"></span>
+            <span className="co-number-appear">HK$305</span>
             <span className="co-rule" />
           </div>
-          <span className="co-number-label">通知書費用</span>
-          <span className="co-number-sub">政府收費</span>
+          <span className="co-number-label">擬結婚通知書費用</span>
+          <span className="co-number-sub">遞交後 15 天方可舉行婚禮</span>
         </div>
       </div>
     );

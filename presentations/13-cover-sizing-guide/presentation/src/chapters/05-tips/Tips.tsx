@@ -1,14 +1,14 @@
 import "./tips.css";
 interface Props { step: number; }
 
-export function tips({ step }: Props) {
+export function Tips({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c4-scene">
         <div className="c4-hook">
           <svg viewBox="0 0 80 80" class="c4-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
-          <h1 className="c4-title">05 tips</h1>
-          <p className="c4-sub">了解05 tips的重點</p>
+          <h1 className="c4-title">選購貼士</h1>
+          <p className="c4-sub">實用證書套選購貼士同注意事項</p>
         </div>
       </div>
     );
@@ -33,27 +33,27 @@ export function tips({ step }: Props) {
   return (
     <div className="c4-scene">
       <div className="c4-card">
-        <h2 className="c4-card-title">05 tips</h2>
+        <h2 className="c4-card-title">選購貼士</h2>
         <div className="c4-list">
           <div className="c4-list-item" style={{ animationDelay: `${0}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>05 tips基本概念</span>
+            <span>材質選擇同耐用度</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${100}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>選擇適合自己的方案</span>
+            <span>顏色配搭婚禮主題</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${200}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>預算同時間安排</span>
+            <span>訂造時間同預算</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${300}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>聽取專業意見</span>
+            <span>售後服務同保養</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${400}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>最後確認</span>
+            <span>網購證書套注意事項</span>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 year1", "03 year5", "04 year10", "05 year15"];
+const CATEGORIES = ["週年慶祝", "重要里程碑", "禮物推薦", "05 year15"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {

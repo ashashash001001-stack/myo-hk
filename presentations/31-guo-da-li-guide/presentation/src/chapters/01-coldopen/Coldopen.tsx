@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 gifts", "03 process", "04 modern", "05 advice"];
+const CATEGORIES = ["準備工作", "禮儀細節", "禁忌習俗", "05 advice"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {

@@ -1,14 +1,14 @@
 import "./legalization.css";
 interface Props { step: number; }
 
-export function legalization({ step }: Props) {
+export function Legalization({ step }: Props) {
   if (step === 0) {
     return (
       <div className="c4-scene">
         <div className="c4-hook">
           <svg viewBox="0 0 80 80" class="c4-hook-icon" width="80" height="80"><rect x="16" y="8" width="48" height="64" rx="4" stroke="var(--accent)" strokeWidth="3" fill="var(--accent-soft)"/><line x1="24" y1="24" x2="56" y2="24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="34" x2="56" y2="34" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/><line x1="24" y1="44" x2="48" y2="44" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/></svg>
-          <h1 className="c4-title">05 legalization</h1>
-          <p className="c4-sub">了解05 legalization的重點</p>
+          <h1 className="c4-title">文件認證</h1>
+          <p className="c4-sub">了解海外文件認證同公證程序</p>
         </div>
       </div>
     );
@@ -33,27 +33,27 @@ export function legalization({ step }: Props) {
   return (
     <div className="c4-scene">
       <div className="c4-card">
-        <h2 className="c4-card-title">05 legalization</h2>
+        <h2 className="c4-card-title">文件認證</h2>
         <div className="c4-list">
           <div className="c4-list-item" style={{ animationDelay: `${0}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>05 legalization基本概念</span>
+            <span>國際公證人見證簽名</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${100}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>選擇適合自己的方案</span>
+            <span>海牙認證 Apostille</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${200}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>預算同時間安排</span>
+            <span>領事館認證程序</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${300}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>聽取專業意見</span>
+            <span>翻譯公證文件</span>
           </div>
           <div className="c4-list-item" style={{ animationDelay: `${400}ms` }}>
             <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="14" fill="none" stroke="var(--accent)" strokeWidth="2.5" opacity="0.3"/><path d="M9 16l5 5 9-9" fill="none" stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            <span>最後確認</span>
+            <span>確認文件有效期</span>
           </div>
         </div>
       </div>
