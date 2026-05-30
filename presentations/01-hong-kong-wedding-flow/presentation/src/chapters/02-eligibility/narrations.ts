@@ -9,7 +9,4 @@ export const narrations: Narration[] = [
 
   // step 2 — special cases (under 21 / divorced / widowed)
   "如果你係離婚人士，要帶埋法院發出嘅離婚判令。鰥夫或者寡婦就要帶前配偶嘅死亡證明書。但大部分人都只需要身份證就夠。",
-
-  // step 3 — transition to next chapter
-  "資格確認咗，文件準備好。下一步就要交擬結婚通知書啦。",
 ];

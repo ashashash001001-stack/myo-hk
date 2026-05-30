@@ -9,7 +9,4 @@ export const narrations: Narration[] = [
 
   // step 2 — cert usage scenes (loan / inheritance / school)
   "結婚證書呢張紙，未來幾十年你可能要拿出來用很多次——申請貸款、辦理遺產、子女入學都可能會用到。",
-
-  // step 3 — grand finale: HK$1,020 total + CTA
-  "從頭到尾，最平嘅方案只要 1,020 蚊——305 蚊通知書加 715 蚊登記處婚禮。其實真係冇你諗到咁複雜。如果你想知更多結婚細節，我哋網站有超過 400 篇香港婚禮教學文章。去 myo-hk.github.io 睇下啦。",
 ];

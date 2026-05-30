@@ -12,7 +12,4 @@ export const narrations: Narration[] = [
 
   // step 3 — civil celebrant: any location, any time
   "第三種，婚姻監禮人。自由度最高——你可以揀任何時間、任何地點。酒店花園、海灘、空中餐廳都得。一般兩千到五千蚊不等。",
-
-  // step 4 — comparison summary table
-  "三種選擇，豐儉由人。最平 715 搞掂，最貴可以自由發揮。",
 ];

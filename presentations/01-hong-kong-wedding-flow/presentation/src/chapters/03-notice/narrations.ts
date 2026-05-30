@@ -12,7 +12,4 @@ export const narrations: Narration[] = [
 
   // step 3 — fee highlight + payment methods
   "費用係 305 蚊。可以用現金、八達通、轉數快、支付寶、微信支付都得。",
-
-  // step 4 — public display animation
-  "交完之後，你嘅通知書會喺登記處公開展示 15 日——畀任何人查閱。冇人反對？咁就過關喇。",
 ];

@@ -9,7 +9,4 @@ export const narrations: Narration[] = [
 
   // step 2 — certificate reveal with dimensions
   "結婚證書會係一式兩份，正本即場俾你哋。呢張證書嘅實際尺寸係 209mm × 298mm，大約等於 A4 咁大。",
-
-  // step 3 — certificate into cover
-  "拎到之後，一定要用證書套好好保護。",
 ];
