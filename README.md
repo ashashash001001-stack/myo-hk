@@ -4,7 +4,7 @@
 
 **Live Site**: [https://myo-hk.github.io](https://myo-hk.github.io)
 **教學指南**: [https://myo-hk.github.io/blog/](https://myo-hk.github.io/blog/)
- 
+
 ---
 
 ## 📋 目錄
@@ -14,12 +14,14 @@
 - [網站架構](#網站架構)
 - [內容分類](#內容分類)
 - [SEO 優化](#seo-優化)
-- [內容生成 SOP](#內容生成-sop)
 - [技術棧](#技術棧)
 - [自動化腳本](#自動化腳本)
+- [測試](#測試)
 - [部署指南](#部署指南)
 - [專案結構](#專案結構)
 - [開發規範](#開發規範)
+- [婚禮視頻 presentations](#婚禮視頻-presentations)
+- [品牌資訊](#品牌資訊)
 - [PDF 列印除錯筆記](#pdf-列印除錯筆記)
 
 ---
@@ -28,12 +30,25 @@
 
 My O! 是一家專注於客製化結婚證書套的香港品牌。本項目是品牌的官方靜態網站，提供：
 
-- **品牌展示** — 產品介紹、材質選擇、客製化選項
-- **婚慶教學指南** — 420+ 篇涵蓋婚禮籌備全流程的中文文章
+- **品牌展示** — 產品介紹、材質選擇、客製化選項（`index.html` / `v2.html`）
+- **宣傳單張** — A5 尺寸海報，支援瀏覽器原生 PDF 列印（`poster.html`）
+- **婚慶教學指南** — 420+ 篇涵蓋婚禮籌備全流程的中文文章（`blog/`）
 - **SEO 內容矩陣** — 通過 Topical Authority 策略建立行業權威
 - **社交分享** — 每篇文章內建 WhatsApp、Facebook、Twitter 分享按鈕
+- **HEIC 轉換工具** — 瀏覽器端 HEIC/HEIF 轉 PNG/JPG 工具（`heic-converter.html`）
 
 網站採用純靜態 HTML 架構，部署於 GitHub Pages，無需後端服務器。
+
+### 兩個首頁版本
+
+項目包含兩個首頁版本：
+
+| 版本 | 檔案 | 說明 |
+|------|------|------|
+| 原始版 | `index.html` | 基於 Tailwind CSS + 自訂 CSS，暖色系配色（米色/玫瑰色），使用 Swiper.js 輪播展示設計款式 |
+| 重設計版 | `v2.html` | CSS 變量系統 + Playfair Display 字體，更現代的設計語言，含步驟指示器、浮動快捷按鈕、Lightbox 圖片查看器、動畫系統與 `prefers-reduced-motion` 無障礙支援 |
+
+兩個版本共享相同的產品內容（證書套顏色選擇、設計款式、客製化說明），並在手機版包含 Sticky Conversion Bar（固定底部轉換欄）。
 
 ---
 
@@ -57,16 +72,20 @@ My O! 是一家專注於客製化結婚證書套的香港品牌。本項目是�
 
 ```
 myo-hk.github.io/
-├── index.html              # 首頁 — 品牌展示、產品介紹、聯絡我們
+├── index.html              # 首頁（原始版）— 品牌展示、產品介紹、款式選擇、聯絡我們
+├── v2.html                 # 首頁（重設計版）— CSS 變量系統、動畫、Lightbox
+├── poster.html             # A5 宣傳單張 — 支援瀏覽器原生 PDF 列印
+├── heic-converter.html     # HEIC/HEIF 轉圖片工具 — 中英雙語、多檔案批次轉換 + ZIP 下載
 ├── blog/
 │   ├── index.html          # 教學指南索引 — 搜尋、分類篩選、動態計數
 │   └── [420+ articles]     # 教學指南文章
 ├── privacy.html            # 私隱政策
 ├── terms.html              # 服務條款
-├── sitemap.xml             # XML 網站地圖
+├── sitemap.xml             # XML 網站地圖（含 35+ 文章 URL）
 ├── robots.txt              # 爬蟲指引
-└── image/                  # 圖片資源
-    └── 01_company_logo.png # 品牌 Logo
+├── image/                  # 圖片資源（Logo、證書套顏色/款式預覽圖）
+├── js library/             # 第三方 JS 庫（heic2any、JSZip、FileSaver）
+└── tests/                  # Playwright 自動化測試
 ```
 
 ### 頁面連結策略
@@ -75,6 +94,15 @@ myo-hk.github.io/
 - **雙向導航** — 所有頁面均可透過導航列返回首頁和教學指南索引
 - **麵包屑導航** — 每篇文章包含「首頁 > 教學指南 > 文章標題」麵包屑
 - **底部 CTA** — 每篇文章底部包含 WhatsApp 和 Instagram 聯絡我們按鈕
+- **手機 Sticky Bar** — 手機版所有頁面底部顯示固定轉換欄（品牌 Logo + WhatsApp/IG 按鈕 + 立即查詢 CTA）
+
+### 手機 Sticky Conversion Bar
+
+所有頁面（首頁、文章頁、隱私政策、服務條款）在手機版（< 768px）底部均顯示固定轉換欄，桌面版自動隱藏。包含：
+- 品牌 Logo 與名稱
+- 「立即查詢」CTA 按鈕（橘紅色漸變）
+- Instagram 與 WhatsApp 快速連結按鈕
+- 超小螢幕（< 380px）自動隱藏輔助文字
 
 ---
 
@@ -136,6 +164,7 @@ myo-hk.github.io/
 <meta property="og:image" content="品牌圖片">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
 ```
 
 ### Schema.org 結構化數據
@@ -143,6 +172,7 @@ myo-hk.github.io/
 - **Article Schema** — 標題、描述、作者、發佈日期
 - **FAQPage Schema** — 常見問題與答案（部分文章）
 - **BreadcrumbList Schema** — 麵包屑導航結構
+- **WebPage Schema** — 用於隱私政策、服務條款等非文章頁面
 
 ### 動態 URL 解析
 
@@ -194,13 +224,19 @@ myo-hk.github.io/
 | HTML5 | 頁面結構 | 純靜態 |
 | Tailwind CSS | 樣式框架 | CDN (v3.x) |
 | Font Awesome | 圖標庫 | CDN (v6.5.2) |
-| Google Fonts | 字體 | Inter (300/400/600/700) |
+| Google Fonts | 字體 | Inter + Playfair Display + Noto Sans TC |
 | JavaScript | 互動功能 | Vanilla JS |
 | JSON-LD | 結構化數據 | Schema.org |
+| Swiper.js | 輪播/滑塊 | CDN (swiper-bundle) |
+| heic2any | HEIC 圖片轉換 | `js library/heic2any.min.js` |
+| JSZip | ZIP 打包下載 | `js library/jszip.min.js` |
+| FileSaver | 檔案下載 | `js library/FileSaver.min.js` |
+| Playwright | 自動化測試 | npm 套件（v1.40） |
+| Python 3 | 批次處理腳本 | — |
 
 ### 無需編譯
 
-- 無 Node.js 依賴
+- 無 Node.js 依賴（除測試外）
 - 無構建步驟
 - 無框架依賴
 - 直接部署靜態文件
@@ -209,61 +245,92 @@ myo-hk.github.io/
 
 ## 自動化腳本
 
-項目包含 4 個 Python 腳本用於內容管理：
+項目包含 3 個 Python 腳本用於內容管理與品質控制：
 
-### 1. `generate_articles.py`
+### 1. `fix_json_ld_and_table.py`
 
-批量生成教學指南文章的 HTML 文件。
-
-**用途**：從文章定義列表快速生成符合模板的 HTML 文件，包含完整的 SEO meta 標籤、OG 標籤、Twitter Card、結構化數據、導航、麵包屑、延伸閱讀和 CTA。
-
-**使用方法**：
-```bash
-python3 generate_articles.py
-```
-
-### 2. `audit_and_fix_articles.py`
-
-審計並修正文章以符合 SOP 標準。
+JSON-LD 結構化數據合併 + 表格無障礙修復。
 
 **功能**：
-- 計算每篇文章的字數
-- 檢測最長純文字區塊
-- 自動插入表格、清單、提示框和 H3 標題
-- 按分類匹配對應的豐富內容
+- 合併重複的 JSON-LD FAQPage 區塊（保留問題數最多的）
+- 為所有 `<th>` 標籤添加 `scope="col"` 以符合無障礙標準
+- 生成 JSON 格式修復報告
 
 **使用方法**：
 ```bash
-python3 audit_and_fix_articles.py
+python3 fix_json_ld_and_table.py [--test]
 ```
 
-### 3. `enrich_articles.py`
+### 2. `fix_medium_issues.py`
 
-為字數不足的文章補充內容。
+中等 SEO 問題批量修復。
 
 **功能**：
-- 識別低於 1,500 字的文章
-- 插入詳細指南、比較分析、檢查清單、專業貼士、常見問題和婚後事項等模塊
-- 確保每篇文章達到目標字數
+- 將硬編碼的絕對 URL（`https://myo-hk.github.io/blog/`）替換為相對 URL
+- 為缺少 meta robots 標籤的頁面添加 `<meta name="robots" content="index, follow">`
+- 為所有 `<img>` 標籤添加 `loading="lazy"` 延遲加載
 
 **使用方法**：
 ```bash
-python3 enrich_articles.py
+python3 fix_medium_issues.py [--test]
 ```
 
-### 4. `fix_links_and_share.py`
+### 3. `add_sticky_bar.py`
 
-修復 URL、添加分享按鈕、確保無孤立頁面。
+批次為所有 HTML 頁面添加手機版 Sticky Conversion Bar。
 
 **功能**：
-- 將 og:url、canonical、og:image 改為動態 `window.location.href`
-- 為每篇文章添加 WhatsApp、Facebook、Twitter、複製連結分享按鈕
-- 隨機分配 4 篇相關文章作為延伸閱讀
-- 確保所有頁面都有內部連結
+- 注入完整的 CSS 樣式（含響應式設計）
+- 注入 HTML 結構（品牌 Logo + WhatsApp/IG 按鈕 + CTA）
+- 自動根據檔案路徑（blog/ vs 根目錄）調整圖片路徑
+- 自動跳過已存在 Sticky Bar 的檔案
 
 **使用方法**：
 ```bash
-python3 fix_links_and_share.py
+python3 add_sticky_bar.py
+```
+
+---
+
+## 測試
+
+項目使用 Playwright 進行自動化端對端測試，覆蓋手機、平板、桌面三種裝置。
+
+### 測試架構
+
+```bash
+tests/
+├── homepage.spec.ts     # 首頁功能測試
+└── mobile.spec.ts       # 手機版專屬測試（Sticky Bar、漢堡選單等）
+```
+
+### Playwright 配置
+
+三種測試專案並行執行：
+
+| 專案 | 裝置 | 視窗 |
+|------|------|------|
+| Mobile (iPhone 12) | 行動裝置 | 390 × 844 |
+| Desktop Chrome | 桌面 | 1280 × 720 |
+| Tablet (iPad) | 平板 | 768 × 1024 |
+
+### 執行測試
+
+```bash
+# 安裝依賴
+npm install
+
+# 執行所有測試
+npm test
+
+# 手機版測試
+npm run test:mobile
+
+# 有頭模式（可視化）
+npm run test:headed
+
+# 查看測試報告
+npm run report
 ```
 
 ---
@@ -300,50 +367,85 @@ python3 -m http.server 8000
 
 ```
 myo-hk/
-├── index.html                  # 首頁
+├── index.html                  # 首頁（原始版）— Tailwind + Swiper
+├── v2.html                     # 首頁（重設計版）— CSS 變量 + 動畫系統
+├── poster.html                 # A5 宣傳單張 — 支援 PDF 列印下載
+├── heic-converter.html         # HEIC/HEIF 轉圖片工具（中英雙語）
+├── HTML-Artifacts.html         # PDF 下載實驗（html2pdf.js）
 ├── privacy.html                # 私隱政策
 ├── terms.html                  # 服務條款
 ├── robots.txt                  # 爬蟲指引
 ├── sitemap.xml                 # XML 網站地圖
-├── opencode.jsonc              # OpenCode 配置
 │
 ├── blog/
 │   ├── index.html              # 教學指南索引（搜尋 + 分類篩選）
 │   └── [420+ .html files]      # 教學指南文章
 │
 ├── image/
-│   └── 01_company_logo.png     # 品牌 Logo
+│   ├── 01_company_logo.png     # 品牌 Logo
+│   ├── cert_color_beige.jpg    # 米色證書套預覽
+│   ├── cert_color_blue.jpg     # 藍色證書套預覽
+│   ├── cert_color_beige_texture.png
+│   ├── cert_color_blue_texture.png
+│   ├── cert_color_beige_and_blue.png
+│   └── cert_style_[1-5]*.png   # 款式 1-5 預覽圖
 │
-├── js library/                 # JavaScript 庫
+├── js library/
+│   ├── heic2any.min.js         # HEIC → PNG/JPG 轉換庫
+│   ├── jszip.min.js            # ZIP 打包庫
+│   └── FileSaver.min.js        # 瀏覽器端檔案儲存
 │
-├── generate_articles.py        # 批量生成文章
-├── audit_and_fix_articles.py   # SOP 審計與修正
-├── enrich_articles.py          # 文章內容補充
-├── fix_links_and_share.py      # 連結與分享修復
-├── generate_articles_batch1.sh # 批量生成腳本（Shell）
-└── heic-converter.html         # HEIC 圖片轉換工具
+├── tests/
+│   ├── homepage.spec.ts        # 首頁 Playwright 測試
+│   └── mobile.spec.ts          # 手機版 Playwright 測試
+│
+├── docs/                       # 文件資源
+├── presentations/              # 40 個婚禮視頻展示項目
+│   ├── index.html              # 視頻索引頁面
+│   ├── _scaffold.sh            # 腳手架生成腳本
+│   └── [01-40]-*/presentation/ # 40 個獨立 Vite + React 項目
+│
+├── fix_json_ld_and_table.py    # JSON-LD 合併 + 表格無障礙修復
+├── fix_medium_issues.py        # SEO 中等問題批量修復
+├── add_sticky_bar.py           # 批次添加手機 Sticky Bar
+├── fix_medium_report.json      # 修復報告
+├── fix_report.json             # 修復報告
+│
+├── package.json                # Node.js 依賴（Playwright 測試）
+├── playwright.config.js        # Playwright 配置
+├── opencode.jsonc              # OpenCode AI 編輯器配置
+│
+├── CLAUDE.md                   # AI 行為指南
+├── USER.md                     # 用戶指南
+└── SOUL.md                     # 專案靈魂文件
 ```
 
 ---
 
 ## 開發規範
 
-### 新增文章
+### 修改首頁
 
-1. 在 `generate_articles.py` 的 `ARTICLES` 列表中添加文章定義：
-   ```python
-   ("文件名", "分類", "標題", "描述", "關鍵字"),
-   ```
-2. 運行 `python3 generate_articles.py`
-3. 運行 `python3 fix_links_and_share.py` 添加分享按鈕和相關連結
-4. 在 `blog/index.html` 中添加文章卡片
+- `index.html`：修改直接編輯 HTML/CSS，使用 Tailwind CDN + 自訂 CSS 變量
+- `v2.html`：修改時使用 `:root` CSS 變量系統（`--color-primary`、`--bg-primary` 等），確保無障礙支援（`prefers-reduced-motion`）
 
-### 修改現有文章
+### 修改文章
 
-1. 直接編輯 HTML 文件
+1. 直接編輯對應的 HTML 文件
 2. 確保字數 ≥ 1,500 中文字符
 3. 確保每 300 字內有視覺中斷（表格、清單、提示框、H3）
-4. 運行 `python3 audit_and_fix_articles.py` 檢查合規性
+4. 運行 `python3 fix_medium_issues.py --test` 檢查 SEO 合規性
+5. 運行 `python3 fix_json_ld_and_table.py --test` 檢查結構化數據
+
+### 新增文章
+
+1. 以現有文章為模板創建新 HTML 文件
+2. 修改 meta 標籤（title、description、keywords）
+3. 修改 canonical URL 和 OG 標籤
+4. 添加 JSON-LD Article Schema
+5. 在 `blog/index.html` 中添加文章卡片
+6. 在 `sitemap.xml` 中添加 URL 條目
+7. 運行 `python3 add_sticky_bar.py` 添加手機轉換欄
 
 ### 提交代碼
 
@@ -351,6 +453,133 @@ myo-hk/
 git add .
 git commit -m "feat: 描述更改"
 git push
+```
+
+---
+
+## 婚禮視頻 presentations
+
+40 個獨立婚禮視頻展示項目已完成，部署於 `presentations/` 目錄。
+
+### 功能特點
+
+- **40 個主題視頻** — 涵蓋香港結婚籌備各個環節（場地、習俗、婚紗、攝影等）
+- **6 章節結構** — 每個視頻包含 6 個章節（開場 → 內容 → 結尾 CTA）
+- **繁體中文** — 全部內容使用繁體中文
+- **TypeScript + React + Vite** — 現代前端技術棧
+- **無障礙支援** — `prefers-reduced-motion` 媒體查詢支援
+- **響應式設計** — 適配桌面和移動設備
+
+### 目錄結構
+
+每個視頻項目位於 `presentations/XX-主題-slug/presentation/`，結構如下：
+
+```
+presentations/
+├── index.html                  # 全部 40 個視頻的索引頁面
+├── _scaffold.sh               # 視頻項目腳手架生成腳本
+├── 01-hong-kong-wedding-flow/
+│   └── presentation/
+│       ├── src/
+│       │   ├── chapters/       # 6 個章節目錄（01-coldopen ~ 06-cta）
+│       │   │   └── 01-coldopen/
+│       │   │       ├── Coldopen.tsx
+│       │   │       ├── Coldopen.css
+│       │   │       └── narrations.ts
+│       │   ├── registry/
+│       │   │   ├── chapters.ts  # 章節註冊表
+│       │   │   └── types.ts      # 類型定義
+│       │   ├── hooks/
+│       │   │   └── useStepper.ts
+│       │   ├── App.tsx
+│       │   └── main.tsx
+│       └── tsconfig.json
+└── [39 more video projects...]
+```
+
+### 40 個視頻主題
+
+| # | 主題 | 主題 |
+|---|---|---|
+| 01 | 香港結婚流程 | 結婚資格與文件 |
+| 02 | 結婚 checklist 時間表 | 海外結婚指南 |
+| 03 | 結婚習俗完整攻略 | 婚姻習俗傳統 |
+| 04 | 婚禮場地選擇 | 教堂婚禮指南 |
+| 05 | 海外結婚指南 | 結婚年齡須知 |
+| 06 | 結婚年齡法律 | 同性婚姻 |
+| 07 | 求婚策劃攻略 | 求婚驚喜創意 |
+| 08 | 情人節求婚創意 | 婚禮驚喜策劃 |
+| 09 | 求婚方式創意 | 訂婚派對策劃 |
+| 10 | 求婚戒指選擇 | 求婚成功後準備 |
+| 11 | 結婚領證流程 | 婚姻登記預約 |
+| 12 | 結婚文件代辦 | 證婚人須知 |
+| 13 | 結婚年齡規定 | 婚姻法新規 |
+| 14 | 海外結婚代辦 | 跨境婚姻指南 |
+| 15 | 婚紗挑選攻略 | 婚紗款式選擇 |
+| 16 | 婚紗試穿準備 | 婚紗尺碼選擇 |
+| 17 | 婚紗保養保存 | 婚紗拍攝技巧 |
+| 18 | 求婚攻略完整版 | 婚禮策劃時間表 |
+| 19 | 婚禮預算規劃 | 婚禮省錢技巧 |
+| 20 | 婚禮賓客名單 | 婚禮座位安排 |
+| 21 | 婚禮音樂選擇 | 婚禮歌單推薦 |
+| 22 | 婚禮流程策劃 | 婚禮當天時間表 |
+| 23 | 婚禮化妝造型 | 新娘妝容教程 |
+| 24 | 新娘美甲建議 | 婚禮美髮造型 |
+| 25 | 婚紗拍攝技巧 | 婚禮攝影指南 |
+| 26 | 婚禮場地佈置 | 婚禮花藝設計 |
+| 27 | 婚禮蛋糕選擇 | 婚禮甜品桌 |
+| 28 | 婚禮回禮禮物 | 婚禮賓客禮品 |
+| 29 | 婚禮統籌技巧 | 婚禮公司選擇 |
+| 30 | 婚禮保險須知 | 婚禮保障 |
+| 31 | 結婚證書套選擇 | 結婚證書設計 |
+| 32 | 結婚請柬設計 | 結婚請帖款式 |
+| 33 | 敬茶禮儀習俗 | 結婚敬茶準備 |
+| 34 | 安床習俗詳解 | 結婚安床攻略 |
+| 35 | 过大礼传统习俗 | 結婚過大禮攻略 |
+| 36 | 回門習俗攻略 | 結婚回門禮俗 |
+| 37 | 蜜月旅行攻略 | 蜜月目的地推薦 |
+| 38 | 婚姻生活適應 | 婚後生活調適 |
+| 39 | 婚後財務規劃 | 婚後理財攻略 |
+| 40 | 結婚回禮創意 | 婚禮優惠資訊 |
+
+### 技術架構
+
+| 層面 | 技術 |
+|------|------|
+| 框架 | React 18 + TypeScript |
+| 構建工具 | Vite |
+| 樣式 | CSS 變量 + 傳統 CSS |
+| 類型檢查 | TypeScript strict mode |
+| 部署 | GitHub Pages (每視頻獨立部署) |
+
+### 開發命令
+
+```bash
+cd presentations/01-hong-kong-wedding-flow/presentation
+
+# 安裝依賴
+npm install
+
+# 本地開發
+npm run dev
+
+# 類型檢查
+npx tsc --noEmit
+
+# 生產構建
+npm run build
+```
+
+### 創建新視頻
+
+```bash
+# 使用腳手架腳本
+cd presentations
+./_scaffold.sh
+
+# 或手動創建
+mkdir -p presentations/XX-topic-slug/presentation/src/{chapters,registry,hooks}
+# 複製 package.json, tsconfig.json, vite.config.ts 等
 ```
 
 ---
@@ -412,3 +641,11 @@ git push
 | A4 寬度（96 DPI） | 793.7px | `210mm × 3.7795 px/mm` |
 | A4 高度 | 1123px | 海報高度 530px × 1.8898 = 1002px（< A4 高度，正常留白） |
 | 縮放倍數 | 1.8898 | `793.7 / 420`，硬編碼避免 `calc()` 單位混算 |
+
+### poster.html 關鍵特性
+
+- **品牌展示**：Alex Brush 手寫字體 Logo + Noto Serif 副標題
+- **產品展示**：5 款證書套設計款式網格 + 顏色選擇（米色亞麻布 / 藍色磨砂珠光）
+- **QR Code**：透過 `api.qrserver.com` 動態生成 Instagram / WhatsApp / 網站 QR Code
+- **客製化說明**：產品特色四格佈局（尺寸、封面、保護、印刷）
+- **螢幕自適應**：JS 根據視窗寬度自動縮放海報比例
