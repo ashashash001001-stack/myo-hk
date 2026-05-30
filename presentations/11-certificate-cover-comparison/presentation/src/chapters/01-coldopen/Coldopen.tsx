@@ -1,7 +1,7 @@
 import "./Coldopen.css";
 interface Props { step: number; }
 
-const CATEGORIES = ["02 leather", "03 linen", "04 velvet", "05 custom"];
+const CATEGORIES = ["皮革證書套", "亞麻布證書套", "絨布證書套", "客製化"];
 
 export function Coldopen({ step }: Props) {
   if (step === 0) {
