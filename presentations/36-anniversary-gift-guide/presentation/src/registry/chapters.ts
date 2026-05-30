@@ -18,5 +18,5 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "02-year1", title: "週年慶祝", narrations: N02, Component: year1 },
   { id: "03-year5", title: "重要里程碑", narrations: N03, Component: year5 },
   { id: "04-year10", title: "禮物推薦", narrations: N04, Component: year10 },
-  { id: "05-year15", title: "05 year15", narrations: N05, Component: year15 },
+  { id: "05-year15", title: "結婚15週年", narrations: N05, Component: year15 },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

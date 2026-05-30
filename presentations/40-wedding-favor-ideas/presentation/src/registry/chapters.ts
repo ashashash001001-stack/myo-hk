@@ -17,6 +17,6 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "01-coldopen", title: "婚禮回禮Ideas", narrations: N01, Component: Coldopen },
   { id: "02-food", title: "創意主意", narrations: N02, Component: Food },
   { id: "03-candles", title: "預算考慮", narrations: N03, Component: Candles },
-  { id: "04-personal", title: "04 personal", narrations: N04, Component: Personal },
-  { id: "05-practical", title: "05 practical", narrations: N05, Component: Practical },
+  { id: "04-personal", title: "個人化禮物", narrations: N04, Component: Personal },
+  { id: "05-practical", title: "實用回禮", narrations: N05, Component: Practical },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

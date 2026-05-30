@@ -18,5 +18,5 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "02-trial", title: "試妝安排", narrations: N02, Component: Trial },
   { id: "03-style", title: "造型建議", narrations: N03, Component: Style },
   { id: "04-hair", title: "時間安排", narrations: N04, Component: Hair },
-  { id: "05-day", title: "05 day", narrations: N05, Component: Day },
+  { id: "05-day", title: "大日子造型", narrations: N05, Component: Day },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

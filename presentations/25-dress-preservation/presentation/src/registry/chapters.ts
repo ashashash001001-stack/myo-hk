@@ -18,5 +18,5 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "02-clean", title: "清潔方法", narrations: N02, Component: Clean },
   { id: "03-storage", title: "存放方式", narrations: N03, Component: Storage },
   { id: "04-avoid", title: "保護技巧", narrations: N04, Component: Protect },
-  { id: "05-preserve", title: "05 preserve", narrations: N05, Component: preserve },
+  { id: "05-preserve", title: "保存技巧", narrations: N05, Component: preserve },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

@@ -17,6 +17,6 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "01-coldopen", title: "婚後理財指南", narrations: N01, Component: Coldopen },
   { id: "02-joint", title: "帳戶管理", narrations: N02, Component: Joint },
   { id: "03-budget", title: "投資規劃", narrations: N03, Component: Budget },
-  { id: "04-debt", title: "04 debt", narrations: N04, Component: Debt },
-  { id: "05-savings", title: "05 savings", narrations: N05, Component: Savings },
+  { id: "04-debt", title: "債務管理", narrations: N04, Component: Debt },
+  { id: "05-savings", title: "儲蓄投資", narrations: N05, Component: Savings },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

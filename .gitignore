@@ -29,3 +29,4 @@ test-*.js
 test-runner.html
 Icon?
 Icon
+.omo/

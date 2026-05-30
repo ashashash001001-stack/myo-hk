@@ -18,5 +18,5 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "02-japan", title: "亞洲目的地", narrations: N02, Component: Japan },
   { id: "03-thailand", title: "歐洲目的地", narrations: N03, Component: Thailand },
   { id: "04-europe", title: "海島度假", narrations: N04, Component: Europe },
-  { id: "05-taiwan", title: "05 taiwan", narrations: N05, Component: Taiwan },
+  { id: "05-taiwan", title: "台灣蜜月", narrations: N05, Component: Taiwan },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];

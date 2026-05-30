@@ -18,5 +18,5 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "02-weather", title: "場地選擇", narrations: N02, Component: Weather },
   { id: "03-deco", title: "天氣應對", narrations: N03, Component: Deco },
   { id: "04-logistics", title: "場地佈置", narrations: N04, Component: Logistics },
-  { id: "05-photo", title: "05 photo", narrations: N05, Component: Photo },
+  { id: "05-photo", title: "戶外拍攝", narrations: N05, Component: Photo },
   { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },];
