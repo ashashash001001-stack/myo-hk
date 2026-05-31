@@ -1,5 +1,5 @@
 import type { ChapterDef } from "./types";
-import { Coldopen } from "../chapters/01-coldopen/Coldopen";
+import Coldopen from "../chapters/01-coldopen/Coldopen";
 import { Timeline } from "../chapters/02-timeline/Timeline";
 import { Checklist } from "../chapters/03-checklist/Checklist";
 import { Budget } from "../chapters/04-budget/Budget";

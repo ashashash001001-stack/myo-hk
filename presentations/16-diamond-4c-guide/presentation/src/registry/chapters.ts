@@ -19,4 +19,5 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "03-color", title: "成色grading", narrations: N03, Component: Color },
   { id: "04-clarity", title: "淨度grading", narrations: N04, Component: Clarity },
   { id: "05-carat", title: "克拉重量", narrations: N05, Component: Carat },
-  { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },;
+  { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA }
+];
