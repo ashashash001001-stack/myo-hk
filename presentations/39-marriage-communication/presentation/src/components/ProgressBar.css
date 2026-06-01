@@ -24,8 +24,8 @@
   overflow-y: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--text-faint) transparent;
-  opacity: 0;
-  transform: translateY(100%);
+  opacity: 1;
+  transform: translateY(calc(100% - 30px));
   transition: opacity var(--dur-base) var(--ease-quart),
     transform var(--dur-base) var(--ease-quart);
 }
@@ -42,6 +42,24 @@
 .pb-hover:hover .pb {
   opacity: 1;
   transform: translateY(0);
+}
+
+.pb-hover::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 6px);
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity var(--dur-quick);
+}
+.pb-hover:hover::before {
+  opacity: 0;
 }
 
 .pb-chapter {
