@@ -19,4 +19,5 @@ export const CHAPTERS: ChapterDef[] = [
   { id: "03-durability", title: "顏色建議", narrations: N03, Component: Durability },
   { id: "04-colors", title: "字體款式", narrations: N04, Component: Colors },
   { id: "05-custom", title: "確認稿樣", narrations: N05, Component: Custom },
-  { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA },;
+  { id: "06-cta", title: "總結與下一步", narrations: N06, Component: CTA }
+];
