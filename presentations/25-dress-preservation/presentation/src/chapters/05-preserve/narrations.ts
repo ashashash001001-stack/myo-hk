@@ -1,5 +1,11 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types";
 
 export const NARRATIONS: Narration[] = [
-"05 preserve，一齊了解下。",
+  "我哋今日講下婚紗保存方法嘅重點。",
+  "呢個章節會詳細介紹婚紗保存方法嘅關鍵知識。",
+  "婚禮係人生最重要嘅時刻之一，要精心籌備。",
+  "每對新人都有獨特嘅故事，值得被記錄。",
+  "細節決定成敗，唔可以忽略任何小地方。",
+  "預留時間處理突發狀況，保持彈性。",
+  "享受整個過程，唔好太緊張。",
 ];

@@ -1,5 +1,6 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types";
 
 export const NARRATIONS: Narration[] = [
-"02 proposal，一齊了解下。",
+  "求婚後下一步。",
+  "求婚成功後，真正的婚禮籌備才剛剛開始！",
 ];

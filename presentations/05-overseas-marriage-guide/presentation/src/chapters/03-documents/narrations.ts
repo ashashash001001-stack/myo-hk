@@ -1,5 +1,6 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types";
 
 export const NARRATIONS: Narration[] = [
-"03 documents，一齊了解下。",
+  "所需文件。",
+  "注意：如文件非中文或英文，必須遞交核證翻譯本。",
 ];

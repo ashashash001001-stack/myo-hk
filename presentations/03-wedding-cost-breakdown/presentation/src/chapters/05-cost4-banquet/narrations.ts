@@ -1,5 +1,6 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types";
 
 export const NARRATIONS: Narration[] = [
-  "婚宴係最大筆開支，佔咗總預算大約一半。",
+  "Budget 婚宴場地（每圍 HK$8,000 以下）。",
+  "傳統酒樓提供地道的中式婚宴菜單，價錢實惠，適合重視傳統的新人。",
 ];

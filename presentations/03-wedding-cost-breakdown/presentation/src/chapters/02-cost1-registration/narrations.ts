@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types";
 
 export const NARRATIONS: Narration[] = [
-  "最基本嘅開支係註冊費用，雖然佔比最細，但係一定要知。",
+  "可以退費嗎？",
+  "。",
+  "遞交擬結婚通知書的費用一般不可退還。",
+  "如果取消婚禮，需重新遞交通知書並繳費。",
 ];
