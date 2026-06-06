@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"想訂製獨一無二嘅證書套？等我介紹熱轉印技術同訂製流程。",
-];
+  { text: "歡迎來到證書套熱轉印訂製。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹證書套熱轉印訂製嘅重要資訊。" },
+  { text: "結婚籌備路上，了解證書套熱轉印訂製非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

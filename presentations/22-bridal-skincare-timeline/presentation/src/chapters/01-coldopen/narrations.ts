@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"新娘護膚要提前幾耐開始？等我話你知最佳護膚時間表。",
-];
+  { text: "歡迎來到新娘護膚時間表。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹新娘護膚時間表嘅重要資訊。" },
+  { text: "結婚籌備路上，了解新娘護膚時間表非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

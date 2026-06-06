@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"戒指要戴一世，保養好重要。等我介紹戒指嘅日常保養同清潔方法。",
-];
+  { text: "歡迎來到戒指保養指南。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹戒指保養指南嘅重要資訊。" },
+  { text: "結婚籌備路上，了解戒指保養指南非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

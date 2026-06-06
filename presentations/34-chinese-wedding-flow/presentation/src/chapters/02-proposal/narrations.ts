@@ -1,6 +1,8 @@
-import type { Narration } from "../types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-  "求婚後下一步。",
-  "求婚成功後，真正的婚禮籌備才剛剛開始！",
-];
+  { text: "結婚籌備路上，了解非常關鍵。" },
+  { text: "呢個章節會詳細介紹嘅關鍵知識。" },
+  { text: "我哋今日會為你全面拆解每個細節。" },
+  { text: "每一步都好重要，唔可以忽略。" },
+]

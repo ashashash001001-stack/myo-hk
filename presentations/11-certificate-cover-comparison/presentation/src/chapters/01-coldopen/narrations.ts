@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"結婚證書套要點揀？等我比較唔同材質同款式嘅證書套。",
-];
+  { text: "歡迎來到結婚證書套比較。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹結婚證書套比較嘅重要資訊。" },
+  { text: "結婚籌備路上，了解結婚證書套比較非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

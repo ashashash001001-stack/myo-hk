@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"擬結婚通知書係註冊第一步。等我話你知遞交通知書嘅程序同費用。",
-];
+  { text: "歡迎來到擬結婚通知書。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹擬結婚通知書嘅重要資訊。" },
+  { text: "結婚籌備路上，了解擬結婚通知書非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

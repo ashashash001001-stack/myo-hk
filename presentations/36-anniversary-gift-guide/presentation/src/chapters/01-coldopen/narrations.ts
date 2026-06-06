@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"結婚週年送咩禮物好？等我介紹各週年嘅傳統禮物建議。",
-];
+  { text: "歡迎來到結婚週年禮物指南。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹結婚週年禮物指南嘅重要資訊。" },
+  { text: "結婚籌備路上，了解結婚週年禮物指南非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

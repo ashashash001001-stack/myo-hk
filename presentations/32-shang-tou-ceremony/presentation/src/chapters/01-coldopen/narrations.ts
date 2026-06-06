@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"上頭儀式係傳統婚禮習俗。等我介紹上頭嘅意義、時間同步驟。",
-];
+  { text: "歡迎來到上頭儀式指南。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹上頭儀式指南嘅重要資訊。" },
+  { text: "結婚籌備路上，了解上頭儀式指南非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

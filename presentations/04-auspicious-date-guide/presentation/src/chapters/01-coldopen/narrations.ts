@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"揀個好日子係婚禮第一步。等我話你知點樣揀結婚吉日同傳統習俗。",
-];
+  { text: "歡迎來到吉日選擇指南。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹吉日選擇指南嘅重要資訊。" },
+  { text: "結婚籌備路上，了解吉日選擇指南非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

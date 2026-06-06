@@ -1,9 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
-export const narrations: Narration[] = [
-  // step 0 — cold open hook
-  "你打算在香港結婚。但你知道從準備到註冊，到底要做什麼嗎？",
-
-  // step 1 — the core promise
-  "說真的，大部分人都覺得結婚註冊流程很複雜——又怕漏文件，又怕排錯期。但拆開來看，其實就五個環節。",
-];
+export const NARRATIONS: Narration[] = [
+  { text: "歡迎來到Video Outline。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹Video Outline嘅重要資訊。" },
+  { text: "結婚籌備路上，了解Video Outline非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

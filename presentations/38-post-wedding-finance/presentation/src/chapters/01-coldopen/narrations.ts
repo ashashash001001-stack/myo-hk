@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"婚後理財好重要。等我話你知聯名戶口、預算管理同儲蓄計劃。",
-];
+  { text: "歡迎來到婚後理財指南。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹婚後理財指南嘅重要資訊。" },
+  { text: "結婚籌備路上，了解婚後理財指南非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]

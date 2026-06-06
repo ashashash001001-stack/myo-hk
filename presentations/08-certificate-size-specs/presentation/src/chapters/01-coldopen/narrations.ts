@@ -1,5 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../types"
 
 export const NARRATIONS: Narration[] = [
-"結婚證書尺寸係幾多？等我介紹證書規格同點樣保存。",
-];
+  { text: "歡迎來到結婚證書尺寸規格。等我帶你認識呢個主題嘅核心知識。" },
+  { text: "呢個presentation會全面介紹結婚證書尺寸規格嘅重要資訊。" },
+  { text: "結婚籌備路上，了解結婚證書尺寸規格非常關鍵。" },
+  { text: "準備好未？等我哋開始深入探討。" },
+]
