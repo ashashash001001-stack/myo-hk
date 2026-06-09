@@ -1,4 +1,4 @@
-import type { Narration } from "../types"
+import type { Narration } from "../../registry/types"
 
 export const NARRATIONS: Narration[] = [
   { text: "結婚籌備路上，了解非常關鍵。" },

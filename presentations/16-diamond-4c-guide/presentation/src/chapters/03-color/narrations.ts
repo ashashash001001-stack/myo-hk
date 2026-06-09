@@ -1,4 +1,4 @@
-import type { Narration } from "../types";
+import type { Narration } from "../../registry/types";
 
 export const NARRATIONS: Narration[] = [
   "選擇婚戒鑽石時，了解 4C 標準至關重要。",

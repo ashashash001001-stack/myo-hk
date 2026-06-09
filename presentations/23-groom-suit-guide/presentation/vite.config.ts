@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/presentations/23-groom-suit-guide/presentation/",
+  base: "",
   server: {
     port: 5174,
     fs: { allow: [".."] },

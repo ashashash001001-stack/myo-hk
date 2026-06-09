@@ -1,4 +1,4 @@
-import type { Narration } from "../types";
+import type { Narration } from "../../registry/types";
 
 export const NARRATIONS: Narration[] = [
   "8. 戶外大自然求婚。",
