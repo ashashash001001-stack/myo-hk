@@ -30,3 +30,5 @@ test-runner.html
 Icon?
 Icon
 .omo/
+.gstack/
+.DS_Store
