@@ -27,7 +27,7 @@ export default function Notice({ step }: Props) {
     return (
       <div className="no-scene">
         <div className="no-timeline-group">
-          <h2 className="no-timeline-heading">15 日點計？</h2>
+          <h2 className="no-timeline-heading">通知期係點样计嘅？</h2>
           <div className="no-timeline">
             {/* Jan 1 — submit day */}
             <div className="no-tl-node no-tl-submit">
@@ -164,7 +164,7 @@ export default function Notice({ step }: Props) {
               <div className="no-notice-paper">
                 <div className="no-notice-header">
                   <span className="no-notice-badge">婚姻登記處</span>
-                  <span className="no-notice-id">#2026-0042</span>
+                  <span className="no-notice-id">個案編號 #2026-0042</span>
                 </div>
                 <div className="no-notice-body">
                   <div className="no-notice-row">
@@ -172,7 +172,7 @@ export default function Notice({ step }: Props) {
                   </div>
                   <div className="no-notice-row">
                     <span className="no-notice-val">陳大明</span>
-                    <span className="no-notice-amp">&amp;</span>
+                    <span className="no-notice-amp">&</span>
                     <span className="no-notice-val">李小美</span>
                   </div>
                   <div className="no-notice-row no-notice-date">
