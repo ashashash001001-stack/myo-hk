@@ -82,3 +82,12 @@ Key routing rules:
 - Save progress → invoke /context-save
 - Resume context → invoke /context-restore
 - Author a backlog-ready spec/issue → invoke /spec
+
+## Presentation Development Note
+
+Each presentation in `presentations/XX-name/presentation/` is an independent Vite + React project. The `vite.config.ts` uses `base: "/presentations/XX-name/presentation/"` for correct GitHub Pages deployment. This means:
+
+- **`npx vite` won't work locally** — it will try to load assets from the wrong path.
+- **For local dev**, use: `npx vite --base ""` or add `"dev": "vite --base \"\""` to the presentation's `package.json` scripts.
+- **For production builds**, use: `npm run build` (which produces correct output for GitHub Pages).
+- **No `node_modules` reinstall needed** — all 40 presentations have `node_modules` pre-installed.

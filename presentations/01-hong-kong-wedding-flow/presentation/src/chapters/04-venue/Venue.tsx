@@ -179,7 +179,7 @@ export default function Venue({ step }: Props) {
           </table>
         </div>
         <div className="ve-compare-footer">
-          <span className="ve-compare-tag">最平 HK$715</span>
+          <span className="ve-compare-tag">最平 HK$715 登記處結婚</span>
           <span className="ve-compare-tag">最自由：監禮人</span>
           <span className="ve-compare-tag">最莊重：登記處</span>
         </div>

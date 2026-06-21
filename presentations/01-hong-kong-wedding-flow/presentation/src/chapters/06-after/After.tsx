@@ -142,7 +142,7 @@ export default function After({ step }: Props) {
             <div className="af-total-breakdown">
               <span>通知書 HK$305</span>
               <span className="af-plus">+</span>
-              <span>登記處 HK$715</span>
+              <span><span>登記處結婚 HK$715</span></span>
             </div>
           </div>
 

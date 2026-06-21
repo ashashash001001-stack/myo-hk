@@ -16,7 +16,7 @@ export default function Notice({ step }: Props) {
           </p>
           <div className="no-rule-accent" />
           <p className="no-hint">
-            婚禮前最少 <strong>15 日</strong>、最多 <strong>3 個月</strong>遞交
+            婚禮前最少 <strong>15 日</strong>、最多 <strong><span>3 個月通知期</span></strong>遞交
           </p>
         </div>
       </div>
