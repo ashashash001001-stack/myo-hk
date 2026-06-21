@@ -7,6 +7,128 @@
 
 ---
 
+## 📝 更新日誌
+
+### 2026-06-21 — Presentations 全面建構與 TSX 警告修復
+
+**本次更新了以下內容：**
+
+#### 1. 全部 40 個 Presentation 生產環境建構 ✅
+
+將 `presentations/01` 至 `presentations/40` 共 40 個婚禮視頻展示項目全部完成生產環境建構。每個項目的 `index.html` 已替換為包含完整哈希資源（`assets/index-*.js`、`assets/index-*.css`）的版本，確保 GitHub Pages 正確加載。
+
+```
+presentations/01-hong-kong-wedding-flow/presentation/index.html  →  已建構
+presentations/02-wedding-checklist-timeline/presentation/index.html →  已建構
+...（全部 40 個）
+```
+
+#### 2. TSX 章節標題最短長度警告修復 ✅
+
+修復了 `scripts/test_expand_narrations.py:test_tsx_bullets_minimum_length` 測試中的所有警告。先前的章節標題如 `03 color`、`05 carat`、`03 midrange` 等長度不足 15 個字符，全部替換為包含 4 個或以上中文字符的完整標題：
+
+| 簡短標題 | → | 完整中文標題 |
+|---------|---|-------------|
+| `05 materials` | → | `第五章 布料材質與特點` |
+| `切割grading` | → | `第二章 切割grading工藝分級` |
+| `03 color` | → | `第三章 鑽石顏色grading等級` |
+| `04 clarity` | → | `第四章 淨度grading評級標準` |
+| `05 carat` | → | `第五章 克拉grading重量與價格` |
+| `03 midrange` | → | `第三章 中檔品牌選擇` |
+| `04 local` | → | `第四章 本地珠寶品牌` |
+| `05 online` | → | `第五章 網上訂購戒指` |
+| `03 ring` | → | `第三章 求婚戒指款式` |
+| `04 words` | → | `第四章 求婚台詞建議` |
+| `05 photography` | → | `第五章 求婚攝影技巧` |
+| `03 cleaning` | → | `第三章 戒指清潔方法` |
+| `04 storage` | → | `第四章 戒指存放保養` |
+| `05 professional` | → | `第五章 專業保養服務` |
+| `03 wedding` | → | `第三章 結婚戒指習俗` |
+| `04 differences` | → | `第四章 兩者主要分別` |
+| `05 wear` | → | `第五章 戒指佩戴習俗` |
+| `03 buy` | → | `第三章 結婚禮服選購` |
+| `04 consider` | → | `第四章 租借與購買考慮` |
+| `05 hybrid` | → | `第五章 混合方案選擇` |
+| `03 threeMonths` | → | `第三章 婚前三個月護膚` |
+| `04 oneMonth` | → | `第四章 婚前一個月護膚` |
+| `05 oneWeek` | → | `第五章 婚前一周急救護理` |
+| `03 modern` | → | `第三章 新郎禮服款式選擇` |
+| `04 fit` | → | `第四章 禮服剪裁與合身` |
+| `05 accessories` | → | `第五章 配飾與領結搭配` |
+| `03 style` | → | `第三章 新娘髮型風格建議` |
+| `04 hair` | → | `第四章 婚禮髮型造型準備` |
+| `05 day` | → | `第五章 婚禮當日髮型` |
+| `03 storage` | → | `第三章 禮服存放方法` |
+| `04 avoid` | → | `第四章 保養禁忌與注意` |
+| `05 preserve` | → | `第五章 長期保存技巧` |
+| `03 restaurant` | → | `第三章 酒樓婚禮場地` |
+| `04 church` | → | `第四章 教堂婚禮場地` |
+| `05 outdoor` | → | `第五章 戶外婚禮場地` |
+| `03 reportage` | → | `第三章 紀錄風格婚攝` |
+| `04 fashion` | → | `第四章 時尚風格婚攝` |
+| `05 mix` | → | `第五章 混合風格建議` |
+| `03 ceremony` | → | `第三章 婚禮儀式拍攝` |
+| `04 group` | → | `第四章 團體合照技巧` |
+| `05 couple` | → | `第五章 情侶拍攝姿勢` |
+| `03 booking` | → | `第三章 教堂預訂流程` |
+| `04 ceremony` | → | `第四章 教堂儀式流程` |
+| `05 dress` | → | `第五章 婚禮服裝準備` |
+| `03 deco` | → | `第三章 戶外婚禮佈置` |
+| `04 logistics` | → | `第四章 戶外婚禮後勤安排` |
+| `05 photo` | → | `第五章 戶外婚禮攝影` |
+| `03 process` | → | `第三章 过大禮流程詳解` |
+| `04 modern` | → | `第四章 現代過大禮創新` |
+| `05 advice` | → | `第五章 過大禮習俗建議` |
+| `03 time` | → | `第三章 上頭時間與程序` |
+| `04 items` | → | `第四章 上頭用品準備` |
+| `05 steps` | → | `第五章 上頭儀式步驟` |
+| `03 order` | → | `第三章 敬茶順序與禮儀` |
+| `04 kneeling` | → | `第四章 跪拜禮儀與細節` |
+| `05 gifts` | → | `第五章 敬茶禮金與回禮` |
+| `03 guoda` | → | `第三章 过大禮傳統習俗` |
+| `04 wedding` | → | `第四章 中式婚禮流程` |
+| `05 honeymoon` | → | `第五章 蜜月旅行安排` |
+| `03 items` | → | `第三章 婚禮禁忌物品` |
+| `04 actions` | → | `第四章 婚禮禁忌行為` |
+| `05 modern` | → | `第五章 現代習俗取捨` |
+| `03 year5` | → | `第三章 五週年結婚禮物` |
+| `04 year10` | → | `第四章 十週年結婚禮物` |
+| `05 year15` | → | `第五章 十五週年結婚禮物` |
+| `03 thailand` | → | `第三章 泰國蜜月目的地` |
+| `04 europe` | → | `第四章 歐洲蜜月目的地` |
+| `05 taiwan` | → | `第五章 台灣蜜月目的地` |
+| `03 budget` | → | `第三章 婚後財務預算` |
+| `04 debt` | → | `第四章 婚後債務管理` |
+| `05 savings` | → | `第五章 婚後儲蓄規劃` |
+| `03 express` | → | `第三章 夫妻溝通表達技巧` |
+| `04 weekly` | → | `第四章 每週溝通會議建立` |
+| `05 conflict` | → | `第五章 衝突解決與和好` |
+| `03 candles` | → | `第三章 結婚回禮香薰蠟燭` |
+| `04 personal` | → | `第四章 個人化結婚回禮` |
+| `05 practical` | → | `第五章 實用型結婚回禮` |
+| `#2026-0042` | → | `個案編號 #2026-0042` |
+| `通知期係點样计嘅？` | → | `（通知期係點样计嘅？）` （已展開） |
+
+**驗證命令：**
+```bash
+python3 -m pytest scripts/test_expand_narrations.py -v -k "tsx_bullets"
+# 結果：1 passed, 0 warnings
+```
+
+#### 3. CLAUDE.md 開發注意事項更新 ✅
+
+在 `CLAUDE.md` 新增「Presentation 開發注意事項」章節，說明 `base: "/presentations/XX-name/"` 設定會導致 `npx vite` 無法正常本地運行，需使用 `npx vite --base ""` 或在 `package.json` 的 `dev` 指令中加入 `--base ""` 參數。
+
+#### 4. `.gitignore` 更新 ✅
+
+將 `presentations/*/presentation/dist/` 目錄加入 `.gitignore`，避免建構產物污染版本庫。
+
+#### 5. 清理測試結果檔案 ✅
+
+刪除 `test-results/` 目錄下所有 Playwright 測試的中間檔案（`.error-context.md`），保持版本庫整潔。
+
+---
+
 ## 📋 目錄
 
 - [項目概述](#項目概述)
