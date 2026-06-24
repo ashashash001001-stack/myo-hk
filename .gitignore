@@ -30,3 +30,8 @@ test-runner.html
 Icon?
 Icon
 .omo/
+.gstack/
+.DS_Store
+
+# Build artifacts (copied to index.html by build command)
+presentations/*/presentation/dist/

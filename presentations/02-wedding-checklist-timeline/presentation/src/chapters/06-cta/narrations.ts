@@ -1,12 +1,8 @@
-import type { Narration } from "../../registry/types";
+import type { Narration } from "../../registry/types"
 
 export const NARRATIONS: Narration[] = [
-  // step 0 — hook
-  "搞掂晒！你已經由頭到尾了解咗結婚籌備嘅完整流程。",
-
-  // step 1 — recap
-  "五個階段搞掂晒：訂日期・預算、文件・婚戒、請柬・試妝、最終確認、婚禮衝刺。",
-
-  // step 2 — final CTA
-  "超過 400 篇香港婚禮教學文章，由籌備到婚後，一站式婚禮資訊平台幫到你。",
-];
+  "恭喜你完成婚前準備清單：倒數 6 個月時間表嘅學習。準備好將知識付諸實行未？",
+  "如果你覺得婚前準備清單：倒數 6 個月時間表有幫助，記得分享比你嘅朋友。",
+  "結婚籌備漫長，但每一步都值得用心準備。",
+  "想了解更多婚前準備清單：倒數 6 個月時間表相關資訊，可以瀏覽我哋嘅blog。",
+]

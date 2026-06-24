@@ -63,3 +63,31 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
+
+## Skill routing
+
+When the user's request matches an available skill, invoke it via the Skill tool. When in doubt, invoke the skill.
+
+Key routing rules:
+- Product ideas/brainstorming → invoke /office-hours
+- Strategy/scope → invoke /plan-ceo-review
+- Architecture → invoke /plan-eng-review
+- Design system/plan review → invoke /design-consultation or /plan-design-review
+- Full review pipeline → invoke /autoplan
+- Bugs/errors → invoke /investigate
+- QA/testing site behavior → invoke /qa or /qa-only
+- Code review/diff check → invoke /review
+- Visual polish → invoke /design-review
+- Ship/deploy/PR → invoke /ship or /land-and-deploy
+- Save progress → invoke /context-save
+- Resume context → invoke /context-restore
+- Author a backlog-ready spec/issue → invoke /spec
+
+## Presentation Development Note
+
+Each presentation in `presentations/XX-name/presentation/` is an independent Vite + React project. The `vite.config.ts` uses `base: "/presentations/XX-name/presentation/"` for correct GitHub Pages deployment. This means:
+
+- **`npx vite` won't work locally** — it will try to load assets from the wrong path.
+- **For local dev**, use: `npx vite --base ""` or add `"dev": "vite --base \"\""` to the presentation's `package.json` scripts.
+- **For production builds**, use: `npm run build` (which produces correct output for GitHub Pages).
+- **No `node_modules` reinstall needed** — all 40 presentations have `node_modules` pre-installed.

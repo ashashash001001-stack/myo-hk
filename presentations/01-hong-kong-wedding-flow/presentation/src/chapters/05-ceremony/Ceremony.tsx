@@ -80,7 +80,7 @@ export default function Ceremony({ step }: Props) {
                 <div className="ce-cert-line ce-cert-line--short" />
                 <div className="ce-cert-line" />
               </div>
-              <div className="ce-cert-seal">HKSAR</div>
+              <div className="ce-cert-seal"><span>香港特別行政區 (HKSAR)</span></div>
             </div>
           </div>
           <div className="ce-dim-badge">

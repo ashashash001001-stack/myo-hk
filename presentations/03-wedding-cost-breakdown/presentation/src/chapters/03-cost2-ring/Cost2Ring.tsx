@@ -55,7 +55,7 @@ export function Cost2Ring({ step }: Props) {
               <circle cx="16" cy="16" r="10" stroke="var(--accent)" strokeWidth="2" fill="none" />
             </svg>
             <span className="c2-compare-label">素色戒指</span>
-            <span className="c2-compare-value">約 HK$3,000 起</span>
+            <span className="c2-compare-value">約 HK$3,000 起（素圈）</span>
           </div>
         </div>
       </div>

@@ -2,13 +2,13 @@ import type { ChapterDef } from "./types";
 
 import { Coldopen } from "../chapters/01-coldopen/Coldopen";
 import { NARRATIONS as N01 } from "../chapters/01-coldopen/narrations";
-import { daily } from "../chapters/02-daily/daily";
+import { Daily } from "../chapters/02-daily/daily";
 import { NARRATIONS as N02 } from "../chapters/02-daily/narrations";
-import { cleaning } from "../chapters/03-cleaning/cleaning";
+import { Cleaning } from "../chapters/03-cleaning/cleaning";
 import { NARRATIONS as N03 } from "../chapters/03-cleaning/narrations";
-import { storage } from "../chapters/04-storage/storage";
+import { Storage } from "../chapters/04-storage/storage";
 import { NARRATIONS as N04 } from "../chapters/04-storage/narrations";
-import { professional } from "../chapters/05-professional/professional";
+import { Professional } from "../chapters/05-professional/professional";
 import { NARRATIONS as N05 } from "../chapters/05-professional/narrations";
 import { CTA } from "../chapters/06-cta/CTA";
 import { NARRATIONS as N06 } from "../chapters/06-cta/narrations";

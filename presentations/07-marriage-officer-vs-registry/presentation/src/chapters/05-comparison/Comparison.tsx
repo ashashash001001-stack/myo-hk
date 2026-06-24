@@ -20,7 +20,7 @@ export function Comparison({ step }: Props) {
         <div className="c4-number-block">
           <div className="c4-highlight-bar">
             <span className="c4-rule" />
-            <span className="c4-number-appear">$715+</span>
+            <span className="c4-number-appear">$715 起</span>
             <span className="c4-rule" />
           </div>
           <span className="c4-number-label">總費用比較</span>
