@@ -9,8 +9,8 @@ import json
 import glob
 from pathlib import Path
 
-BLOG_DIR = Path("/Users/babubu/Documents/GitHub/myo-hk/blog")
-REPORT_FILE = Path("/Users/babubu/Documents/GitHub/myo-hk/fix_report.json")
+BLOG_DIR = Path(__file__).parent / "blog"
+REPORT_FILE = Path(__file__).parent / "fix_report.json"
 
 def get_faq_count(content):
     """計算 FAQPage 中的問題數量"""

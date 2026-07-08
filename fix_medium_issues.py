@@ -11,23 +11,15 @@ import glob
 from pathlib import Path
 
 # 設定
-BLOG_DIR = Path("/Users/babubu/Documents/GitHub/myo-hk/blog")
-REPORT_FILE = Path("/Users/babubu/Documents/GitHub/myo-hk/fix_medium_report.json")
+BLOG_DIR = Path(__file__).parent / "blog"
+REPORT_FILE = Path(__file__).parent / "fix_medium_report.json"
 
 def fix_medium_issues(html):
     """修復中等問題"""
     original_html = html
     changes = []
 
-    # 2.1 硬編碼 URL fallback - 設為空值
-    if 'href="https://myo-hk.github.io/blog/' in html:
-        html = html.replace(
-            'href="https://myo-hk.github.io/blog/',
-            'href="'
-        )
-        changes.append('url_canonical')
-
-    # 2.2 添加 meta robots (如不存在)
+    # 2.1 添加 meta robots (如不存在)
     if 'name="robots"' not in html.lower():
         html = re.sub(
             r'</head>',
