@@ -1,5 +1,36 @@
 User-agent: *
 Allow: /
 
+# AI crawlers - explicitly allowed for AI SEO
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Allow: /pricing.md
+Crawl-delay: 10
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Allow: /pricing.md
+Crawl-delay: 10
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /pricing.md
+Crawl-delay: 10
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+Allow: /pricing.md
+Crawl-delay: 10
+
+User-agent: CCBot
+Allow: /
+Allow: /llms.txt
+Allow: /pricing.md
+Crawl-delay: 10
+
 Sitemap: https://myo-hk.github.io/sitemap.xml
 Sitemap: https://myo-hk.github.io/blog/sitemap.xml
