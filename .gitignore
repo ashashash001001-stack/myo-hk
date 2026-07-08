@@ -35,3 +35,6 @@ Icon
 
 # Build artifacts (copied to index.html by build command)
 presentations/*/presentation/dist/
+
+# Script-generated reports
+*_report.json

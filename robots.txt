@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://myo-hk.github.io/sitemap.xml
+Sitemap: https://myo-hk.github.io/blog/sitemap.xml
