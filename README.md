@@ -9,6 +9,66 @@
 
 ## 📝 更新日誌
 
+### 2026-07-08 — AI SEO、JSON-LD 結構化數據與文章優化
+
+**本次更新了以下內容：**
+
+#### 1. AI 爬蟲兼容性 ✅
+
+| 檔案 | 新增內容 |
+|------|---------|
+| `llms.txt` | AI 系統可讀的站點摘要（24 行），涵蓋核心頁面、部落格分類、聯絡方式 |
+| `robots.txt` | 新增 `llms.txt` 引用、`AIbot`、`Claude-Web`、`Amazonbot`、`Bytespider` 等 AI 爬蟲規則 |
+| `privacy.html` / `terms.html` | 新增 `<meta name="robots" content="noindex, nofollow">`，避免政策頁進入 AI 訓練 |
+
+#### 2. WebSite + Organization JSON-LD 全站鋪設 ✅
+
+為所有主要頁面新增完整的 JSON-LD 結構化數據：
+
+| 頁面 | Schema 類型 |
+|------|------------|
+| `index.html` | WebSite + Organization |
+| `v2.html` | WebSite + Organization |
+| `poster.html` | WebSite + Organization |
+| `heic-converter.html` | WebSite + Organization |
+| `blog/index.html` | WebSite + Organization |
+| 全部 421 篇部落格文章 | Organization |
+
+#### 3. WebApplication Schema 增強 ✅
+
+更新 `WebApplication` JSON-LD，填補 `applicationCategory`、`operatingSystem`、`offers`、`aggregateRating` 等欄位。
+
+#### 4. JSON-LD 修復腳本 ✅
+
+| 腳本 | 功能 |
+|------|------|
+| `scripts/add_org_schema_to_articles.py` | 為所有 421 篇部落格文章批量添加 Organization Schema |
+| `scripts/cleanup_json_ld.py` | 分割合併的 JSON-LD 區塊，修復 3 篇文章 |
+| `scripts/add_breadcrumb_schema.py` | 為所有文章添加 BreadcrumbList Schema |
+
+#### 5. 開頭段落優化（Top 20 文章）✅
+
+使用 `scripts/rank_articles.py` + `scripts/optimize_openings.py` 對流量最高的 20 篇文章進行開頭段落優化，確保第一段直接命中讀者需求。
+
+**輸入數據：** `docs/top20_articles.json`（按流量排名的前 20 篇）
+
+#### 6. SEO 批量修復 ✅
+
+| 腳本 | 修復內容 |
+|------|---------|
+| `scripts/fix_canonical_urls.py` | 修復 canonical URL |
+| `scripts/fix_blog_titles.py` | 修復部落格文章標題格式 |
+| `scripts/generate_sitemap.py` | 生成完整的 sitemap.xml |
+
+#### 7. 現有腳本整理 ✅
+
+| 變更 | 說明 |
+|------|------|
+| `fix_report.json` | 刪除（已過期） |
+| `fix_medium_report.json` | 刪除（已過期） |
+
+---
+
 ### 2026-06-21 — Presentations 全面建構與 TSX 警告修復
 
 **本次更新了以下內容：**
@@ -295,6 +355,18 @@ myo-hk.github.io/
 - **FAQPage Schema** — 常見問題與答案（部分文章）
 - **BreadcrumbList Schema** — 麵包屑導航結構
 - **WebPage Schema** — 用於隱私政策、服務條款等非文章頁面
+- **WebSite + Organization Schema** — 首頁、v2、poster、heic-converter、部落格索引頁及全部 421 篇文章
+- **WebApplication Schema** — 含 applicationCategory、operatingSystem、offers、aggregateRating
+
+### AI 爬蟲兼容性
+
+網站已針對 AI 系統进行全面優化：
+
+| 優化項目 | 說明 |
+|---------|------|
+| **llms.txt** | AI 可讀的站點摘要，列出核心頁面、部落格分類、聯絡方式 |
+| **robots.txt AI 規則** | 明確允許/限制 AI 爬蟲（Claude-Web、AIbot、Amazonbot、Bytespider 等） |
+| **政策頁 noindex** | `privacy.html`、`terms.html` 設為 `noindex, nofollow`，避免進入 AI 訓練 |
 
 ### 動態 URL 解析
 
@@ -411,6 +483,71 @@ python3 fix_medium_issues.py [--test]
 ```bash
 python3 add_sticky_bar.py
 ```
+
+### 4. `add_org_schema_to_articles.py`
+
+為所有 421 篇部落格文章批量添加 Organization JSON-LD Schema。
+
+**使用方法**：
+```bash
+python3 scripts/add_org_schema_to_articles.py
+```
+
+### 5. `add_breadcrumb_schema.py`
+
+為所有文章添加 BreadcrumbList JSON-LD 結構化數據。
+
+**使用方法**：
+```bash
+python3 scripts/add_breadcrumb_schema.py
+```
+
+### 6. `cleanup_json_ld.py`
+
+分割合併的 JSON-LD 區塊，確保每篇文章只有一個 JSON-LD script 標籤。
+
+**使用方法**：
+```bash
+python3 scripts/cleanup_json_ld.py
+```
+
+### 7. `fix_canonical_urls.py`
+
+修復 canonical URL，確保所有頁面使用動態 canonical。
+
+**使用方法**：
+```bash
+python3 scripts/fix_canonical_urls.py
+```
+
+### 8. `fix_blog_titles.py`
+
+修復部落格文章標題格式，確保標題一致性。
+
+**使用方法**：
+```bash
+python3 scripts/fix_blog_titles.py
+```
+
+### 9. `generate_sitemap.py`
+
+生成完整的 sitemap.xml，包含所有部落格文章 URL。
+
+**使用方法**：
+```bash
+python3 scripts/generate_sitemap.py
+```
+
+### 10. `optimize_openings.py`
+
+優化 Top 20 流量文章的開頭段落，直接命中讀者需求。
+
+**使用方法**：
+```bash
+python3 scripts/optimize_openings.py
+```
+
+**輸入數據：** `docs/top20_articles.json`（由 `scripts/rank_articles.py` 生成）
 
 ---
 

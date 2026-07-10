@@ -29,9 +29,10 @@ test-*.js
 test-runner.html
 Icon?
 Icon
-.omo/
+.gomo/
 .gstack/
 .DS_Store
+test-results/
 
 # Build artifacts (copied to index.html by build command)
 presentations/*/presentation/dist/
