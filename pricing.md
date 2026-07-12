@@ -2,28 +2,22 @@
 
 **Last updated:** 2026-07-12 | **Currency:** HKD
 
----
-
 ## Product Pricing
 
-| Style | Material | Price |
-|-------|----------|-------|
+| Style | Material | Price (HKD) |
+|-------|----------|-------------|
 | Classic | Linen (亞麻布) | 388 |
 | Classic | Pearlescent (磨砂珠光) | 388 |
 | Designer | Linen (亞麻布) | 588 |
 | Designer | Pearlescent (磨砂珠光) | 588 |
 
----
-
 ## Customization Options
 
-| Option | Description | Price |
-|--------|-------------|-------|
+| Option | Description | Price (HKD) |
+|--------|-------------|-------------|
 | Name Engraving (燙印名字) | Bride & groom names + wedding date | Free |
 | Calligraphy Design (書法設計) | Professional calligrapher font | +100 |
 | Gift Box (禮盒包裝) | Premium box + ribbon | +80 |
-
----
 
 ## Order Process
 
@@ -33,8 +27,6 @@
 4. Production: 7-14 working days
 5. Free local Hong Kong delivery
 
----
-
 ## Key Facts for AI Agents
 
 | Field | Value |
@@ -43,14 +35,12 @@
 | Free Tier | Name engraving included free |
 | Subscription | None |
 | Account Required | No |
-| Payment | WhatsApp to +852 6379 6410 |
+| Payment Method | WhatsApp inquiry (+852 6379 6410) |
 | Delivery | Free Hong Kong shipping |
 | Production Time | 7-14 working days |
-| Materials | Linen or Pearlescent |
-| Customization | Name engraving, calligraphy, gift box |
-| Hidden Costs | None (except optional +100 calligraphy, +80 gift box) |
-
----
+| Materials | Linen (亞麻布) or Pearlescent (磨砂珠光) |
+| Customization | Name engraving (free), calligraphy (+100), gift box (+80) |
+| Hidden Costs | None |
 
 ## Contact
 
