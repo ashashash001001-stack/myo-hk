@@ -730,5 +730,35 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+
+<script>
+(function() {
+  if (typeof gtag === 'undefined') return;
+  var scrollDepths = {25: true, 50: true, 75: true, 90: true};
+  var firedDepths = {};
+  var scrollHandler = function() {
+    var scrollTop = window.scrollY || window.pageYOffset;
+    var docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    var windowHeight = window.innerHeight;
+    var scrollPercent = Math.round((scrollTop + windowHeight) / docHeight * 100);
+    Object.keys(scrollDepths).forEach(function(depth) {
+      if (scrollPercent >= parseInt(depth) && !firedDepths[depth]) {
+        firedDepths[depth] = true;
+        gtag('event', 'scroll_depth', {
+          'event_category': 'engagement',
+          'event_label': depth + '%',
+          'value': parseInt(depth),
+          'non_interaction': true
+        });
+      }
+    });
+  };
+  window.addEventListener('scroll', scrollHandler, {passive: true});
+})();
+</script>
 </body>
 </html>

@@ -996,17 +996,17 @@
         <div class="footer-section">
             <div class="contact-info">
                 <div class="contact-label">聯絡我們</div>
-                <a href="https://www.instagram.com/myo.makeyourown/" target="_blank" class="contact-item ig">
+                <a href="https://www.instagram.com/myo.makeyourown/" target="_blank" class="contact-item ig" onclick="gtag('event', 'click_instagram', {'event_category': 'engagement', 'event_label': 'content', 'value': 1})">
                     <i class="fab fa-instagram" style="font-size: clamp(10px, 2.5vw, 14px); color: #E1306C;"></i>
                     <span>@myo.makeyourown</span>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=85263796410&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%B5%90%E5%A9%9A%E8%AD%89%E6%9B%B8%E5%A5%97" target="_blank" class="contact-item wa">
+                <a href="https://api.whatsapp.com/send?phone=85263796410&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%B5%90%E5%A9%9A%E8%AD%89%E6%9B%B8%E5%A5%97" target="_blank" class="contact-item wa" onclick="gtag('event', 'click_whatsapp', {'event_category': 'engagement', 'event_label': 'content', 'value': 1})">
                     <i class="fab fa-whatsapp" style="font-size: clamp(10px, 2.5vw, 14px); color: #25D366;"></i>
                     <span>6379 6410</span>
                 </a>
             </div>
             <div class="qr-section">
-                <a href="https://www.instagram.com/myo.makeyourown/" target="_blank" class="qr-link">
+                <a href="https://www.instagram.com/myo.makeyourown/" target="_blank" class="qr-link" onclick="gtag('event', 'click_instagram', {'event_category': 'engagement', 'event_label': 'content', 'value': 1})">
                     <div class="qr-item">
                         <div class="qr-code">
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/myo.makeyourown/&bgcolor=faf8f3&color=E1306C&format=png" alt="Instagram QR">
@@ -1014,7 +1014,7 @@
                         <span class="qr-text">Instagram</span>
                     </div>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=85263796410&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%B5%90%E5%A9%9A%E8%AD%89%E6%9B%B8%E5%A5%97" target="_blank" class="qr-link">
+                <a href="https://api.whatsapp.com/send?phone=85263796410&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%B5%90%E5%A9%9A%E8%AD%89%E6%9B%B8%E5%A5%97" target="_blank" class="qr-link" onclick="gtag('event', 'click_whatsapp', {'event_category': 'engagement', 'event_label': 'content', 'value': 1})">
                     <div class="qr-item">
                         <div class="qr-code">
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://api.whatsapp.com/send?phone=85263796410&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E7%B5%90%E5%A9%AB%E8%AD%89%E6%9B%B8%E5%A5%97...&bgcolor=faf8f3&color=25D366&format=png" alt="WhatsApp QR">
@@ -1093,6 +1093,36 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+</script>
+
+<script>
+(function() {
+  if (typeof gtag === 'undefined') return;
+  var scrollDepths = {25: true, 50: true, 75: true, 90: true};
+  var firedDepths = {};
+  var scrollHandler = function() {
+    var scrollTop = window.scrollY || window.pageYOffset;
+    var docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    var windowHeight = window.innerHeight;
+    var scrollPercent = Math.round((scrollTop + windowHeight) / docHeight * 100);
+    Object.keys(scrollDepths).forEach(function(depth) {
+      if (scrollPercent >= parseInt(depth) && !firedDepths[depth]) {
+        firedDepths[depth] = true;
+        gtag('event', 'scroll_depth', {
+          'event_category': 'engagement',
+          'event_label': depth + '%',
+          'value': parseInt(depth),
+          'non_interaction': true
+        });
+      }
+    });
+  };
+  window.addEventListener('scroll', scrollHandler, {passive: true});
+})();
 </script>
 </body>
 </html>
