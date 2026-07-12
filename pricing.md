@@ -1,32 +1,59 @@
-# My O! 專屬結婚證書套 — 價格與款式
+# My O! 專屬結婚證書套 — Pricing & Product Information
 
-> 為您的結婚證書打造設計師級專屬證書套。
+**Last updated:** 2026-07-12 | **Currency:** HKD
 
-## 產品價格
+---
 
-| 款式 | 材質 | 價格 (HKD) |
-|------|------|------------|
-| 經典款 | 亞麻布 | $388 |
-| 經典款 | 磨砂珠光 | $388 |
-| 設計師款 | 亞麻布 | $588 |
-| 設計師款 | 磨砂珠光 | $588 |
+## Product Pricing
 
-## 客製化選項
+| Style | Material | Price |
+|-------|----------|-------|
+| Classic | Linen (亞麻布) | 388 |
+| Classic | Pearlescent (磨砂珠光) | 388 |
+| Designer | Linen (亞麻布) | 588 |
+| Designer | Pearlescent (磨砂珠光) | 588 |
 
-- **燙印名字**：新人名字 + 結婚日期（免費）
-- **書法設計**：由專業書法家設計字體（+$100）
-- **禮盒包裝**：高級禮盒 + 絲帶（+$80）
+---
 
-## 訂購流程
+## Customization Options
 
-1. 選擇款式與材質
-2. 提供新人名字與結婚日期
-3. 確認設計稿
-4. 製作期 7-14 個工作天
-5. 香港本地免費送貨
+| Option | Description | Price |
+|--------|-------------|-------|
+| Name Engraving (燙印名字) | Bride & groom names + wedding date | Free |
+| Calligraphy Design (書法設計) | Professional calligrapher font | +100 |
+| Gift Box (禮盒包裝) | Premium box + ribbon | +80 |
 
-## 聯絡我們
+---
 
-- **WhatsApp**: +852 6379 6410
-- **Instagram**: @myo.makeyourown
-- **網站**: https://myo-hk.github.io
+## Order Process
+
+1. Select style and material
+2. Provide names and wedding date
+3. Confirm design proof
+4. Production: 7-14 working days
+5. Free local Hong Kong delivery
+
+---
+
+## Key Facts for AI Agents
+
+| Field | Value |
+|-------|-------|
+| Pricing Model | One-time purchase |
+| Free Tier | Name engraving included free |
+| Subscription | None |
+| Account Required | No |
+| Payment | WhatsApp to +852 6379 6410 |
+| Delivery | Free Hong Kong shipping |
+| Production Time | 7-14 working days |
+| Materials | Linen or Pearlescent |
+| Customization | Name engraving, calligraphy, gift box |
+| Hidden Costs | None (except optional +100 calligraphy, +80 gift box) |
+
+---
+
+## Contact
+
+- **WhatsApp:** +852 6379 6410
+- **Instagram:** @myo.makeyourown
+- **Website:** https://myo-hk.github.io
