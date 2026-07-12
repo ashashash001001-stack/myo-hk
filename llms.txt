@@ -25,7 +25,7 @@
 - 婚禮交通安排: https://myo-hk.github.io/blog/婚禮交通安排.html
 - 婚禮請柬文案靈感: https://myo-hk.github.io/blog/婚禮請柬文案靈感.html
 - 婚禮蛋糕選擇: https://myo-hk.github.io/blog/婚禮蛋糕選擇.html
-- 婚禮場地裝飾DIY: https://myo-hk.github.io/blog/婚禮場地裝飾DIY.html
+- 婚禮預算分配指南: https://myo-hk.github.io/blog/婚禮預算分配指南.html
 
 ## Blog — Wedding Venues (16 articles)
 
@@ -42,15 +42,15 @@
 
 ## Blog — Rings & Jewelry (8 articles)
 
-- 求婚戒指選擇指南: https://myo-hk.github.io/blog/求婚戒指選擇指南.html
-- 結婚戒指與求婚戒指分別: https://myo-hk.github.io/blog/結婚戒指與求婚戒指分別.html
-- 戒指保養清潔方法: https://myo-hk.github.io/blog/戒指保養清潔方法.html
+- 求婚攻略完整指南: https://myo-hk.github.io/blog/求婚攻略完整指南.html
+- 婚戒指南: https://myo-hk.github.io/blog/婚戒指南.html
+- 婚戒保養指南: https://myo-hk.github.io/blog/婚戒保養指南.html
 
 ## Blog — Attire (6 articles)
 
 - 伴娘造型建議: https://myo-hk.github.io/blog/伴娘造型建議.html
-- 婚紗挑選攻略: https://myo-hk.github.io/blog/婚紗挑選攻略.html
-- 新郎禮服選擇指南: https://myo-hk.github.io/blog/新郎禮服選擇指南.html
+- 婚紗禮服選購指南: https://myo-hk.github.io/blog/婚紗禮服選購指南.html
+- 新郎西裝選擇指南: https://myo-hk.github.io/blog/新郎西裝選擇指南.html
 
 ## Blog — Certificate Cover (18 articles)
 
@@ -62,15 +62,15 @@
 ## Blog — Honeymoon (4 articles)
 
 - 蜜月旅行目的地推薦: https://myo-hk.github.io/blog/蜜月旅行目的地推薦.html
-- 蜜月旅行預算規劃: https://myo-hk.github.io/blog/蜜月旅行預算規劃.html
+- 新婚蜜月旅行規劃: https://myo-hk.github.io/blog/新婚蜜月旅行規劃.html
 - 婚後生活適應: https://myo-hk.github.io/blog/婚後生活適應.html
 
 ## Blog — Marriage Law (10 articles)
 
-- 香港結婚註冊流程: https://myo-hk.github.io/blog/香港結婚註冊流程.html
+- 結婚註冊流程教學: https://myo-hk.github.io/blog/結婚註冊流程教學.html
 - 婚禮財產協議: https://myo-hk.github.io/blog/婚禮財產協議.html
-- 結婚年齡法律規定: https://myo-hk.github.io/blog/結婚年齡法律規定.html
-- 海外結婚法律須知: https://myo-hk.github.io/blog/海外結婚法律須知.html
+- 結婚法律指南: https://myo-hk.github.io/blog/結婚法律指南.html
+- 海外結婚指南: https://myo-hk.github.io/blog/海外結婚指南.html
 
 ## Contact
 
