@@ -161,13 +161,13 @@ export default function After({ step }: Props) {
           <div className="af-cta">
             <div className="af-cta-text">超過 400 篇香港婚禮教學文章</div>
             <a
-              href="https://myo-hk.github.io"
+              href="https://myo-makeyourown.pages.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="af-cta-link"
               data-no-advance
             >
-              <span>myo-hk.github.io</span>
+              <span>myo-makeyourown.pages.dev</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="af-cta-arrow">
                 <path d="M5 10 L13 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 <path d="M10 5 L15 10 L10 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

@@ -53,8 +53,8 @@ export function CTA({ step }: Props) {
         </svg>
         <h2 className="ct-final-title">超過 400 篇香港婚禮教學文章</h2>
         <p className="ct-final-desc">由預算規劃到婚禮籌備，一站式資訊平台</p>
-        <a href="https://myo-hk.github.io/" className="ct-cta-link" target="_blank" rel="noopener noreferrer">
-          myo-hk.github.io
+        <a href="https://myo-makeyourown.pages.dev/" className="ct-cta-link" target="_blank" rel="noopener noreferrer">
+          myo-makeyourown.pages.dev
           <svg viewBox="0 0 24 24" width="20" height="20">
             <path d="M7 17L17 7M7 7h10v10" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

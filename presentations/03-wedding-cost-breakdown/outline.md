@@ -28,6 +28,6 @@
 ## Chapter 6: 總結與下一步 (3 steps)
 - Step 0: 搞掂晒！掌握晒所有開支類別
 - Step 1: 5 大類 recap card
-- Step 2: 預算分配建議 + myo-hk.github.io CTA
+- Step 2: 預算分配建議 + myo-makeyourown.pages.dev CTA
 
 Total: 18 steps

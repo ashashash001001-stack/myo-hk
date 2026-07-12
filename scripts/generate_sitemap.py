@@ -17,7 +17,7 @@ NOW = datetime.now().strftime("%Y-%m-%d")
 # Pages that are not blog articles and should be in root sitemap
 ROOT_PAGES = {
     "index.html":       {"priority": "1.0", "changefreq": "weekly"},
-    "v2.html":          {"priority": "0.5", "changefreq": "monthly"},
+    "v2.html":          {"priority": "0.3", "changefreq": "monthly"},
     "poster.html":      {"priority": "0.5", "changefreq": "monthly"},
     "heic-converter.html": {"priority": "0.5", "changefreq": "monthly"},
     "privacy.html":     {"priority": "0.3", "changefreq": "yearly"},
@@ -39,11 +39,11 @@ def generate_root_sitemap():
     urls = []
 
     for filename, meta in ROOT_PAGES.items():
-        loc = f"https://myo-hk.github.io/{filename}" if filename != "index.html" else "https://myo-hk.github.io/"
+        loc = f"https://myo-makeyourown.pages.dev/{filename}" if filename != "index.html" else "https://myo-makeyourown.pages.dev/"
         add_url(urls, loc, NOW, meta["changefreq"], meta["priority"])
 
     # Add blog index
-    add_url(urls, "https://myo-hk.github.io/blog/", NOW, "weekly", "0.8")
+    add_url(urls, "https://myo-makeyourown.pages.dev/blog/", NOW, "weekly", "0.8")
 
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -72,7 +72,7 @@ def generate_blog_sitemap():
         lastmod = date_match.group(1) if date_match else NOW
 
         filename = fpath.name
-        loc = f"https://myo-hk.github.io/blog/{escape(filename)}"
+        loc = f"https://myo-makeyourown.pages.dev/blog/{escape(filename)}"
         add_url(urls, loc, lastmod, "monthly", "0.7")
 
     xml = f"""<?xml version="1.0" encoding="UTF-8"?>

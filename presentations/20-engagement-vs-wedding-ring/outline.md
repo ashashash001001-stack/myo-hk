@@ -28,4 +28,4 @@
 ## 第六章：總結
 - Step 0: 完成提示
 - Step 1: 重點回顧
-- Step 2: 呼籲行動（myo-hk.github.io）
+- Step 2: 呼籲行動（myo-makeyourown.pages.dev）

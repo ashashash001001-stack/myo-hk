@@ -12,7 +12,7 @@ from pathlib import Path
 BLOG_DIR = Path(__file__).parent.parent / "blog"
 
 BREADCRUMB_SCHEMA = """    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://myo-hk.github.io/"},{"@type":"ListItem","position":2,"name":"教學指南","item":"https://myo-hk.github.io/blog/"},{"@type":"ListItem","position":3,"name":"%TITLE%","item":"https://myo-hk.github.io/blog/%FILENAME%"}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://myo-makeyourown.pages.dev/"},{"@type":"ListItem","position":2,"name":"教學指南","item":"https://myo-makeyourown.pages.dev/blog/"},{"@type":"ListItem","position":3,"name":"%TITLE%","item":"https://myo-makeyourown.pages.dev/blog/%FILENAME%"}]}
     </script>"""
 
 def extract_title(html):

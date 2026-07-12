@@ -12,4 +12,4 @@
 搞清楚呢啲細節，就可以安心繼續下一步。
 搞掂晒！你已經掌握晒所有重點。
 等我幫你 recap 一下。
-想睇更多香港結婚資訊？上 myo-hk.github.io
+想睇更多香港結婚資訊？上 myo-makeyourown.pages.dev
