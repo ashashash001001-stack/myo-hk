@@ -303,6 +303,12 @@
     }
 }
 </script>
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#CD853F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="My O!">
+<link rel="apple-touch-icon" href="../image/icon-192x192.png">
 </head>
 <body>
     <nav class="bg-white p-4 shadow-md sticky top-0 z-50">
@@ -551,5 +557,15 @@
         </div>
     </div>
 
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').catch(function(err) {
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+</script>
 </body>
 </html>
