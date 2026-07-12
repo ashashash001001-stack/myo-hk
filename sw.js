@@ -10,7 +10,9 @@ const STATIC_ASSETS = [
   '/image/01_company_logo.png',
   '/image/icon-192x192.png',
   '/image/icon-512x512.png',
-  '/manifest.json'
+  '/manifest.json',
+  '/privacy.html',
+  '/terms.html'
 ];
 
 // Install: pre-cache critical assets
@@ -56,7 +58,7 @@ self.addEventListener('fetch', (event) => {
           }
           return response;
         })
-        .catch(() => cached);
+        .catch(() => cached || new Response('Offline', { status: 503 }));
 
       return cached || fetchPromise;
     })
