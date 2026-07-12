@@ -5,20 +5,78 @@
 ## Core Pages
 
 - Homepage: https://myo-hk.github.io/
-- Wedding Certificate Cover Products: https://myo-hk.github.io/v2.html
-- HEIC/HEIF Image Converter Tool: https://myo-hk.github.io/heic-converter.html
+- Product Overview (v2): https://myo-hk.github.io/v2.html
 - Pricing: https://myo-hk.github.io/pricing.md
-
-## Blog — Wedding Planning Guide (420+ Articles)
-
+- Poster / Flyer: https://myo-hk.github.io/poster.html
+- HEIC Image Converter: https://myo-hk.github.io/heic-converter.html
 - Blog Index: https://myo-hk.github.io/blog/
-- Wedding Photography (201 articles): https://myo-hk.github.io/blog/index.html
-- Wedding Planning (28 articles): https://myo-hk.github.io/blog/index.html
-- Wedding Traditions (14 articles): https://myo-hk.github.io/blog/index.html
-- Wedding Venues (16 articles): https://myo-hk.github.io/blog/index.html
-- Wedding Rings & Jewelry (8 articles): https://myo-hk.github.io/blog/index.html
+
+## Blog — Wedding Photography (201 articles)
+
+- 婚禮攝影拍照清單: https://myo-hk.github.io/blog/婚禮攝影拍照清單.html
+- 婚禮攝影合約範例: https://myo-hk.github.io/blog/婚禮攝影合約範例.html
+- 婚禮攝影師溝通技巧: https://myo-hk.github.io/blog/婚禮攝影師溝通技巧.html
+- 婚禮攝影後製軟件比較: https://myo-hk.github.io/blog/婚禮攝影後製軟件比較.html
+- 婚禮攝影色彩分级指南: https://myo-hk.github.io/blog/婚禮攝影色彩分级指南.html
+
+## Blog — Wedding Planning (28 articles)
+
+- 婚禮座位安排指南: https://myo-hk.github.io/blog/婚禮座位安排指南.html
+- 婚禮交通安排: https://myo-hk.github.io/blog/婚禮交通安排.html
+- 婚禮請柬文案靈感: https://myo-hk.github.io/blog/婚禮請柬文案靈感.html
+- 婚禮蛋糕選擇: https://myo-hk.github.io/blog/婚禮蛋糕選擇.html
+- 婚禮場地裝飾DIY: https://myo-hk.github.io/blog/婚禮場地裝飾DIY.html
+
+## Blog — Wedding Venues (16 articles)
+
+- 婚宴甜品桌設計: https://myo-hk.github.io/blog/婚宴甜品桌設計.html
+- 婚禮場地裝飾DIY: https://myo-hk.github.io/blog/婚禮場地裝飾DIY.html
+- 婚禮影片製作指南: https://myo-hk.github.io/blog/婚禮影片製作指南.html
+
+## Blog — Wedding Traditions (14 articles)
+
+- 敬茶儀式完整教學: https://myo-hk.github.io/blog/敬茶儀式完整教學.html
+- 回門習俗介紹: https://myo-hk.github.io/blog/回門習俗介紹.html
+- 中西婚禮習俗比較: https://myo-hk.github.io/blog/中西婚禮習俗比較.html
+- 婚禮禁忌大全: https://myo-hk.github.io/blog/婚禮禁忌大全.html
+
+## Blog — Rings & Jewelry (8 articles)
+
+- 求婚戒指選擇指南: https://myo-hk.github.io/blog/求婚戒指選擇指南.html
+- 結婚戒指與求婚戒指分別: https://myo-hk.github.io/blog/結婚戒指與求婚戒指分別.html
+- 戒指保養清潔方法: https://myo-hk.github.io/blog/戒指保養清潔方法.html
+
+## Blog — Attire (6 articles)
+
+- 伴娘造型建議: https://myo-hk.github.io/blog/伴娘造型建議.html
+- 婚紗挑選攻略: https://myo-hk.github.io/blog/婚紗挑選攻略.html
+- 新郎禮服選擇指南: https://myo-hk.github.io/blog/新郎禮服選擇指南.html
+
+## Blog — Certificate Cover (18 articles)
+
+- 證書套定制指南: https://myo-hk.github.io/blog/證書套定制指南.html
+- 婚禮證書套保養: https://myo-hk.github.io/blog/婚禮證書套保養.html
+- 證書套材質比較: https://myo-hk.github.io/blog/證書套材質比較.html
+- 證書套尺寸指南: https://myo-hk.github.io/blog/證書套尺寸指南.html
+
+## Blog — Honeymoon (4 articles)
+
+- 蜜月旅行目的地推薦: https://myo-hk.github.io/blog/蜜月旅行目的地推薦.html
+- 蜜月旅行預算規劃: https://myo-hk.github.io/blog/蜜月旅行預算規劃.html
+- 婚後生活適應: https://myo-hk.github.io/blog/婚後生活適應.html
+
+## Blog — Marriage Law (10 articles)
+
+- 香港結婚註冊流程: https://myo-hk.github.io/blog/香港結婚註冊流程.html
+- 婚禮財產協議: https://myo-hk.github.io/blog/婚禮財產協議.html
+- 結婚年齡法律規定: https://myo-hk.github.io/blog/結婚年齡法律規定.html
+- 海外結婚法律須知: https://myo-hk.github.io/blog/海外結婚法律須知.html
 
 ## Contact
 
 - Instagram: https://www.instagram.com/myo.makeyourown/
 - WhatsApp: +852 6379 6410
+
+## Language
+
+This file is written in Traditional Chinese (繁體中文).
