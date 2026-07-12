@@ -27,10 +27,7 @@ Allow: /pricing.md
 Crawl-delay: 10
 
 User-agent: CCBot
-Allow: /
-Allow: /llms.txt
-Allow: /pricing.md
-Crawl-delay: 10
+Disallow: /
 
 Sitemap: https://myo-hk.github.io/sitemap.xml
 Sitemap: https://myo-hk.github.io/blog/sitemap.xml
