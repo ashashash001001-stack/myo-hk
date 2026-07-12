@@ -17,7 +17,7 @@ NOW = datetime.now().strftime("%Y-%m-%d")
 # Pages that are not blog articles and should be in root sitemap
 ROOT_PAGES = {
     "index.html":       {"priority": "1.0", "changefreq": "weekly"},
-    "v2.html":          {"priority": "0.5", "changefreq": "monthly"},
+    "v2.html":          {"priority": "0.3", "changefreq": "monthly"},
     "poster.html":      {"priority": "0.5", "changefreq": "monthly"},
     "heic-converter.html": {"priority": "0.5", "changefreq": "monthly"},
     "privacy.html":     {"priority": "0.3", "changefreq": "yearly"},
