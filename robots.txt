@@ -29,5 +29,5 @@ Crawl-delay: 10
 User-agent: CCBot
 Disallow: /
 
-Sitemap: https://myo-hk.github.io/sitemap.xml
-Sitemap: https://myo-hk.github.io/blog/sitemap.xml
+Sitemap: https://myo-makeyourown.pages.dev/sitemap.xml
+Sitemap: https://myo-makeyourown.pages.dev/blog/sitemap.xml

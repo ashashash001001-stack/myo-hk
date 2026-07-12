@@ -2,8 +2,8 @@
 
 > 為您的結婚證書打造設計師級專屬證書套，讓這份愛情的見證永恆閃耀。
 
-**Live Site**: [https://myo-hk.github.io](https://myo-hk.github.io)
-**教學指南**: [https://myo-hk.github.io/blog/](https://myo-hk.github.io/blog/)
+**Live Site**: [https://myo-makeyourown.pages.dev](https://myo-makeyourown.pages.dev)
+**教學指南**: [https://myo-makeyourown.pages.dev/blog/](https://myo-makeyourown.pages.dev/blog/)
 
 ---
 
@@ -253,7 +253,7 @@ My O! 是一家專注於客製化結婚證書套的香港品牌。本項目是�
 ## 網站架構
 
 ```
-myo-hk.github.io/
+myo-makeyourown.pages.dev/
 ├── index.html              # 首頁（原始版）— 品牌展示、產品介紹、款式選擇、聯絡我們
 ├── v2.html                 # 首頁（重設計版）— CSS 變量系統、動畫、Lightbox
 ├── poster.html             # A5 宣傳單張 — 支援瀏覽器原生 PDF 列印
@@ -460,7 +460,7 @@ python3 fix_json_ld_and_table.py [--test]
 中等 SEO 問題批量修復。
 
 **功能**：
-- 將硬編碼的絕對 URL（`https://myo-hk.github.io/blog/`）替換為相對 URL
+- 將硬編碼的絕對 URL（`https://myo-makeyourown.pages.dev/blog/`）替換為相對 URL
 - 為缺少 meta robots 標籤的頁面添加 `<meta name="robots" content="index, follow">`
 - 為所有 `<img>` 標籤添加 `loading="lazy"` 延遲加載
 
@@ -602,14 +602,14 @@ npm run report
 
 1. 推送代碼到 `main` 分支
 2. GitHub Pages 自動從根目錄提供服務
-3. 網站網址：`https://myo-hk.github.io`
+3. 網站網址：`https://myo-makeyourown.pages.dev`
 
 ### 自定義域名
 
 如需使用自定義域名：
 
 1. 在倉庫 Settings → Pages 中添加自定義域名
-2. 在 DNS 提供商處添加 CNAME 記錄指向 `myo-hk.github.io`
+2. 在 DNS 提供商處添加 CNAME 記錄指向 `myo-makeyourown.pages.dev`
 3. 所有社交分享 URL 會自動適應新域名（使用 `window.location.href`）
 
 ### 本地預覽
@@ -850,7 +850,7 @@ mkdir -p presentations/XX-topic-slug/presentation/src/{chapters,registry,hooks}
 | **品牌名稱** | My O! 專屬結婚證書套 |
 | **WhatsApp** | +852 6379 6410 |
 | **Instagram** | [@myo.makeyourown](https://www.instagram.com/myo.makeyourown/) |
-| **網站** | [myo-hk.github.io](https://myo-hk.github.io) |
+| **網站** | [myo-makeyourown.pages.dev](https://myo-makeyourown.pages.dev) |
 | **產品** | 客製化結婚證書套（亞麻布 / 磨砂珠光） |
 | **特色** | 熱轉印（燙印）工藝、新人名字 + 日期、書法家設計字體 |
 

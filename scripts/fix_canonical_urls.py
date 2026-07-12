@@ -4,7 +4,7 @@ Batch fix: Replace relative canonical URLs with absolute URLs in blog articles.
 Usage: python3 scripts/fix_canonical_urls.py [--test]
 
 Changes: <link rel="canonical" href="文件名.html">
-      → <link rel="canonical" href="https://myo-hk.github.io/blog/文件名.html">
+      → <link rel="canonical" href="https://myo-makeyourown.pages.dev/blog/文件名.html">
 """
 
 import re
@@ -35,8 +35,8 @@ def fix_canonical(html, filename):
         if url.startswith("/blog/") or url.startswith("https://"):
             return match.group(0)
 
-        absolute = f'{prefix}https://myo-hk.github.io/blog/{url}">'
-        changes.append({"from": url, "to": f"https://myo-hk.github.io/blog/{url}"})
+absolute = f'{prefix}https://myo-makeyourown.pages.dev/blog/{url}">'
+changes.append({"from": url, "to": f"https://myo-makeyourown.pages.dev/blog/{url}"})
         return absolute
 
     html = CANONICAL_PATTERN.sub(replace_relative, html)

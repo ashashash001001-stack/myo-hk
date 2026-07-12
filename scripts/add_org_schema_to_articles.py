@@ -14,8 +14,8 @@ ORG_SCHEMA = '''    <script type="application/ld+json">
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "My O! 專屬結婚證書套",
-    "url": "https://myo-hk.github.io",
-    "logo": "https://myo-hk.github.io/image/01_company_logo.png",
+    "url": "https://myo-makeyourown.pages.dev",
+    "logo": "https://myo-makeyourown.pages.dev/image/01_company_logo.png",
     "sameAs": [
         "https://www.instagram.com/myo.makeyourown/"
     ],

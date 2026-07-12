@@ -41,6 +41,6 @@
 ## Chapter 6: 總結與下一步 (3 steps)
 - Step 0: Hook — 搞掂晒！掌握婚禮籌備完整流程
 - Step 1: Recap — 五個階段 recap card
-- Step 2: CTA — myo-hk.github.io 超過 400 篇香港婚禮教學文章
+- Step 2: CTA — myo-makeyourown.pages.dev 超過 400 篇香港婚禮教學文章
 
 Total: 31 steps

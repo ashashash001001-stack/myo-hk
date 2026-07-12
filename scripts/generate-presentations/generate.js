@@ -176,7 +176,7 @@ function generateOutline(p) {
 ## 第六章：總結
 - Step 0: 完成提示
 - Step 1: 重點回顧
-- Step 2: 呼籲行動（myo-hk.github.io）`;
+- Step 2: 呼籲行動（myo-makeyourown.pages.dev）`;
 }
 
 function generateScript(p) {
@@ -202,7 +202,7 @@ function generateScript(p) {
   // ch06 - 3 narrations
   lines.push(`搞掂晒！你已經掌握晒所有重點。`);
   lines.push(`等我幫你 recap 一下。`);
-  lines.push(`想睇更多香港結婚資訊？上 myo-hk.github.io`);
+  lines.push(`想睇更多香港結婚資訊？上 myo-makeyourown.pages.dev`);
   return lines;
 }
 
@@ -476,8 +476,8 @@ ${recapItems}
         ${getHook("heart", prefix)}
         <h2 className="${prefix}-final-title">超過 400 篇香港婚禮教學文章</h2>
         <p className="${prefix}-final-desc">由籌備到婚禮，一站式資訊平台</p>
-        <a href="https://myo-hk.github.io/" className="${prefix}-cta-link" target="_blank" rel="noopener noreferrer">
-          myo-hk.github.io
+        <a href="https://myo-makeyourown.pages.dev/" className="${prefix}-cta-link" target="_blank" rel="noopener noreferrer">
+          myo-makeyourown.pages.dev
           <svg viewBox="0 0 24 24" width="20" height="20">
             <path d="M7 17L17 7M7 7h10v10" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -860,7 +860,7 @@ function narrationsLines(ch, idx, p) {
     return [
       `"搞掂晒！你已經掌握晒所有重點。"`,
       `"等我幫你重温一下關鍵資訊。"`,
-      `"想睇更多香港結婚資訊？上 myo-hk.github.io"`,
+      `"想睇更多香港結婚資訊？上 myo-makeyourown.pages.dev"`,
     ];
   }
   // info chapter

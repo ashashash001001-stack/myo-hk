@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://myo-hk.github.io/</loc>
+    <loc>https://myo-makeyourown.pages.dev/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://myo-hk.github.io/v2.html</loc>
+    <loc>https://myo-makeyourown.pages.dev/v2.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://myo-hk.github.io/poster.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://myo-hk.github.io/heic-converter.html</loc>
+    <loc>https://myo-makeyourown.pages.dev/poster.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://myo-hk.github.io/privacy.html</loc>
+    <loc>https://myo-makeyourown.pages.dev/heic-converter.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://myo-makeyourown.pages.dev/privacy.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://myo-hk.github.io/terms.html</loc>
+    <loc>https://myo-makeyourown.pages.dev/terms.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://myo-hk.github.io/blog/</loc>
+    <loc>https://myo-makeyourown.pages.dev/blog/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -124,7 +124,7 @@
 - 核證副本：HK$425/份（表格 MR10） —— 來源 article §五
 - 免稅額：HK$264,000（2025/26） —— 來源 article §五
 - 證書用途：貸款/遺產/子女入學 —— 來源 article 推斷
-- 網站：420+ 篇教學文章，myo-hk.github.io —— 來源 README
+- 網站：420+ 篇教學文章，myo-makeyourown.pages.dev —— 來源 README
 
 **開發計劃**：
 - step 1 (~10s) — 4 張婚後待辦卡片逐一揭示
