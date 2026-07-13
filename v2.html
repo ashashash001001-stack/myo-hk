@@ -34,12 +34,22 @@
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" fetchpriority="low">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    (function() {
+        var d = document, t = d.createElement('script');
+        t.src = 'https://cdn.tailwindcss.com';
+        t.async = true;
+        var ref = d.querySelector('link[rel="stylesheet"]') || d.head.appendChild(d.createElement('meta'));
+        d.head.insertBefore(t, ref.nextSibling);
+    })();
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preload" href="https://unpkg.com/swiper/swiper-bundle.min.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"></noscript>
 
     <style>
         /* ===== CSS 變量系統 ===== */
@@ -2050,7 +2060,6 @@
         </a>
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
                 <span>myo.makeyourown</span>
             </div>
         </div>
@@ -2067,7 +2076,7 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script async src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -2134,63 +2143,70 @@
                 });
             });
 
-            // 3. 初始化 Swiper 輪播 for 選擇證書套設計樣式 (mySwiper)
-            const mySwiper = new Swiper('.mySwiper', {
-                slidesPerView: 'auto',
-                centeredSlides: true,
-                spaceBetween: 20,
+            // 3. 輪播初始化 (Swiper Carousel) — async-safe
+            function initSwiper() {
+                if (typeof Swiper === 'undefined') {
+                    setTimeout(initSwiper, 50);
+                    return;
+                }
+                var swiper = new Swiper('.mySwiper', {
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    spaceBetween: 20,
 
-                // 觸控優化配置
-                simulateTouch: true,
-                touchRatio: 1,
-                touchAngle: 45,
-                shortSwipes: true,
-                longSwipesRatio: 0.5,
-                allowTouchMove: true,
+                    // 觸控優化配置
+                    simulateTouch: true,
+                    touchRatio: 1,
+                    touchAngle: 45,
+                    shortSwipes: true,
+                    longSwipesRatio: 0.5,
+                    allowTouchMove: true,
 
-                // 防止誤觸的滾動閾值
-                threshold: 5,
+                    // 防止誤觸的滾動閾值
+                    threshold: 5,
 
-                breakpoints: {
-                    0: { // 0px 到 639px
-                        slidesPerView: 1.2,
-                        spaceBetween: 10,
+                    breakpoints: {
+                        0: { // 0px 到 639px
+                            slidesPerView: 1.2,
+                            spaceBetween: 10,
+                        },
+                        640: { // 640px 及以上
+                            slidesPerView: 2.2,
+                            spaceBetween: 15,
+                        },
+                        768: { // 768px 及以上
+                            slidesPerView: 3.2,
+                            spaceBetween: 20,
+                        },
+                        1024: { // 1024px 及以上
+                            slidesPerView: 4.2,
+                            spaceBetween: 20,
+                        },
+                        1280: { // 1280px 及以上
+                            slidesPerView: 5.2,
+                            spaceBetween: 20,
+                        }
                     },
-                    640: { // 640px 及以上
-                        slidesPerView: 2.2,
-                        spaceBetween: 15,
+
+                    loop: true,
+
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
                     },
-                    768: { // 768px 及以上
-                        slidesPerView: 3.2,
-                        spaceBetween: 20,
+
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
                     },
-                    1024: { // 1024px 及以上
-                        slidesPerView: 4.2,
-                        spaceBetween: 20,
+
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
                     },
-                    1280: { // 1280px 及以上
-                        slidesPerView: 5.2,
-                        spaceBetween: 20,
-                    }
-                },
-
-                loop: true,
-
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-            });
+                });
+            }
+            initSwiper();
 
             // 4. Mobile Sticky Conversion Bar - 保持始終顯示（無需額外 JS）
 
