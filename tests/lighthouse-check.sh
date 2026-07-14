@@ -11,7 +11,6 @@ echo ""
 if command -v lighthouse &> /dev/null; then
     echo "Running Lighthouse (mobile emulation)..."
     lighthouse "$URL" \
-        --preset=desktop \
         --output=json \
         --output-path=/tmp/lighthouse-result.json \
         --chrome-flags="--headless --no-sandbox" \
@@ -19,11 +18,26 @@ if command -v lighthouse &> /dev/null; then
 
     if [ -f /tmp/lighthouse-result.json ]; then
         python3 -c "
-import json
+import json, sys
 d = json.load(open('/tmp/lighthouse-result.json'))
+perf = d['categories']['performance']['score'] * 100
+print('=== Lighthouse Scores (Mobile) ===')
 for cat, data in d['categories'].items():
     score = data['score'] * 100
     print(f'{cat:20s}: {score:.0f}')
+print()
+metrics = d['audits']
+for m in ['first-contentful-paint', 'largest-contentful-paint', 'speed-index', 'total-blocking-time', 'cumulative-layout-shift']:
+    if m in metrics:
+        v = metrics[m]
+        print(f'{m:30s}: {v.get(\"displayValue\", \"N/A\")}')
+print()
+if perf >= 90:
+    print(f'✅ Performance target met: {perf:.0f} >= 90')
+    sys.exit(0)
+else:
+    print(f'❌ Performance target NOT met: {perf:.0f} < 90')
+    sys.exit(1)
 " 2>/dev/null || echo "Could not parse results"
     fi
 else
