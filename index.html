@@ -35,8 +35,10 @@
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="stylesheet" href="/css/tailwind.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
     <link rel="preload" href="https://unpkg.com/swiper/swiper-bundle.min.css" as="style" fetchpriority="low" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"></noscript>
@@ -997,7 +999,7 @@
     <nav class="bg-white p-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a class="GAuSPc" aria-hidden="false" tabindex="0">
-                <img src="image/01_company_logo.png" class="lzy1Td" role="img" aria-label="網站首頁" jsname="SwcDWb">
+                <img src="image/01_company_logo.png" width="256" height="256" loading="eager" class="lzy1Td" role="img" aria-label="網站首頁" jsname="SwcDWb">
                 <span class="QTKDff text-rose-500">My O!</span>專屬結婚證書套
             </a>
 
@@ -1029,9 +1031,11 @@
         </div>
     </nav>
 
+    <main>
+
     <header class="hero-section">
         <div class="container mx-auto px-4">
-            <div class="flex justify-center mb-6 md:mb-8"> <img src="image/01_company_logo.png" alt="My O! logo" class="w-28 md:w-36 h-auto"> </div>
+            <div class="flex justify-center mb-6 md:mb-8"> <img src="image/01_company_logo.png" alt="My O! logo" width="112" height="112" loading="eager" class="w-28 md:w-36 h-auto"> </div>
 
             <h1 class="text-4xl md:text-5xl font-bold text-rose-600 leading-tight mb-3 md:mb-4"> 珍藏您的愛情，<br>從一份證書套開始。💖
             </h1>
@@ -1064,7 +1068,10 @@
                             <span class="text-md font-medium text-gray-800">米色 Beige ｜亞麻布 Linen Texture</span>
                         </div>
                         <div class="image-container">
-                            <img src="image/cert_color_beige.jpg" alt="米色證書套預覽" class="select-option-image">
+                            <picture>
+                                <source srcset="image/cert_color_beige.webp" type="image/webp">
+                                <img src="image/cert_color_beige.jpg" alt="米色證書套預覽" class="select-option-image" width="200" height="133" loading="lazy">
+                            </picture>
                         </div>
                     </div>
                     <div class="card select-option color-option-card" data-type="color" data-value="blue">
@@ -1073,7 +1080,10 @@
                             <span class="text-md font-medium text-gray-800">藍色 Blue ｜磨砂珠光 Frosted Pearl</span>
                         </div>
                         <div class="image-container">
-                            <img src="image/cert_color_blue.jpg" alt="藍色證書套預覽" class="select-option-image">
+                            <picture>
+                                <source srcset="image/cert_color_blue.webp" type="image/webp">
+                                <img src="image/cert_color_blue.jpg" alt="藍色證書套預覽" class="select-option-image" width="200" height="144" loading="lazy">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -1087,7 +1097,10 @@
                         <div class="swiper-slide">
                             <div class="card select-option design-style-card" data-type="style" data-value="style1">
                                 <div class="image-container-design">
-                                    <img src="image/cert_style_1.png" alt="款式1" class="w-full h-auto rounded-md">
+                                    <picture>
+                                        <source srcset="image/cert_style_1.webp" type="image/webp">
+                                        <img src="image/cert_style_1.png" alt="款式1" class="w-full h-auto rounded-md" width="437" height="465" loading="lazy">
+                                    </picture>
                                 </div>
                                 <span class="block font-medium text-gray-800">款式1｜Cert Style 1</span>
                                 <p class="text-gray-600 text-sm mt-1">簡潔線條，永恆經典。</p>
@@ -1096,7 +1109,10 @@
                         <div class="swiper-slide">
                             <div class="card select-option design-style-card" data-type="style" data-value="style2">
                                 <div class="image-container-design">
-                                    <img src="image/cert_style_2.png" alt="款式2" class="w-full h-auto rounded-md">
+                                    <picture>
+                                        <source srcset="image/cert_style_2.webp" type="image/webp">
+                                        <img src="image/cert_style_2.png" alt="款式2" class="w-full h-auto rounded-md" width="548" height="455" loading="lazy">
+                                    </picture>
                                 </div>
                                 <span class="block font-medium text-gray-800">款式2｜Cert Style 2</span>
                                 <p class="text-gray-600 text-sm mt-1">以花卉圖案點綴，寓意愛情如花般綻放。</p>
@@ -1105,7 +1121,10 @@
                         <div class="swiper-slide">
                             <div class="card select-option design-style-card" data-type="style" data-value="style3">
                                 <div class="image-container-design">
-                                    <img src="image/cert_style_3_chinese.png" alt="款式3" class="w-full h-auto rounded-md">
+                                    <picture>
+                                        <source srcset="image/cert_style_3_chinese.webp" type="image/webp">
+                                        <img src="image/cert_style_3_chinese.png" alt="款式3" class="w-full h-auto rounded-md" width="656" height="262" loading="lazy">
+                                    </picture>
                                 </div>
                                 <span class="block font-medium text-gray-800">款式3｜Cert Style 3</span>
                                 <p class="text-gray-600 text-sm mt-1">時尚幾何圖形，展現現代感。</p>
@@ -1114,7 +1133,10 @@
                         <div class="swiper-slide">
                             <div class="card select-option design-style-card" data-type="style" data-value="style4">
                                 <div class="image-container-design">
-                                    <img src="image/cert_style_4.png" alt="款式4" class="w-full h-auto rounded-md">
+                                    <picture>
+                                        <source srcset="image/cert_style_4.webp" type="image/webp">
+                                        <img src="image/cert_style_4.png" alt="款式4" class="w-full h-auto rounded-md" width="608" height="288" loading="lazy">
+                                    </picture>
                                 </div>
                                 <span class="block font-medium text-gray-800">款式4｜Cert Style 4</span>
                                 <p class="text-gray-600 text-sm mt-1">融入夢幻元素，充滿魔法。</p>
@@ -1123,7 +1145,10 @@
                         <div class="swiper-slide">
                             <div class="card select-option design-style-card" data-type="style" data-value="style5">
                                 <div class="image-container-design">
-                                    <img src="image/cert_style_5.png" alt="款式5" class="w-full h-auto rounded-md">
+                                    <picture>
+                                        <source srcset="image/cert_style_5.webp" type="image/webp">
+                                        <img src="image/cert_style_5.png" alt="款式5" class="w-full h-auto rounded-md" width="490" height="518" loading="lazy">
+                                    </picture>
                                 </div>
                                 <span class="block font-medium text-gray-800">款式5｜Cert Style 5</span>
                                 <p class="text-gray-600 text-sm mt-1">更多風格選擇，等待您發掘。</p>
@@ -1146,7 +1171,10 @@
             </p>
 
             <div class="grid md:grid-cols-2 gap-6 items-center mb-6"> <div class="flex justify-center">
-                    <img src="https://lh5.googleusercontent.com/DWeIfZzwIHgSE31vh0akZf8RFa4FSApdYuzT_Cer8xnRZ3AdnIqurxsmKCM82KVA1GmyjdCxfLDtzuL1f1RtYvojfmzK-Ee38rYaossg4OfSVJ4oKA5iaryucGf6cRqe3mCcj5nfJwXmZP3785AdCaWNgTR_M7BlcNdw4a8CDRX9eJxBNg=w1326?key=Bl7sKK6_IAHx2-hi6KOMLg" alt="結婚證書套示意圖" class="rounded-2xl shadow-lg product-image">
+                    <picture>
+                        <source srcset="image/cert_hero.webp" type="image/webp">
+                        <img src="image/cert_hero.jpg" alt="結婚證書套示意圖" class="rounded-2xl shadow-lg product-image" width="600" height="496" loading="eager">
+                    </picture>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">產品特點 | Product Highlights</h3> <ul class="space-y-2 text-gray-800 text-md"> <li class="flex items-start">
@@ -1284,6 +1312,8 @@
         </div>
     </section>
 
+    </main>
+
     <footer class="bg-gray-800 text-white py-5"> <div class="container mx-auto px-4 text-center">
             <p class="mb-1 text-sm">© 2025 愛的見證. 版權所有。</p> <div class="space-x-2 text-sm"> <a href="privacy.html" class="footer-link">隱私政策</a>
                 <a href="terms.html" class="footer-link">服務條款</a>
@@ -1300,7 +1330,7 @@
     <!-- Mobile Sticky Conversion Bar -->
     <div class="sticky-conversion-bar" id="sticky-conversion-bar">
         <div class="brand-section">
-            <img src="image/01_company_logo.png" alt="My O! Logo" class="logo">
+            <img src="image/01_company_logo.png" alt="My O! Logo" width="50" height="50" loading="lazy" class="logo">
             <div class="brand-name">
                 <span>My O!</span>
                 <span>myo.makeyourown</span>
