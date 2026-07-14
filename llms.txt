@@ -5,8 +5,7 @@
 ## Core Pages
 
 - [Homepage](https://myo-makeyourown.pages.dev/)
-- [Product Overview (v2)](https://myo-makeyourown.pages.dev/v2.html)
-# REMOVED: - Pricing: https://myo-makeyourown.pages.dev/pricing.md
+- [Product Overview v2 — 重設計版](https://myo-makeyourown.pages.dev/v2.html)
 - [Poster / Flyer](https://myo-makeyourown.pages.dev/poster.html)
 - [HEIC Image Converter](https://myo-makeyourown.pages.dev/heic-converter.html)
 - [FAQ](https://myo-makeyourown.pages.dev/faq.html)
