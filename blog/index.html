@@ -48,9 +48,9 @@
         .footer-link:hover { color: #CD853F; }
         .fa-instagram { color: #E1306C; }
         .fa-whatsapp { color: #25D366; }
-        .category-btn { transition: all 0.2s; white-space: nowrap; }
+        .category-btn { transition: background-color 0.2s, color 0.2s; white-space: nowrap; }
         .category-btn.active { background-color: #CD853F; color: white; }
-        .article-card { transition: all 0.2s; }
+        .article-card { transition: transform 0.2s, box-shadow 0.2s; }
         .article-card.hidden { display: none; }
         #categoryFilters { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
         #categoryFilters::-webkit-scrollbar { display: none; }
@@ -140,7 +140,7 @@
             height: 52px;
             border-radius: 14px;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
             border: 3px solid #333;
             background: #fff;
         }
