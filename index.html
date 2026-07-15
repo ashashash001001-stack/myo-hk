@@ -395,7 +395,7 @@
             <div class="grid md:grid-cols-2 gap-6 items-center mb-6"> <div class="flex justify-center">
                     <picture>
                         <source srcset="image/cert_hero_600.webp 600w, image/cert_hero.webp 1200w" sizes="(max-width: 768px) 100vw, 600px" type="image/webp">
-                        <img src="image/cert_hero.jpg" alt="結婚證書套示意圖" class="rounded-2xl shadow-lg product-image" width="600" height="495" style="aspect-ratio: 1200/991" loading="eager" fetchpriority="high" sizes="(max-width: 768px) 100vw, 600px">
+                        <img src="image/cert_hero.webp" alt="結婚證書套示意圖" class="rounded-2xl shadow-lg product-image" style="width:600px;aspect-ratio:1200/991;" loading="eager" fetchpriority="high" sizes="(max-width: 768px) 100vw, 600px">
                     </picture>
                 </div>
                 <div>
@@ -743,13 +743,15 @@ if ('serviceWorker' in navigator) {
   if (typeof gtag === 'undefined') return;
   var scrollDepths = {25: true, 50: true, 75: true, 90: true};
   var firedDepths = {};
+
+  // Compute document height ONCE — not on every scroll event
+  var docHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight
+  );
+
   var scrollHandler = function() {
     var scrollTop = window.scrollY || window.pageYOffset;
-    var docHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
     var windowHeight = window.innerHeight;
     var scrollPercent = Math.round((scrollTop + windowHeight) / docHeight * 100);
     Object.keys(scrollDepths).forEach(function(depth) {
