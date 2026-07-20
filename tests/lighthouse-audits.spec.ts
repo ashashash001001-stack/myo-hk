@@ -91,6 +91,40 @@ test.describe('Lighthouse audit fixes', () => {
     }
   });
 
+  // ====================================================
+  // TEST: Scroll-depth script should not query layout on load
+  // ====================================================
+  test('scroll-depth script should not eagerly compute docHeight', async ({ page }) => {
+    await page.goto('/');
+
+    const hasLazyPattern = await page.evaluate(() => {
+      const scripts = document.querySelectorAll('script');
+      for (const script of scripts) {
+        if (script.textContent?.includes('scrollDepths')) {
+          return script.textContent.includes('getDocHeight') || script.textContent.includes('docHeight = 0');
+        }
+      }
+      return false;
+    });
+    expect(hasLazyPattern).toBe(true);
+  });
+
+  // ====================================================
+  // TEST: Color preview images should use thumbnail variants
+  // ====================================================
+  test('color preview images should use thumbnail variants', async ({ page }) => {
+    await page.goto('/');
+
+    const colorImages = page.locator('.color-option-card .select-option-image');
+    const count = await colorImages.count();
+    expect(count).toBe(2);
+
+    for (let i = 0; i < count; i++) {
+      const src = await colorImages.nth(i).getAttribute('src');
+      expect(src).toMatch(/thumb\.webp$/);
+    }
+  });
+
   test('nav links should have sufficient color contrast on white background', async ({ page }) => {
     await page.goto('/');
 
