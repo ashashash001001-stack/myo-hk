@@ -323,7 +323,7 @@
                             <div class="card select-option design-style-card" data-type="style" data-value="style1">
                                 <div class="image-container-design">
                                     <picture>
-                                        <source srcset="image/cert_style_1.webp" type="image/webp">
+                                        <source srcset="image/cert_style_1_thumb.webp 200w, image/cert_style_1.webp 437w" sizes="(max-width: 768px) 70vw, 180px" type="image/webp">
                                         <img src="image/cert_style_1.png" alt="款式1" class="w-full h-auto rounded-md" width="437" height="465" loading="lazy">
                                     </picture>
                                 </div>
@@ -335,7 +335,7 @@
                             <div class="card select-option design-style-card" data-type="style" data-value="style2">
                                 <div class="image-container-design">
                                     <picture>
-                                        <source srcset="image/cert_style_2.webp" type="image/webp">
+                                        <source srcset="image/cert_style_2_thumb.webp 200w, image/cert_style_2.webp 548w" sizes="(max-width: 768px) 70vw, 180px" type="image/webp">
                                         <img src="image/cert_style_2.png" alt="款式2" class="w-full h-auto rounded-md" width="548" height="455" loading="lazy">
                                     </picture>
                                 </div>
@@ -347,7 +347,7 @@
                             <div class="card select-option design-style-card" data-type="style" data-value="style3">
                                 <div class="image-container-design">
                                     <picture>
-                                        <source srcset="image/cert_style_3_chinese.webp" type="image/webp">
+                                        <source srcset="image/cert_style_3_chinese_thumb.webp 200w, image/cert_style_3_chinese.webp 656w" sizes="(max-width: 768px) 70vw, 180px" type="image/webp">
                                         <img src="image/cert_style_3_chinese.png" alt="款式3" class="w-full h-auto rounded-md" width="656" height="262" loading="lazy">
                                     </picture>
                                 </div>
@@ -359,7 +359,7 @@
                             <div class="card select-option design-style-card" data-type="style" data-value="style4">
                                 <div class="image-container-design">
                                     <picture>
-                                        <source srcset="image/cert_style_4.webp" type="image/webp">
+                                        <source srcset="image/cert_style_4_thumb.webp 200w, image/cert_style_4.webp 608w" sizes="(max-width: 768px) 70vw, 180px" type="image/webp">
                                         <img src="image/cert_style_4.png" alt="款式4" class="w-full h-auto rounded-md" width="608" height="288" loading="lazy">
                                     </picture>
                                 </div>
@@ -371,7 +371,7 @@
                             <div class="card select-option design-style-card" data-type="style" data-value="style5">
                                 <div class="image-container-design">
                                     <picture>
-                                        <source srcset="image/cert_style_5.webp" type="image/webp">
+                                        <source srcset="image/cert_style_5_thumb.webp 200w, image/cert_style_5.webp 490w" sizes="(max-width: 768px) 70vw, 180px" type="image/webp">
                                         <img src="image/cert_style_5.png" alt="款式5" class="w-full h-auto rounded-md" width="490" height="518" loading="lazy">
                                     </picture>
                                 </div>
@@ -661,10 +661,10 @@
             });
 
 
-            // 3. 輪播初始化 (Swiper Carousel) — async-safe
+            // 3. 輪播初始化 (Swiper Carousel) — deferred past first paint
             function initSwiper() {
                 if (typeof Swiper === 'undefined') {
-                    setTimeout(initSwiper, 50);
+                    requestAnimationFrame(initSwiper);
                     return;
                 }
                 var swiper = new Swiper('.mySwiper', {
@@ -724,7 +724,7 @@
                     },
                 });
             }
-            initSwiper();
+            requestAnimationFrame(initSwiper);
 
             // 4. Mobile Sticky Conversion Bar - 保持始終顯示（無需額外 JS）
         });
