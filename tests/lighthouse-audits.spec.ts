@@ -125,6 +125,61 @@ test.describe('Lighthouse audit fixes', () => {
     }
   });
 
+  // ====================================================
+  // TEST: Inter woff2 font files should be preloaded
+  // ====================================================
+  test('Inter woff2 font files should be preloaded with fetchpriority=low', async ({ page }) => {
+    await page.goto('/');
+
+    const fontPreloads = await page.evaluate(() => {
+      const links = document.querySelectorAll('link[rel="preload"][as="font"]');
+      return Array.from(links).map(l => ({
+        href: (l as HTMLLinkElement).href,
+        type: (l as HTMLLinkElement).type,
+        crossorigin: (l as HTMLLinkElement).crossOrigin,
+      }));
+    });
+
+    // At least one latin-subset Inter woff2 preload
+    const interLatin = fontPreloads.filter(p =>
+      p.href.includes('fonts.gstatic.com/s/inter') && p.href.includes('1ZL7.woff2')
+    );
+    expect(interLatin.length).toBeGreaterThanOrEqual(1);
+
+    // At least one latin-ext Inter woff2 preload
+    const interLatinExt = fontPreloads.filter(p =>
+      p.href.includes('fonts.gstatic.com/s/inter') && p.href.includes('25L7SUc.woff2')
+    );
+    expect(interLatinExt.length).toBeGreaterThanOrEqual(1);
+
+    // All font preloads should have correct type
+    for (const p of fontPreloads) {
+      if (p.href.includes('fonts.gstatic.com')) {
+        expect(p.type).toBe('font/woff2');
+      }
+    }
+  });
+
+  // ====================================================
+  // TEST: Nav link hover should use composited opacity transition
+  // ====================================================
+  test('nav link hover should use opacity transition instead of transition-colors', async ({ page }) => {
+    await page.goto('/');
+
+    const navLinks = page.locator('.desktop-nav-links a');
+    const count = await navLinks.count();
+    expect(count).toBeGreaterThan(0);
+
+    for (let i = 0; i < count; i++) {
+      const link = navLinks.nth(i);
+      const className = await link.getAttribute('class');
+      // Should NOT contain 'transition-colors'
+      expect(className).not.toContain('transition-colors');
+      // Should use transition-opacity + hover:opacity pattern
+      expect(className).toContain('transition-opacity');
+    }
+  });
+
   test('nav links should have sufficient color contrast on white background', async ({ page }) => {
     await page.goto('/');
 
