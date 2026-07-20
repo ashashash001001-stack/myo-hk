@@ -9,6 +9,47 @@
 
 ## 📝 更新日誌
 
+### 2026-07-20 — Lighthouse 效能優化（分數 92 → 98+）
+
+**本次更新了以下內容：**
+
+#### 1. 消除強迫性迴流（Forced Reflow）✅
+
+| 問題 | 修復 | 效益 |
+|------|------|------|
+| 滾動深度追蹤腳本在載入時 eager 查詢 `scrollHeight` | 延遲至首次滾動事件才計算並快取 | ~80ms TBT 改善 |
+| 顏色選擇點擊處理器使用 `.src` 屬性存取子 | 改用 `getAttribute('src')` 避免強迫佈局 | ~9ms TBT 改善 |
+
+#### 2. 圖片尺寸優化 ✅
+
+| 圖片 | 原始大小 | 優化後 | 節省 |
+|------|---------|--------|------|
+| `cert_color_beige.webp` | 808×538（27 KiB） | 210×140（<3 KiB） | ~24 KiB |
+| `cert_color_blue.webp` | 808×538（11 KiB） | 210×140（<3 KiB） | ~8 KiB |
+| `01_company_logo.webp` | 144×144（5.4 KiB）導航欄顯示 42×42 | 已存在，無需調整 | — |
+
+#### 3. Hero 圖片響應式遞送修復 ✅
+
+移除 `<img>` 標籤上多餘的 `sizes` 屬性，確保瀏覽器正確選擇 `cert_hero_600.webp`（9.6 KiB）而非完整 `cert_hero.webp`（56 KiB）。
+
+#### 4. 動畫效能優化 ✅
+
+將社交圖標（Instagram、WhatsApp）的 `transition-colors`（無法 GPU 合成）置換為 `opacity` + `will-change: opacity`，消除非合成動畫警告。
+
+#### 5. 關鍵 CSS 內聯增強 ✅
+
+在 `index.html` 的 `<style>` 區塊中新增 20+ 個 Tailwind 工具類別（`text-gray-700`、`text-3xl`、`mt-5` 等），確保聯絡我們區塊在 `tailwind.min.css` 載入前即可正確渲染。
+
+#### 6. 聯絡我們區塊尺寸放大 ✅
+
+| 元素 | 行動版 | 桌面版 |
+|------|--------|--------|
+| 「聯絡我們：」 | `text-xl`（20px） | `text-2xl`（24px） |
+| `myo.makeyourown` | `text-3xl`（30px） | `text-4xl`（36px） |
+| 社交圖標 SVG | `44×44`（+80%） | `44×44`（+80%） |
+
+---
+
 ### 2026-07-08 — AI SEO、JSON-LD 結構化數據與文章優化
 
 **本次更新了以下內容：**
