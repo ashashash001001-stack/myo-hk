@@ -1,18 +1,6 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
-build/
-
-# Claude configuration
-.claude/
-
-# OpenCode configuration
-.opencode/
-
-# Sisyphus
-.sisyphus/
 
 # IDE
 .idea/
@@ -34,8 +22,6 @@ Icon
 .DS_Store
 test-results/
 
-# Build artifacts (copied to index.html by build command)
-presentations/*/presentation/dist/
 
 # Script-generated reports
 *_report.json
