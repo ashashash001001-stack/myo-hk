@@ -50,6 +50,52 @@
 
 ---
 
+### 2026-07-12 至 2026-07-15 — 效能突圍與 SEO 全面提升
+
+**本次更新了以下內容：**
+
+#### 1. 421 個部落格頁面消除渲染封鎖 CSS ✅
+
+將 Font Awesome、Tailwind CSS、Google Fonts 從同步 `<link rel="stylesheet">` 改為 `preload + onload` 模式，新增 preconnect 提示（`fonts.googleapis.com`、`fonts.gstatic.com`、`cdnjs.cloudflare.com`），並為頁首與頁尾 Logo `<img>` 標籤新增 `width="24" height="24"` 屬性。一次性批次處理 421 篇文章，大幅減少初次 paint 前的阻塞。
+
+#### 2. Lighthouse 分數 77 → 92+（Mobile Performance）✅
+
+消除 Tailwind CDN 124 KiB 渲染封鎖腳本後，Mobile Performance 從 77 升至 92+。
+
+#### 3. 桌面版 CLS 修復 ✅
+
+- 預加載 Inter WOFF2 字體 + `size-adjust` fallback 字體，解決字體置換導致的 CLS
+- 修正 Hero 圖片 `width`/`height` 屬性與實際比例不符問題
+- `transition:all`（不可 GPU 合成）替換為 `opacity` / `transform` 等可合成屬性，應用於 432 篇文章
+
+#### 4. 控制台錯誤與 CSP 違規修復 ✅
+
+- 為 `index.html`、`v2.html`、`poster.html`、`heic-converter.html` 新增 `<meta http-equiv="Content-Security-Policy">`
+- 修補 Cloudflare Insights、CSS、圖片資源的 CSP 許可
+- 為所有 icon-only 按鈕新增 `aria-hidden="true"` 與 `aria-label`
+- 修正 footer 連結色彩對比度（`text-gray-400` → `text-gray-300`）
+
+#### 5. 圖片效能優化 ✅
+
+- Hero 圖片設為 `fetchpriority="high"` + `loading="eager"`
+- 下方摺疊內容圖片新增 `loading="lazy"`
+- 為桌面版圖片新增 `width`/`height` 與 `srcset` 響應式提示
+- 陰影圖（style image）新增 200w 響應式變體
+
+#### 6. FontAwesome 從無圖標頁面移除 ✅
+
+建立批次腳本 `scripts/remove_unused_fa.py`，自動偵測頁面 body 是否使用 `fa-*` 類別，只在有圖標的頁面保留 FontAwesome CSS（約 65 KB 節省）。
+
+#### 7. WebP Logo 全面採用 ✅
+
+次級頁面（`poster.html`、`heic-converter.html`、`privacy.html`、`terms.html`）的 Logo 參照從 PNG 升級至 WebP。
+
+#### 8. llms.txt 連結格式修復 ✅
+
+將 bare URL 格式（如 `- Homepage: https://...`）轉換為 Markdown 連結格式（`- [Homepage](https://...)`），確保 AI 爬蟲正確解析。
+
+---
+
 ### 2026-07-08 — AI SEO、JSON-LD 結構化數據與文章優化
 
 **本次更新了以下內容：**
